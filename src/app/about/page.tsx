@@ -1,8 +1,5 @@
 "use client"
-export const metadata = {
-    title: 'aboutpage',
-    description: 'Ghomepage',
-  }
+
 const AboutPage = () => {
     return (
         <div>
