@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     experimental: {
-    appDir: false,
+    appDir: true,
     turbo: {
             resolveAlias: {
                 underscore: 'lodash',
@@ -25,7 +25,6 @@ const nextConfig = {
    
     poweredByHeader: false,
     reactStrictMode: true,
-    poweredByHeader: false,
     webpack: (config, options) => {
         config.module.rules.push({
           test: /\.mdx/,

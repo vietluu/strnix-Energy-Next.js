@@ -3,10 +3,7 @@ import React from "react";
 import Slider,{Settings} from 'react-slick'
 
 
-export const metadata = {
-  title: 'homepage',
-  description: 'Ghomepage',
-}
+
 
 const Homepage = () => {
     const setting: Settings = {
