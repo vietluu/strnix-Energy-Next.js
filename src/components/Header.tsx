@@ -1,4 +1,4 @@
-
+"use client"
 import React, { useEffect, useLayoutEffect, useState } from "react"
 const Header = () => {
     const [mobile, setMobile] = useState(false)

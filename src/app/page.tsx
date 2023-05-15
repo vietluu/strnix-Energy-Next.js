@@ -1,4 +1,4 @@
-"use client"
+
 import React from "react";
 import Slider, { Settings } from 'react-slick'
 import type { Metadata } from 'next';

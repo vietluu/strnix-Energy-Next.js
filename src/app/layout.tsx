@@ -1,4 +1,4 @@
-"use client"
+
 import '/assets/css/globals.css'
 import '/assets/css/slick.css'; 
 import '/assets/css/owl.carousel.css'
