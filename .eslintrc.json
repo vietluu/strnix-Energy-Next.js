@@ -1,5 +1,5 @@
 {
-  "extends": ["next/babel","next/core-web-vitals","eslint:recommended"],
+  "extends": ["next/core-web-vitals","eslint:recommended"],
   "plugins": ["prettier"],
   "globals": {
     "React": "readonly"

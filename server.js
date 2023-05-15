@@ -2,7 +2,7 @@ const express = require('express');
 const cp = require('child_process');
 const next = require('next');
 const os = require('os');
-// const { publicRuntimeConfig, serverRuntimeConfig } = require('./next.config');
+const { publicRuntimeConfig, serverRuntimeConfig } = require('./next.config');
 
 function getIPAdress() {
   const interfaces = os.networkInterfaces();
@@ -18,10 +18,9 @@ function getIPAdress() {
   }
 }
 
-// const { isDev } = publicRuntimeConfig;
-// const { PORT } = serverRuntimeConfig;
-const PORT = 3000
-  const isDev = true
+const { isDev } = publicRuntimeConfig;
+const { PORT } = serverRuntimeConfig;
+console.log(isDev,PORT)
 const app = next({ dev: isDev });
 const handle = app.getRequestHandler();
 

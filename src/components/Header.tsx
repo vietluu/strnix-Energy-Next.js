@@ -1,8 +1,15 @@
-"use client"
-import React, { useEffect, useState } from "react"
+
+import React, { useEffect, useLayoutEffect, useState } from "react"
 const Header = () => {
     const [mobile, setMobile] = useState(false)
-    const [search,setSearch] = useState(false)
+    const [search, setSearch] = useState(false)
+    const [page, setPage] = useState(0);
+    
+    useLayoutEffect(() => {
+        window.addEventListener('scroll', scroll);
+
+  },[])
+
     useEffect(() => {
         if (mobile || search) {
             document.body.style.height = "100vh";
@@ -18,8 +25,13 @@ const Header = () => {
      e.children[0].children[1].classList.toggle('activebtn')
        e.children[1].classList.toggle('open')
     }
+    const scroll = () => {
+        
+            setPage(window.scrollY)
+        
+    }
     return <>
-        {search && <div className={`search-bar`} >
+        {search && <div className={`search-bar`}>
             <div className="close" onClick={e => setSearch(false)}>
             <i className="fas fa-times fa-2x"></i>
           </div>
@@ -34,7 +46,7 @@ const Header = () => {
         </div>}
         <div className="header">
 
-            <div className="header-top clearfix">
+           {page > 200 && <div className="header-top clearfix">
                 <div className="logo-top"><img src="https://smartdemowp.com/strnix/wp-content/themes/strnix/assets/images/sticky-logo.png" alt="Logo"/></div>
                 <div className="main-menu clearfix">
                     <ul className="menu ">
@@ -111,7 +123,7 @@ const Header = () => {
                         <li><a href="# " className="hover1 "><strong>CONTACT</strong></a></li>
                     </ul>
                 </div>
-            </div>
+            </div>}
             <div className="banner-top  clearfix">
                 <div className="top-left">
                     <div className="top-text">The Nagy Saving for us</div>
@@ -138,7 +150,7 @@ const Header = () => {
                 </div>
 
             </div>
-            <div className="header-main ">
+            <div className="header-main  ">
 
                 <div className="header-main-box clearfix">
                     <div className="logo ">

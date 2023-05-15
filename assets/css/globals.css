@@ -172,13 +172,23 @@ button:focus {
 }
 
 .header-top {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #fff;
   z-index: 11;
+  padding: 10px 0;
+  animation: menuAnimation 0.7s ease;
+}
+@keyframes menuAnimation {
+  0%{
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);  }
 }
 
 .logo-top {
@@ -384,7 +394,7 @@ button:focus {
 .slidemain {
   position: relative;
   width: 100%;
-  animation: anishow 0.5s linear;
+  animation: anishow 0.75s linear;
 }
 @keyframes anishow {
   0%{
@@ -1058,45 +1068,51 @@ button:focus {
   height: 100px;
 }
 
-.imgprogram .owl-nav {
-  display: block !important;
-  margin-top: 20px;
-}
 
-.imgprogram .owl-nav button {
+
+.imgprogram  button {
   display: inline-block;
-  position: relative;
+  position: absolute;
+  bottom: -50px;
   width: 50px;
   height: 50px;
-  margin: 10px;
+  background-color: transparent;
   font-size: 2rem !important;
   border-radius: 50% !important;
-  border: 1px solid #777777 !important;
+  color:#d9d9d9;
+  text-align: center;
+  border: 1px solid #d9d9d9 !important;
 }
 
-.imgprogram.owl-nav button:hover {
+.imgprogram button:hover {
   color: #08e306!important;
   border-color: #08e306!important;
 }
 
-.imgprogram .owl-nav span {
-  position: absolute;
-  top: 9px;
-  left: 20px;
-  color: #777777;
+.imgprogram  .slick-prev {
+
+  left: calc(50% - 60px);
+
+}
+.imgprogram .slick-next {
+  
+  left: calc(50% + 15px);
+
 }
 
 .third-body {
   width: 100%;
   background-color: #161155;
+ 
+}
+.auto-container{
+  max-width: 1340px;
   position: relative;
 }
-
 .panel {
-  width: 300px;
-  height: 100%;
+  width: 270px;
   color: #ffffff;
-  opacity: 0.4;
+  opacity: 0.2;
   position: absolute;
   left: -150px;
   top: 0;

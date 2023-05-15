@@ -1,18 +1,16 @@
-import Script from 'next/script'
-import './globals.css'
-import "./slick.css"; 
-import "./owl.carousel.css";
-import "./bootstrap.min.css"
+"use client"
+import '/assets/css/globals.css'
+import '/assets/css/slick.css'; 
+import '/assets/css/owl.carousel.css'
+import '/assets/css/bootstrap.min.css'
 import { Inter } from 'next/font/google'
 import Header from '../components/Header';
 const inter = Inter({ subsets: ['vietnamese'] })
 
 export const metadata = {
-  title: "Strnix World's Energy",
+    title: "Strnix World's Energy",
     description: 'my next app',
-
-}
-
+};
 export default function RootLayout({
   children,
 }: {
