@@ -8,12 +8,12 @@
     "node": ">=14.0.0",
     "yarn": ">=1.22.0",
     "npm": "please-use-yarn"
-  },"husky": {
+  },
+  "husky": {
     "hooks": {
       "pre-commit": "yarn lint-staged && yarn check:type"
     }
-}
-,
+  },
   "main": "server.js",
   "lint-staged": {
     "*.ts|tsx|json": [
@@ -58,6 +58,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8"
