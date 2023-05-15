@@ -11,7 +11,7 @@
   },
   "main": "server.js",
   "lint-staged": {
-    "*.{ts|tsx|json}": [
+    "*.ts|tsx|json": [
       "yarn lint",
       "yarn prettier",
       "git add ."
@@ -19,7 +19,7 @@
   },
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "next build",
+    "build": "CI=false && next build",
     "start": "SET ENVIRONMENT=./.env &&  node server.js",
     "lint": "next lint",
     "prettier": "prettier --write .",
