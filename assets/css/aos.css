@@ -1151,7 +1151,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     transform: perspective(2500px) rotateX(0)
 }
 
-[data-aos="spin"].aos-animate {
+[data-aos="spin"]{
     transform: rotate(-540deg);
     opacity: 0;
     transition-property: transform, opacity;
