@@ -467,7 +467,7 @@ const Homepage = () => {
       <div className="bodyfour ">
         <div className="bodyfourcontainer ">
           <div className="patternimgleft ">
-            <Image fill priority pri src="/assets/images/home/pattern-image-1.png" alt="" />
+            <Image fill priority src="/assets/images/home/pattern-image-1.png" alt="" />
           </div>
           <div className="patternimgright ">
             <Image fill priority src="/assets/images/home/pattern-image-2.png" alt=" " />
