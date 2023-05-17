@@ -287,7 +287,7 @@ const Header = () => {
                 <div className="dropdownnav-menu">
                     <ul id="dropdown">
                         <li id="menu-img">
-                            <a href="#"><Image alt="" priority width={150} height={90}  src="/assets/images/home/logo-3.png" className="mCS_img_loaded"/></a>
+                            <a href="#"><Image alt="" priority width={130} height={60}  src="/assets/images/home/logo-3.png" className="mCS_img_loaded"/></a>
                         </li>
 
 

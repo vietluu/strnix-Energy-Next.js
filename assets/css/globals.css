@@ -2513,6 +2513,9 @@ button:focus {
     flex-direction: column;
 
   }
+  .logo{
+    margin: auto;
+  }
   .ant-tabs-tab{
     width: 100% !important;
   }
@@ -2522,10 +2525,7 @@ button:focus {
   .header-main .linkbox {
       display: none;
   }
-  .header-main .logo {
-      text-align: center;
-      float: none;
-  }
+  
   .row h2 {
       font-size: 28px;
       margin-left: 0;
