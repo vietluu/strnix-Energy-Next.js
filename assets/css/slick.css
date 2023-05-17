@@ -100,3 +100,11 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+.slick-initialized .slick-slide {
+    visibility: visible;
+    display: block;
+    }
+.slick-list,
+.slick-track {
+  transition-delay: 10ms;
+}

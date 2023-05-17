@@ -1,4 +1,5 @@
 "use client"
+import Image from "next/image"
 import React, { useEffect, useLayoutEffect, useState } from "react"
 const Header = () => {
     const [mobile, setMobile] = useState(false)
@@ -21,11 +22,11 @@ const Header = () => {
 
         }
     }, [mobile,search])
-    const handleShowDropdown = (e: any) => {
+    const handleShowDropdown = (e: any):void => {
      e.children[0].children[1].classList.toggle('activebtn')
        e.children[1].classList.toggle('open')
     }
-    const scroll = () => {
+    const scroll = ():void => {
         
             setPage(window.scrollY)
         
@@ -47,7 +48,7 @@ const Header = () => {
         <div className="header">
 
            {page > 200 && <div className="header-top clearfix">
-                <div className="logo-top"><img src="https://smartdemowp.com/strnix/wp-content/themes/strnix/assets/images/sticky-logo.png" alt="Logo"/></div>
+                <div className="logo-top"><Image width={136} height={50} priority  src="/assets/images/home/sticky-logo.png" alt="Logo"/></div>
                 <div className="main-menu clearfix">
                     <ul className="menu ">
                         <li><a href="# " className="hover1 "><strong>HOME</strong></a>
@@ -152,17 +153,17 @@ const Header = () => {
             </div>
             <div className="header-main  ">
 
-                <div className="header-main-box clearfix">
+                <div className="header-main-box row clearfix">
                     <div className="logo ">
                         <a href="https://smartdemowp.com/strnix/">
-                            <img src="https://smartdemowp.com/strnix/wp-content/uploads/2020/06/logo.svg " alt="Logo" />
+                            <Image width={164} height={66} priority  src="/assets/images/home/logo.svg" alt="Logo" />
                         </a>
                     </div>
                     <div className="right-content-header">
                         <div className="info-contact">
                             <div className="info ">
                                 <div className="icon-img ">
-                                    <img src="http://smartdemowp.com/strnix/wp-content/uploads/2020/06/phone.svg " alt="phone "/>
+                                    <Image width={40} height={40} priority  src="/assets/images/home/phone.svg" alt="phone "/>
                                 </div>
                                 <strong>Mon to fri: 0800 - 1900</strong>
                                 <div className="info-text ">
@@ -174,7 +175,7 @@ const Header = () => {
 
                             <div className="info ">
                                 <div className="icon-img ">
-                                    <img src="http://smartdemowp.com/strnix/wp-content/uploads/2020/06/cooment.svg " alt="cooment "/>
+                                    <Image width={40} height={40} priority  src="/assets/images/home/cooment.svg" alt="cooment "/>
                                 </div>
                                 <strong>Mon to fri: 0800 - 1900</strong>
                                 <div className="info-text ">
@@ -286,7 +287,7 @@ const Header = () => {
                 <div className="dropdownnav-menu">
                     <ul id="dropdown">
                         <li id="menu-img">
-                            <a href="#"><img src="http://smartdemowp.com/strnix/wp-content/uploads/2020/06/logo-3.png" className="mCS_img_loaded"/></a>
+                            <a href="#"><Image alt="" priority width={150} height={90}  src="/assets/images/home/logo-3.png" className="mCS_img_loaded"/></a>
                         </li>
 
 

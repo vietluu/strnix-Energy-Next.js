@@ -1,41 +1,12 @@
-/* @tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-} */
 * {
   margin: 0 auto;
   padding: 0;
   border: none;
   box-sizing: border-box;
-  font-size: 100%;
+  font-size: 16px;
 }
-:root{
-  font-size: 18px;
 
-}
 html {
   scroll-behavior: smooth;
 }
@@ -43,8 +14,11 @@ html {
 body {
   font-family: 'Hind', sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+overflow-x: hidden;
 }
-
+img{
+  position: static !important;
+}
 a,
 a:hover,
 a:link,
@@ -282,32 +256,33 @@ button:focus {
 }
 
 .header-main-box {
-  display: block;
-  padding: 20px 30px;
+  padding: 20px 0;
   background-color: #ffffff;
   font-size: 1rem;
 }
 
-.logo {
-  float: left;
-}
-
-.right-content-header {
-  float: right;
+.logo{
+  flex: 0  0 10%;
+  margin-right: 0;
 }
 
 .info-contact {
-  float: left;
-  padding-top: 15px;
-  position: relative;
+  display: flex;
+  flex: 0 0 60%;
+  margin-right: 0;
+  flex-wrap: nowrap;
 }
 
-.info {
-  float: left;
+.right-content-header{
+  flex:0 0 80%;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  
 }
-
 .right-content-header .info {
-  padding-left: 50px;
+  padding-top: 10px;
+  margin-right: 10px;
 }
 
 .icon-img {
@@ -316,13 +291,9 @@ button:focus {
 }
 
 .linkbox {
-  padding-top: 13px;
-  margin-left: 50px;
+  margin-right: 10px;
 }
 
-.right-content-header .linkbox {
-  float: right;
-}
 
 .link {
   display: inline-block;
@@ -811,14 +782,14 @@ button:focus {
   display: block;
   position: relative;
   padding-left: 110px;
-  animation: animations;
-  animation-duration: 2.5s;
+
 }
 
 .img-left img {
   display: block;
   max-width: 100%;
   height: auto;
+  position: static !important;
 }
 
 .img-bottom {
@@ -826,16 +797,17 @@ button:focus {
   padding: 10px;
   position: absolute;
   left: -70px;
-  animation: animations-right;
-  animation-duration: 2.5s;
+
+}
+.img-bottom img{
+  position: static !important;
 }
 
 
-
-.elmif {
+/* .elmif {
   animation: animations;
   animation-duration: 2s;
-}
+} */
 
 .title-text {
   font-size: 14px;
@@ -999,10 +971,13 @@ button:focus {
 .imglinkcontent {
   display: inline-block;
   width: 100%;
+  
 }
 
 .imgobject img {
   display: block;
+  position: static !important;
+
 }
 
 .linkimg {
@@ -1410,17 +1385,36 @@ button:focus {
 .tab {
   width: 100%;
   position: relative;
-  display: none;
 }
 
-.tab.active {
-  display: inherit;
-}
 
+.ant-tabs-nav{
+  margin: 0 !important;
+}
+.ant-tabs-nav-list{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.ant-tabs-content-holder{
+  width: 100%;
+}.ant-tabs-tab{
+  width: 33.33% !important;
+  height: 90px;
+  background-color: #fff;
+  border-bottom: 2px solid #444444 !important;
+  border-radius: 0 !important;
+}
+.ant-tabs-tab-active {
+  border-bottom: 2px solid #08e438 !important;
+  height: 105px;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+}
 .tab img {
   width: 100%;
   display: block;
   position: relative;
+  aspect-ratio: 7/5;
 }
 
 .tab .subimg {
@@ -1486,9 +1480,11 @@ button:focus {
   height: 100%;
   z-index: 0;
   display: block;
-  background-image: url(http://smartdemowp.com/strnix/wp-content/uploads/2020/06/map-pattern.jpg);
+  background-image: url('/assets/images/home/map-pattern.jpg');
 }
-
+.counter {
+  font-size: 3rem;
+}
 .sub-body-five .content {
   max-width: 1300px;
   padding-top: 200px;
@@ -1541,7 +1537,7 @@ button:focus {
 }
 
 .imgbg {
-  background-image: url(http://smartdemowp.com/strnix/wp-content/uploads/2020/06/bg-image-1.jpg);
+  background-image: url('/assets/images/home/bg-image-1.jpg');
 }
 
 .body-six .imgbg {
@@ -1590,38 +1586,31 @@ button:focus {
 
 .slides-comment {
   width: 100%;
-  padding: 80px 20px;
+  margin-top: 80px;
+  position: relative;
+  
 }
 
-.cmt-user {
-  max-width: 1200px;
-  padding: 0 30px;
-}
 
 .slides {
   width: 100%;
-  display: flex;
 }
 
 .vote {
-  display: block;
-  flex: 0 0 50%;
+  
   padding: 30px 0;
   text-align: left;
 }
 
 .elm-cmt {
-  padding: 40px 30px;
+  padding: 50px 35px;
   background-color: #fff;
   position: relative;
+  margin: 0 20px;
+  transition: all 1s ease;
 }
 
-.stars {
-  display: block;
-  color: #e6d40e;
-  margin-bottom: 15px;
-  line-height: 24px;
-}
+
 
 .slides .text {
   font-size: 16px;
@@ -1645,7 +1634,9 @@ button:focus {
   border-radius: 50%;
   overflow: hidden;
 }
-
+.user p {
+  margin: 0;
+}
 .user-avt img {
   display: block;
   width: 65px;
@@ -1676,7 +1667,6 @@ button:focus {
 }
 
 .vote .quote {
-  font-size: 72px;
   color: #56b806;
   position: absolute;
   top: -30px;
@@ -1684,55 +1674,41 @@ button:focus {
   z-index: 10;
   transition: 0.4s;
 }
-
-.cmt-user .owl-nav {
-  display: block !important;
-  margin-top: 20px;
+.vote .quote i{
+  font-size: 4rem;
 }
 
-.cmt-user .owl-nav button {
+
+
+.slides-comment button {
   display: inline-block;
-  position: relative;
+  position: absolute;
   width: 50px;
   height: 50px;
-  margin: 10px;
-  font-size: 2rem !important;
-  border-radius: 50% !important;
-  border: 1px solid #777777 !important;
-}
-
-.cmt-user.owl-nav button:hover {
-  color: #08e306!important;
-  border-color: #08e306!important;
-}
-
-.cmt-user .owl-nav span {
-  position: absolute;
-  top: 9px;
-  left: 20px;
+  line-height: 50px;
   color: #777777;
+  border-radius: 50% ;
+  border: 1px solid #777777 ;
+  background-color: transparent;
 }
 
-.cmt-user .owl-carousel {
-  position: relative !important;
+.slides-comment button:hover {
+  color: #08e306;
+  border-color: #08e306;
 }
-
-.cmt-user .owl-prev {
-  position: absolute !important;
-  left: -65px !important;
-  top: 35%;
+.slides-comment .slick-prev{
+  top:calc(50% - 25px);
+  left: -60px;
 }
-
-.cmt-user .owl-next {
-  position: absolute !important;
-  right: -65px !important;
-  top: 35%;
+.slides-comment .slick-next{
+  top:calc(50% - 25px);
+  right: -60px;
 }
-
-.vote:hover .quote {
+.vote:hover .quote i {
   transform: translate(-100px, 100px);
   font-size: 6rem;
   opacity: 0.4;
+  transition: all 0.6s ease;
 }
 
 .body-seven {
@@ -1864,7 +1840,7 @@ button:focus {
 }
 
 .bgimg {
-  background-image: url(http://smartdemowp.com/strnix/wp-content/uploads/2020/06/bg-image-2.jpg);
+  background-image: url('/assets/images/home/bg-image-2.jpg');
   position: absolute;
   left: 0;
   top: 0;
@@ -2313,7 +2289,9 @@ button:focus {
   position: relative;
   border-top: 1px solid #6a6a6a;
 }
-
+.footer .social-logo i{
+  font-size: 1.5rem;
+}
 .footer-container {
   max-width: 1200px;
   padding: 30px 0;
@@ -2347,16 +2325,18 @@ button:focus {
   z-index: 10;
   top: -25px;
   left: 49%;
-  font-size: 2rem;
   width: 50px;
   height: 50px;
   text-align: center;
-  line-height: 50px;
+  line-height: 60px;
   background-color: #52c306;
   border-radius: 3px;
   transition: all 0.3s ease;
 }
+.go-back i{
+  font-size: 2rem;
 
+}
 .go-back:hover {
   background-color: #392bf8;
 }
@@ -2452,9 +2432,7 @@ button:focus {
       left: 38%;
       top: 33%;
   }
-  .cmt-user {
-      width: 100%;
-  }
+  
   .vote {
       width: 100%;
       margin-right: 30px;
@@ -2529,7 +2507,14 @@ button:focus {
   }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
+  .ant-tabs-nav-list{
+    flex-direction: column;
+
+  }
+  .ant-tabs-tab{
+    width: 100% !important;
+  }
   .text-info h1 {
       font-size: 42px;
   }
