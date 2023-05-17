@@ -92,17 +92,17 @@ const Homepage = () => {
     {
       label: 'Raymond Era',
       sublabel: '5.2KW SYSTEM',
-      image: '/assets/images/home/featured-image-6.jpg ',
+      image: '/assets/images/home/featured-image-6.jpg',
     },
     {
       label: 'House Villa',
       sublabel: '5.2KW SYSTEM',
-      image: '/assets/images/home/featured-image-7.jpg ',
+      image: '/assets/images/home/featured-image-7.jpg',
     },
     {
       label: 'Agri Lounge',
       sublabel: '5.2KW SYSTEM',
-      image: '/assets/images/home/featured-image-8.jpg ',
+      image: '/assets/images/home/featured-image-8.jpg',
     },
   ];
   return (
@@ -1109,7 +1109,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-down'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <a href="# "><Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png " alt=''/></a>
+                                        <a href="# "><Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png" alt=''/></a>
                                         <div className="date ">
                                             <h2>17</h2>
                                             <p>DEC</p>
