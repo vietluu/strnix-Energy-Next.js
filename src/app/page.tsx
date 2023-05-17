@@ -173,7 +173,7 @@ const Homepage = () => {
                 <Image
                   fill
                   loading="lazy"
-                  src="/assets/images/home/featured-image-1.jpg "
+                  src="/assets/images/home/featured-image-1.jpg"
                   alt=" "
                 />
               </div>
@@ -182,7 +182,7 @@ const Homepage = () => {
               <Image
                 fill
                 loading="lazy"
-                src="/assets/images/home/featured-image-2.jpg "
+                src="/assets/images/home/featured-image-2.jpg"
                 alt=" "
               />
             </div>
@@ -278,7 +278,7 @@ const Homepage = () => {
                   <Image
                     loading="lazy"
                     fill
-                    src="/assets/images/home/program-image-3.jpg "
+                    src="/assets/images/home/program-image-3.jpg"
                     alt="work "
                   />
                   <div className="hidentext ">
@@ -300,11 +300,11 @@ const Homepage = () => {
                 </div>
               </div>
               <div className="imglinkcontent ">
-                <div className="imgobject hoverimg ">
+                <div className="imgobject hoverimg">
                   <Image
                     loading="lazy"
                     fill
-                    src="/assets/images/home/program-image-4.jpg "
+                    src="/assets/images/home/program-image-4.jpg"
                     alt="charges "
                   />
                   <div className="hidentext ">
@@ -330,7 +330,7 @@ const Homepage = () => {
                   <Image
                     fill
                     loading="lazy"
-                    src="/assets/images/home/program-image-2.jpg "
+                    src="/assets/images/home/program-image-2.jpg"
                     alt=" "
                   />
                   <div className="hidentext ">
@@ -356,7 +356,7 @@ const Homepage = () => {
                   <Image
                     loading="lazy"
                     fill
-                    src="/assets/images/home/program-image-1.jpg "
+                    src="/assets/images/home/program-image-1.jpg"
                     alt=" "
                   />
                   <div className="hidentext ">
@@ -382,7 +382,7 @@ const Homepage = () => {
                   <Image
                     fill
                     loading="lazy"
-                    src="/assets/images/home/program-image-3.jpg "
+                    src="/assets/images/home/program-image-3.jpg"
                     alt="work "
                   />
                   <div className="hidentext ">
@@ -467,10 +467,10 @@ const Homepage = () => {
       <div className="bodyfour ">
         <div className="bodyfourcontainer ">
           <div className="patternimgleft ">
-            <Image fill loading='lazy' src="/assets/images/home/pattern-image-1.png" alt="" />
+            <Image fill priority pri src="/assets/images/home/pattern-image-1.png" alt="" />
           </div>
           <div className="patternimgright ">
-            <Image fill loading='lazy' src="/assets/images/home/pattern-image-2.png" alt=" " />
+            <Image fill priority src="/assets/images/home/pattern-image-2.png" alt=" " />
           </div>
           <div className="mainbodyfour ">
             <div className="services ">
@@ -481,7 +481,7 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill loading='lazy'
+                    <Image fill priority
                       src="/assets/images/home/featured-image-3.jpg"
                       alt=" "
                     />
@@ -553,8 +553,8 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill loading='lazy'
-                      src="/assets/images/home/featured-image-4.jpg "
+                    <Image fill priority
+                      src="/assets/images/home/featured-image-4.jpg"
                       alt=" "
                     />
                     <div className="imgcircle" data-aos="spin" data-aos-duration='2000'>
@@ -570,8 +570,8 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill loading='lazy'
-                      src="/assets/images/home/featured-image-5.jpg "
+                    <Image fill priority
+                      src="/assets/images/home/featured-image-5.jpg"
                       alt=" "
                     />
                     <div className="imgcircle" data-aos="spin" data-aos-duration='2000'>
@@ -662,7 +662,7 @@ const Homepage = () => {
                       <Tabs.TabPane key={index} tab={value.label}>
                         {
                           <div className="tab">
-                            <Image fill loading='lazy' src={value.image} alt=" " />
+                            <Image fill priority src={value.image} alt=" " />
                             <div className="subimg ">COMMERCIAL</div>
                           </div>
                         }
@@ -816,7 +816,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-1.jpg " alt=" "/>
+                                                <img src="/assets/images/home/author-thumb-1.jpg" alt=" "/>
                                             </div>
 
                                             <p className="name ">Erina Soulasd</p>
@@ -836,7 +836,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-2.jpg " alt=" "/>
+                                                <img src="/assets/images/home/author-thumb-2.jpg" alt=" "/>
                                             </div>
 
                                             <p className="name ">Noal Hsuat</p>
@@ -856,7 +856,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-1.jpg " alt=" "/>
+                                                <img src="/assets/images/home/author-thumb-1.jpg" alt=" "/>
                                             </div>
 
                                             <p className="name ">Erina Soulasd</p>
@@ -876,7 +876,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-2.jpg " alt=" "/>
+                                                <img src="/assets/images/home/author-thumb-2.jpg" alt=" "/>
                                             </div>
 
                                             <p className="name ">Noal Hsuat</p>
@@ -1109,7 +1109,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-down'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <a href="# "><Image loading='lazy' width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png " alt=''/></a>
+                                        <a href="# "><Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png " alt=''/></a>
                                         <div className="date ">
                                             <h2>17</h2>
                                             <p>DEC</p>
@@ -1130,7 +1130,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-up'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <Image loading='lazy' width="773" height="451" src="/assets/images/home/Artboard-–-1-3.png" alt=''/>
+                                        <Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-3.png" alt=''/>
                               
                                         <div className="date ">
                                             <h2>17</h2>
@@ -1152,7 +1152,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-down'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <Image loading='lazy' width="779" height="451" src="/assets/images/home/Artboard-–-1-2.png"  alt=''/>
+                                        <Image priority width="779" height="451" src="/assets/images/home/Artboard-–-1-2.png"  alt=''/>
                                
                                         <div className="date ">
                                             <h2>15</h2>
