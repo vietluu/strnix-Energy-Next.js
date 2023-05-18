@@ -6,6 +6,8 @@ import Slider, { Settings } from 'react-slick';
 import { isMobile} from 'react-device-detect';
 import Aos from 'aos';
 import CountUp from 'react-countup';
+
+
 const Homepage = () => {
   useEffect(() => {
     Aos.init({ duration: 1000 });

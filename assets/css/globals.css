@@ -1,4 +1,5 @@
 
+
 * {
   margin: 0 auto;
   padding: 0;
@@ -15,6 +16,7 @@ html {
 body {
   font-family: 'Hind', sans-serif;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  overflow-x: hidden;
 }
 img{
   position: static !important;
@@ -1410,6 +1412,23 @@ button:focus {
   border-bottom: 2px solid #08e438 !important;
   height: 105px;
   box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  justify-content: center;
+  font-weight: 700;
+}
+.ant-tabs-tab-btn{
+  font-size: 1.2rem;
+}
+.ant-tabs-tab-active > .ant-tabs-tab-btn{
+  color: #000000 !important;
+}
+.ant-tabs-tab-active::after{
+  content: '5.2KW SYSYEM';
+  color: #686666;
+  font-weight: 300;
+ 
 }
 .tab img {
   width: 100%;
@@ -2387,6 +2406,7 @@ button:focus {
 }
 
 @media screen and (max-width: 1080px) {
+
   .header-top {
       visibility: hidden;
   }
