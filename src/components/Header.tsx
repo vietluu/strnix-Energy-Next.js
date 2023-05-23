@@ -1,14 +1,18 @@
 "use client"
 import Image from "next/image"
 import React, { useEffect, useLayoutEffect, useState } from "react"
+import Link from 'next/link'
+import { useRouter } from "next/navigation"
+import { isMobile } from "react-device-detect"
+
 const Header = () => {
     const [mobile, setMobile] = useState(false)
     const [search, setSearch] = useState(false)
     const [page, setPage] = useState(0);
-    
+    const router = useRouter();
     useLayoutEffect(() => {
         window.addEventListener('scroll', scroll);
-
+        setPage(window.scrollY)
   },[])
 
     useEffect(() => {
@@ -27,7 +31,7 @@ const Header = () => {
        e.children[1].classList.toggle('open')
     }
     const scroll = ():void => {
-        
+
             setPage(window.scrollY)
         
     }
@@ -45,107 +49,109 @@ const Header = () => {
                 </div>
             </form>
         </div>}
-        <div className="header">
+        <header className="header">
 
            {page > 200 && <div className="header-top clearfix">
                 <div className="logo-top"><Image width={136} height={50} priority  src="/assets/images/home/sticky-logo.png" alt="Logo"/></div>
                 <div className="main-menu clearfix">
                     <ul className="menu ">
-                        <li><a href="# " className="hover1 "><strong>HOME</strong></a>
+                        <li><Link href="/" className="hover1 "><strong>HOME</strong></Link>
                             <ul className="sub-menu">
                                 <li>
-                                    <a href="# ">Home Solar Energy</a>
+                                    <Link href="# ">Home Solar Energy</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Wind Power</a>
+                                    <Link href="# ">Home Wind Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Bio Power</a>
+                                    <Link href="# ">Home Bio Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Fuel Power</a>
+                                    <Link href="# ">Home Fuel Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Hydro Power</a>
+                                    <Link href="# ">Home Hydro Power</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="# " className="hover1 "><strong>ABOUT US</strong></a>
+                        <li><Link href="about" className="hover1 "><strong>ABOUT US</strong></Link>
                             <ul className="sub-menu ">
                                 <li>
-                                    <a href="# ">ABOUT US</a>
+                                    <Link href="# ">ABOUT US</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">FAQ's</a>
+                                    <Link href="# ">FAQ's</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Delicated Project</a>
+                                    <Link href="# ">Delicated Project</Link>
                                 </li>
 
                             </ul>
                         </li>
-                        <li><a href="# " className="hover1"><strong>SERVICES</strong></a>
+                        <li><Link href="# " className="hover1"><strong>SERVICES</strong></Link>
                             <ul className="sub-menu ">
                                 <li>
-                                    <a href="# ">Our Services</a>
+                                    <Link href="# ">Our Services</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Commercial Services</a>
+                                    <Link href="# ">Commercial Services</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Panel Installation</a>
+                                    <Link href="# ">Panel Installation</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Replacement Upgrade</a>
+                                    <Link href="# ">Replacement Upgrade</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Residential EV Charges</a>
+                                    <Link href="# ">Residential EV Charges</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Solar Maintenance</a>
+                                    <Link href="# ">Solar Maintenance</Link>
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="# " className="hover1 "><strong>PROJECTS</strong></a></li>
-                        <li><a href="# " className="hover1 "><strong>NEWS</strong></a>
+                        <li><Link href="# " className="hover1 "><strong>PROJECTS</strong></Link></li>
+                        <li><Link href="# " className="hover1 "><strong>NEWS</strong></Link>
                             <ul className="sub-menu ">
                                 <li>
-                                    <a href="# ">Blog Grid Style</a>
+                                    <Link href="# ">Blog Grid Style</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Blog with Sidebar</a>
+                                    <Link href="# ">Blog with Sidebar</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Blog Post Details</a>
+                                    <Link href="# ">Blog Post Details</Link>
                                 </li>
 
                             </ul>
                         </li>
-                        <li><a href="# " className="hover1 "><strong>CONTACT</strong></a></li>
+                        <li><Link href="# " className="hover1 "><strong>CONTACT</strong></Link></li>
                     </ul>
                 </div>
             </div>}
+            <div  data-aos="custom-center" data-aos-duration="500">
+                
             <div className="banner-top  clearfix">
                 <div className="top-left">
                     <div className="top-text">The Nagy Saving for us</div>
                 </div>
                 <div className="top-right">
                     <div className=" mail ">
-                        <a href="mailto:support@smartdatasoft.net ">Email:support@smartdatasoft.net</a>
+                        <Link href="mailto:support@smartdatasoft.net ">Email:support@smartdatasoft.net</Link>
                     </div>
                     <ul className="social-comunity ">
                         <li>
-                            <a href="# "><i className="fab fa-twitter "></i></a>
+                            <Link href="# "><i className="fab fa-twitter "></i></Link>
                         </li>
                         <li>
-                            <a href="# "><i className="fab fa-facebook-f "></i></a>
+                            <Link href="# "><i className="fab fa-facebook-f "></i></Link>
                         </li>
-                        <li><a href="# "><i className="fab fa-instagram "></i></a>
+                        <li><Link href="# "><i className="fab fa-instagram "></i></Link>
                         </li>
                         <li>
-                            <a href="# "><i className="fab fa-linkedin-in "></i></a>
+                            <Link href="# "><i className="fab fa-linkedin-in "></i></Link>
                         </li>
-                        <li><a href="# "><i className="fab fa-pinterest-p "></i></a>
+                        <li><Link href="# "><i className="fab fa-pinterest-p "></i></Link>
                         </li>
                     </ul>
                 </div>
@@ -155,13 +161,13 @@ const Header = () => {
 
                 <div className="header-main-box row clearfix">
                     <div className="logo ">
-                        <a href="https://smartdemowp.com/strnix/">
+                        <Link href="https://smartdemowp.com/strnix/">
                             <Image width={164} height={66} priority  src="/assets/images/home/logo.svg" alt="Logo" />
-                        </a>
+                        </Link>
                     </div>
                     <div className="right-content-header">
                         <div className="info-contact">
-                            <div className="info ">
+                            <div className="info">
                                 <div className="icon-img ">
                                     <Image width={40} height={40} priority  src="/assets/images/home/phone.svg" alt="phone "/>
                                 </div>
@@ -185,190 +191,200 @@ const Header = () => {
                             </div>
                         </div>
                         <div className="linkbox ">
-                            <a href="# " className="link ">
+                            <Link href="# " className="link ">
                                 <div className="link-text effect ">
                                     <span className="btn-txt ">Free Consultation</span>
                                     <span className="btn-icon "><i className="fas fa-arrow-right "></i> </span>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
                 </div>
                 <div className="main-menu clearfix">
-                    <ul className="menu ">
-                        <li><a href="# " className="hover1 "><strong>HOME</strong></a>
-                            <ul className="sub-menu">
-                                <li>
-                                    <a href="# ">Home Solar Energy</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Home Wind Power</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Home Bio Power</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Home Fuel Power</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Home Hydro Power</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="# " className="hover1 "><strong>ABOUT US</strong></a>
-                            <ul className="sub-menu ">
-                                <li>
-                                    <a href="# ">ABOUT US</a>
-                                </li>
-                                <li>
-                                    <a href="# ">FAQ's</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Delicated Project</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="# " className="hover1 "><strong>SERVICES</strong></a>
-                            <ul className="sub-menu ">
-                                <li>
-                                    <a href="# ">Our Services</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Commercial Services</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Panel Installation</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Replacement Upgrade</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Residential EV Charges</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Solar Maintenance</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li><a href="# " className="hover1 "><strong>PROJECTS</strong></a></li>
-                        <li><a href="# " className="hover1 "><strong>NEWS</strong></a>
-                            <ul className="sub-menu ">
-                                <li>
-                                    <a href="# ">Blog Grid Style</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Blog with Sidebar</a>
-                                </li>
-                                <li>
-                                    <a href="# ">Blog Post Details</a>
-                                </li>
-
-                            </ul>
-                        </li>
-                        <li><a href="# " className="hover1 "><strong>CONTACT</strong></a></li>
-                    </ul>
-                    <div className="tabbar">
-                        <div className="search">
-                            <span onClick={e => setSearch(true)}><i className="fas fa-search "></i></span>
-                        </div>
+                    
+                        {isMobile ? <div className="tabbar">
                         <div className="navmoblie" >
                             <span className="menu-bar" onClick={e => setMobile(true)}><i className="fas fa-bars"></i></span>
                         </div>
-                    </div>
+                        <div className="search">
+                            <span onClick={e => setSearch(true)}><i className="fas fa-search "></i></span>
+                        </div>
+                        
+                        </div> 
+                            :
+                            <>
+                            <ul className="menu ">
+                        <li><Link href="/" className="hover1 "><strong>HOME</strong></Link>
+                            <ul className="sub-menu">
+                                <li>
+                                    <Link href="# ">Home Solar Energy</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Home Wind Power</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Home Bio Power</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Home Fuel Power</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Home Hydro Power</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><Link href="about" className="hover1 "><strong>ABOUT US</strong></Link>
+                            <ul className="sub-menu ">
+                                <li>
+                                    <Link href="# ">ABOUT US</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">FAQ's</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Delicated Project</Link>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><Link href="# " className="hover1 "><strong>SERVICES</strong></Link>
+                            <ul className="sub-menu ">
+                                <li>
+                                    <Link href="# ">Our Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Commercial Services</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Panel Installation</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Replacement Upgrade</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Residential EV Charges</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Solar Maintenance</Link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><Link href="# " className="hover1 "><strong>PROJECTS</strong></Link></li>
+                        <li><Link href="# " className="hover1 "><strong>NEWS</strong></Link>
+                            <ul className="sub-menu ">
+                                <li>
+                                    <Link href="# ">Blog Grid Style</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Blog with Sidebar</Link>
+                                </li>
+                                <li>
+                                    <Link href="# ">Blog Post Details</Link>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li><Link href="# " className="hover1 "><strong>CONTACT</strong></Link></li>
+                        </ul>
+                        <div className="search">
+                            <span onClick={e => setSearch(true)}><i className="fas fa-search "></i></span>
+                        </div>
+                            </>
+                    }
 
                 </div>
 
 
+            </div>
             </div>
            {mobile && <div className="mobile-menu">
 
                 <div className="dropdownnav-menu">
                     <ul id="dropdown">
                         <li id="menu-img">
-                            <a href="#"><Image alt="" priority width={130} height={60}  src="/assets/images/home/logo-3.png" className="mCS_img_loaded"/></a>
+                            <Link href="/"><Image alt="" priority width={130} height={60}  src="/assets/images/home/logo-3.png" className="mCS_img_loaded"/></Link>
                         </li>
 
 
-                        <li id='first' onClick={e => handleShowDropdown(e.currentTarget)}><a href="# "><strong>HOME</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></a>
+                        <li id='first' onClick={e => handleShowDropdown(e.currentTarget)}><Link href="/"><strong>HOME</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></Link>
 
 
                             <ul className="nav-mobile">
 
                                 <li>
-                                    <a href="# ">Home Solar Energy</a>
+                                    <Link href="# ">Home Solar Energy</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Wind Power</a>
+                                    <Link href="# ">Home Wind Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Bio Power</a>
+                                    <Link href="# ">Home Bio Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Fuel Power</a>
+                                    <Link href="# ">Home Fuel Power</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Home Hydro Power</a>
+                                    <Link href="# ">Home Hydro Power</Link>
                                 </li>
                             </ul>
                             
                         </li>
-                        <li id="sercond" onClick={e => handleShowDropdown(e.currentTarget)}><a href="# "><strong>ABOUT US</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></a>
+                        <li id="sercond" onClick={e => handleShowDropdown(e.currentTarget)}><Link href="# "><strong>ABOUT US</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></Link>
                             <ul className="nav-mobile">
                                 <li>
-                                    <a href="# ">ABOUT US</a>
+                                    <Link href="# ">ABOUT US</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">FAQ's</a>
+                                    <Link href="# ">FAQ's</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Delicated Project</a>
+                                    <Link href="# ">Delicated Project</Link>
                                 </li>
 
                             </ul>
 
                         </li>
-                        <li id='third' onClick={e => handleShowDropdown(e.currentTarget)}><a href="# "><strong>SERVICES</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></a>
+                        <li id='third' onClick={e => handleShowDropdown(e.currentTarget)}><Link href="# "><strong>SERVICES</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></Link>
                             <ul className="nav-mobile">
                                 <li>
-                                    <a href="# ">Our Services</a>
+                                    <Link href="# ">Our Services</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Commercial Services</a>
+                                    <Link href="# ">Commercial Services</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Panel Installation</a>
+                                    <Link href="# ">Panel Installation</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Replacement Upgrade</a>
+                                    <Link href="# ">Replacement Upgrade</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Residential EV Charges</a>
+                                    <Link href="# ">Residential EV Charges</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Solar Maintenance</a>
+                                    <Link href="# ">Solar Maintenance</Link>
                                 </li>
                             </ul>
 
                         </li>
-                        <li><a href="# "><strong>PROJECTS</strong></a></li>
-                        <li onClick={e => handleShowDropdown(e.currentTarget)}><a href="# "><strong>NEWS</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></a>
+                        <li><Link href="# "><strong>PROJECTS</strong></Link></li>
+                        <li onClick={e => handleShowDropdown(e.currentTarget)}><Link href="# "><strong>NEWS</strong><div className="dropdown-icon"><span className="fa fa-angle-right"></span></div></Link>
                             <ul className="nav-mobile">
                                 <li>
-                                    <a href="# ">Blog Grid Style</a>
+                                    <Link href="# ">Blog Grid Style</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Blog with Sidebar</a>
+                                    <Link href="# ">Blog with Sidebar</Link>
                                 </li>
                                 <li>
-                                    <a href="# ">Blog Post Details</a>
+                                    <Link href="# ">Blog Post Details</Link>
                                 </li>
 
                             </ul>
 
                         </li>
-                        <li><a href="# "><strong>CONTACT</strong></a></li>
+                        <li><Link href="# "><strong>CONTACT</strong></Link></li>
                     </ul>
                     <div className="close" onClick={e => setMobile(false)}>
                         <i className="fas fa-times fa-2x"></i>
@@ -379,7 +395,7 @@ const Header = () => {
 
             </div>}
 
-        </div>
+        </header>
     </>
 }
 export default Header

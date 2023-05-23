@@ -9,6 +9,7 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
+  
   experimental: {
   appDir: true,
   turbo: {
@@ -82,7 +83,7 @@ webpack: (config, {dev,isServer}) => {
         options: {
           workerParallelJobs: 50,
           // additional node.js arguments
-          workerNodeArgs: ['--max-old-space-size=1024'],
+          workerNodeArgs: ['--max-old-space-size=2048'],
         },
         loader: 'thread-loader'
       });

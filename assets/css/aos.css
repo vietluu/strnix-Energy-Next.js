@@ -1155,9 +1155,18 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     transform: rotate(-540deg);
     opacity: 0;
     transition-property: transform, opacity;
-  
+
     &.aos-animate {
         transform: rotate(0);
         opacity: 1;
     }
-  }
+}
+[data-aos="custom-center"]{
+    transform: scalex(0);
+    opacity: 0;
+    transition-property: transform, opacity;
+    &.aos-animate {
+      transform: scalex(1);
+      opacity: 1;
+    }
+}
