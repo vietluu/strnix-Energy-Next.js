@@ -2,7 +2,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
-import { Left, Right } from '../page';
+import { Left, Right } from '../../common/button';
 import CountUp from 'react-countup';
 
 const AboutPage = () => {
