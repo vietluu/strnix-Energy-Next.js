@@ -5,14 +5,15 @@ import React from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile} from 'react-device-detect';
 import CountUp from 'react-countup';
+import type { NextComponentType } from 'next';
 
 
-export const Right = ({ currentSlide, slideCount, children, ...props }: any) => (
+export const Right:NextComponentType = ({ currentSlide, slideCount, children, ...props }: any) => (
   <button {...props}>
     <i className="fas fa-chevron-right" />
   </button>
 );
-export const Left = ({ currentSlide, slideCount, children, ...props }: any) => (
+export const Left:NextComponentType = ({ currentSlide, slideCount, children, ...props }: any) => (
   <button {...props}>
     <i className="fas fa-chevron-left" />
   </button>
