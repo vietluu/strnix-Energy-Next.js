@@ -46,7 +46,7 @@ const AboutPage = () => {
       >
         <div className="mt-11 pt-8 font-weight-bold">
           <h5>
-            {document ? document.title : "strnix world's energy "}
+            {"strnix world's energy "}
             {'  →  About Strnix'}
           </h5>
           <h1 className="text-6xl mt-4">About Strnix</h1>
