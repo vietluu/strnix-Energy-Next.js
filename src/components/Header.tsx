@@ -2,14 +2,12 @@
 import Image from "next/image"
 import React, { useEffect, useLayoutEffect, useState } from "react"
 import Link from 'next/link'
-import { useRouter } from "next/navigation"
 import { isMobile } from "react-device-detect"
 
 const Header = () => {
     const [mobile, setMobile] = useState(false)
     const [search, setSearch] = useState(false)
     const [page, setPage] = useState(0);
-    const router = useRouter();
     useLayoutEffect(() => {
         window.addEventListener('scroll', scroll);
         setPage(window.scrollY)

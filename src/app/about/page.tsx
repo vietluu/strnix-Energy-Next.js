@@ -5,6 +5,7 @@ import Slider, { Settings } from 'react-slick';
 import { Left, Right } from '../../common/button';
 import CountUp from 'react-countup';
 
+
 const AboutPage = () => {
   const setting: Settings = {
     arrows: true,
@@ -107,7 +108,7 @@ const AboutPage = () => {
                   height={257}
                   src="/assets/images/about/program-image-1.jpg"
                   sizes="cover"
-                  alt=""
+                  alt='strnix image'
                 />
               </Link>
               <div className="lower-box px-3 text-center">
@@ -134,7 +135,7 @@ const AboutPage = () => {
                   height={257}
                   src="/assets/images/about/program-image-2.jpg"
                   sizes="cover"
-                  alt=""
+                  alt='strnix image'
                 />
               </Link>
               <div className="lower-box px-3 text-center">
@@ -161,7 +162,7 @@ const AboutPage = () => {
                   src="/assets/images/about/program-image-4.jpg"
                   quality={100}
                   sizes="cover"
-                  alt=""
+                  alt='strnix image'
                 />
               </Link>
               <div className="lower-box px-3 text-center">
@@ -185,7 +186,7 @@ const AboutPage = () => {
             fill
             priority
             src="/assets/images/home/pattern-image-1.png"
-            alt=""
+            alt='strnix image'
           />
         </div>
         <div className="patternimgright ">
@@ -193,7 +194,7 @@ const AboutPage = () => {
             fill
             priority
             src="/assets/images/home/pattern-image-2.png"
-            alt=" "
+            alt='strnix image'
           />
         </div>
       </div>
@@ -469,7 +470,7 @@ const AboutPage = () => {
                   <Image
                     className="aspect-[1/1]"
                     src="/assets/images/about/team-image-1.jpg"
-                    alt=""
+                    alt='strnix image'
                     priority
                     width={370}
                     height={270}
@@ -513,7 +514,7 @@ const AboutPage = () => {
                   <Image
                     className="aspect-[1/1]"
                     src="/assets/images/about/team-image-2.jpg"
-                    alt=""
+                    alt='strnix image'
                     priority
                     width={370}
                     height={270}
@@ -557,7 +558,7 @@ const AboutPage = () => {
                   <Image
                     className="aspect-[1/1]"
                     src="/assets/images/about/team-image-3.jpg"
-                    alt=""
+                    alt='strnix image'
                     priority
                     width={370}
                     height={270}
@@ -601,7 +602,7 @@ const AboutPage = () => {
                   <Image
                     className="aspect-[1/1]"
                     src="/assets/images/about/team-image-4.jpg"
-                    alt=""
+                    alt='strnix image'
                     priority
                     width={370}
                     height={270}

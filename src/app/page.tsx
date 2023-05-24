@@ -1,15 +1,16 @@
 'use client'
 import { Rate, Tabs } from 'antd';
 import Image from 'next/image';
-import React from 'react';
+import React, { memo, useEffect, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile} from 'react-device-detect';
-import CountUp from 'react-countup';
+import CountUp, { CountUpProps } from 'react-countup';
 import {Left,Right} from '../common/button'
 
 
 const Homepage = () => {
 
+ 
   const setting: Settings = {
     arrows: false,
     dots: true,
@@ -165,7 +166,7 @@ const Homepage = () => {
                   fill
                   loading="lazy"
                   src="/assets/images/home/featured-image-1.jpg"
-                  alt=" "
+                  alt='strnix image'
                 />
               </div>
             </div>
@@ -174,7 +175,7 @@ const Homepage = () => {
                 fill
                 loading="lazy"
                 src="/assets/images/home/featured-image-2.jpg"
-                alt=" "
+                alt='strnix image'
               />
             </div>
           </div>
@@ -321,7 +322,7 @@ const Homepage = () => {
                     fill
                     loading="lazy"
                     src="/assets/images/home/program-image-2.jpg"
-                    alt=" "
+                    alt='strnix image'
                   />
                   <div className="hidentext ">
                     <div className="elmhiden ">
@@ -346,7 +347,7 @@ const Homepage = () => {
                     loading="lazy"
                     fill
                     src="/assets/images/home/program-image-1.jpg"
-                    alt=" "
+                    alt='strnix image'
                   />
                   <div className="hidentext ">
                     <div className="elmhiden ">
@@ -455,10 +456,10 @@ const Homepage = () => {
       <div className="installation">
         <div className="installation-container ">
           <div className="patternimgleft ">
-            <Image fill priority src="/assets/images/home/pattern-image-1.png" alt="" />
+            <Image fill  loading="lazy" src="/assets/images/home/pattern-image-1.png" alt='strnix image' />
           </div>
           <div className="patternimgright ">
-            <Image fill priority src="/assets/images/home/pattern-image-2.png" alt=" " />
+            <Image fill  loading="lazy" src="/assets/images/home/pattern-image-2.png" alt='strnix image' />
           </div>
           <div className="main-installation">
             <div className="services ">
@@ -469,14 +470,14 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill priority
+                    <Image fill  loading="lazy"
                       src="/assets/images/home/featured-image-3.jpg"
-                      alt=" "
+                      alt='strnix image'
                     />
                     <div className="imgcircle" data-aos="spin" data-aos-duration='2000'>
-                      <img
+                      <Image fill  loading="lazy"
                         src='/assets/images/home/homepanel.svg'
-                        alt=""
+                        alt='strnix image'
                       />
                     </div>
                   </div>
@@ -541,14 +542,14 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill priority
+                    <Image fill  loading="lazy"
                       src="/assets/images/home/featured-image-4.jpg"
-                      alt=" "
+                      alt='strnix image'
                     />
                     <div className="imgcircle" data-aos="spin" data-aos-duration='2000'>
-                      <img
+                      <Image fill  loading="lazy"
                        src='/assets/images/home/energy.svg'
-                        alt=""
+                        alt='strnix image'
                       />
                     </div>
                   </div>
@@ -561,14 +562,14 @@ const Homepage = () => {
                   
                 >
                   <div className="imgdemo ">
-                    <Image fill priority
+                    <Image fill  loading="lazy"
                       src="/assets/images/home/featured-image-5.jpg"
-                      alt=" "
+                      alt='strnix image'
                     />
                     <div className="imgcircle" data-aos="spin" data-aos-duration='2000'>
-                    <img
+                    <Image fill  loading="lazy"
                        src='/assets/images/home/electricsvg.svg'
-                        alt=""
+                        alt='strnix image'
                       />
                     </div>
                   </div>
@@ -656,7 +657,7 @@ const Homepage = () => {
                       <Tabs.TabPane key={index} tab={value.label}>
                         {
                           <div className="tab">
-                            <Image fill priority src={value.image} alt=" " />
+                            <Image fill  loading="lazy" src={value.image} alt='strnix image' />
                             <div className="subimg ">COMMERCIAL</div>
                           </div>
                         }
@@ -813,7 +814,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-1.jpg" alt=" "/>
+                                                <Image fill  loading="lazy" src="/assets/images/home/author-thumb-1.jpg" alt='strnix image'/>
                                             </div>
 
                                             <p className="name ">Erina Soulasd</p>
@@ -832,7 +833,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-2.jpg" alt=" "/>
+                                                <Image fill  loading="lazy" src="/assets/images/home/author-thumb-2.jpg" alt='strnix image'/>
                                             </div>
 
                                             <p className="name ">Noal Hsuat</p>
@@ -851,7 +852,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-1.jpg" alt=" "/>
+                                                <Image fill  loading="lazy" src="/assets/images/home/author-thumb-1.jpg" alt='strnix image'/>
                                             </div>
 
                                             <p className="name ">Erina Soulasd</p>
@@ -870,7 +871,7 @@ const Homepage = () => {
                                         </div>
                                         <div className="user ">
                                             <div className="user-avt ">
-                                                <img src="/assets/images/home/author-thumb-2.jpg" alt=" "/>
+                                                <Image fill  loading="lazy" src="/assets/images/home/author-thumb-2.jpg" alt='strnix image'/>
                                             </div>
 
                                             <p className="name ">Noal Hsuat</p>
@@ -1069,7 +1070,7 @@ const Homepage = () => {
                                     <span className="txt ">OR IF YOU NEED QUICK ASSISTANCE</span>
                                 </div>
                                 <div className="info-support ">Call Us 24/7 For Customer Support At <span className="icon "></span>
-                                    <a href="# "><img src="/assets/images/home/phone.svg " alt="phone "/>(222)-303-4500</a>
+                                    <a href="# "><Image fill  loading="lazy" src="/assets/images/home/phone.svg " alt="phone "/>(222)-303-4500</a>
                                 </div>
 
                             </div>
@@ -1099,7 +1100,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-down'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <a href="# "><Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png" alt=''/></a>
+                                        <a href="# "><Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-4.png" alt='strnix'/></a>
                                         <div className="date ">
                                             <h2>17</h2>
                                             <p>DEC</p>
@@ -1120,7 +1121,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-up'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-3.png" alt=''/>
+                                        <Image priority width="773" height="451" src="/assets/images/home/Artboard-–-1-3.png" alt='strnix'/>
                               
                                         <div className="date ">
                                             <h2>17</h2>
@@ -1142,7 +1143,7 @@ const Homepage = () => {
                             <div className="tab col-lg-4 col-md-6 col-sm-12" data-aos='fade-down'>
                                 <div className="news ">
                                     <div className="img-date ">
-                                        <Image priority width="779" height="451" src="/assets/images/home/Artboard-–-1-2.png"  alt=''/>
+                                        <Image priority width="779" height="451" src="/assets/images/home/Artboard-–-1-2.png"  alt='strnix'/>
                                
                                         <div className="date ">
                                             <h2>15</h2>
@@ -1170,4 +1171,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default memo(Homepage);

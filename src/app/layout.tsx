@@ -1,7 +1,7 @@
 "use client"
 import { Inter } from 'next/font/google';
 import Header from '../components/Header';
-import { Footer } from '../components/Footer';
+import Footer  from '../components/Footer';
 const inter = Inter({ subsets: ['vietnamese'] });
 import React, {useLayoutEffect, } from 'react';
 import Aos from 'aos';
@@ -37,20 +37,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta charSet="UTF-8" />
-        <meta name="description" content="Free Web tutorials with next.js" />
-        <meta name="keywords" content="strnix , energy, next,next.js,vercel, website,demo" />
+        <meta name="description" content="Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote..." />
+        <meta name="keywords" content="strnix , energy,next.js,vercel,react" />
         <meta name="author" content="Vietluu" />
         <meta
           property="og:image"
           content="/assets/images/home/bg-image-1.jpg"
         />
         <title>Strnix World's Energy by Next.js</title>
-        <link
-          rel="stylesheet"
-          href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"
-        />
-        {/* <link rel='stylesheet' href='https://smartdemowp.com/strnix/wp-content/themes/strnix/assets/css/flaticon.css?ver=1'/> */}
+        <link rel="icon" type="image/x-icon" href="/vercel.svg" sizes='any' />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"></link>
       </head>
       <body className={'container-body ' + inter.className}>
         <Header />

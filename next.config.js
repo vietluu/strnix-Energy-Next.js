@@ -2,35 +2,40 @@
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const ESLintWebpackPlugin = require('eslint-webpack-plugin');
 
-const withPlugins = require('next-compose-plugins')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
-  
+  swcMinify: false,
+  compiler: {
+    removeConsole: true,
+  },
+  output: 'standalone',
   experimental: {
-  appDir: true,
-  turbo: {
-          resolveAlias: {
-              underscore: 'lodash',
-              mocha: { browser: 'mocha/browser-entry.js' },
-            },
-          loaders: {
-            // Option format
-            '.md': [
-              {
-                loader: '@mdx-js/loader',
-                options: {
-                  format: 'md',
-                },
-              },
-            ],
-            // Option-less format
-            '.mdx': ['@mdx-js/loader'],
-          },
-        },
+    appDir: true,
+    mdxRs: true,
+  // turbo: {
+  //         resolveAlias: {
+  //             underscore: 'lodash',
+  //             mocha: { browser: 'mocha/browser-entry.js' },
+  //           },
+  //         loaders: {
+  //           // Option format
+  //           '.md': [
+  //             {
+  //               loader: '@mdx-js/loader',
+  //               options: {
+  //                 format: 'md',
+  //               },
+  //             },
+  //           ],
+  //           // Option-less format
+  //           '.mdx': ['@mdx-js/loader'],
+  //         },
+  //       },
   },
  
   poweredByHeader: false,
@@ -78,7 +83,7 @@ webpack: (config, {dev,isServer}) => {
         ],
       }
       config.module.rules.push({
-        test: /\.js$/,
+        test: /\.tsx$/,
         include: path.resolve(__dirname, './src'),
         options: {
           workerParallelJobs: 50,
@@ -89,22 +94,47 @@ webpack: (config, {dev,isServer}) => {
       });
       config.devtool = isServer ? false : 'source-map';
     } else {
-      config.module.rules.push({
-        test: /\.js$/,
-        enforce: 'pre',
-        include: path.resolve(__dirname, './src'),
-        options: {
-          configFile: path.resolve('.eslintrc.json'),
-          eslint: {
-            configFile: path.resolve(__dirname, '.eslintrc.json')
-          }
-        },
-        loader: 'eslint-loader'
-      });
+      config.plugins.push(  new ESLintWebpackPlugin({
+        
+        context: path.resolve(__dirname, 'src'),
+        emitError: true,
+        emitWarning: true,
+        failOnError: true,
+        failOnWarning: true,
+        quiet: false,
+        extensions: [`tsx`],
+        exclude: [`node_modules`],
+
+    }))
+  
+      //   test: /\.tsx$/,
+      //   enforce: 'pre',
+      //   include: path.resolve(__dirname, './src'),
+      //   options: {
+      //     configFile: path.resolve('.eslintrc.json'),
+      //     eslint: {
+      //       configFile: path.resolve(__dirname, '.eslintrc.json')
+      //     }
+      //   },
+      //   loader: 'eslint-webpack-plugin'
+      // });
     }
     config.module.rules.push({
       test: /\.(jpe?g|png|gif|svg)$/i, 
-      loader: 'file-loader'
+      use: [
+        {
+          loader: `img-optimize-loader`,
+          options: {
+            compress: {
+              // This will transform your png/jpg into webp.
+              webp: true,
+              disableOnDevelopment: true,
+              publicPath: '/assets/images',
+             
+            }
+          },
+        },
+      ],
     });
       return config;
 },

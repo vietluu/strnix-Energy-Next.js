@@ -1,5 +1,5 @@
 'use client'
-export const Footer = () => {
+export default function Footer() {
     const goToTop = ():void => {
         if (typeof window != 'undefined') {
             window.scrollTo(0,0)

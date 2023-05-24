@@ -22,6 +22,13 @@
       "git add ."
     ]
   },
+  "browserslist": [
+    "chrome 64",
+    "edge 79",
+    "firefox 67",
+    "opera 51",
+    "safari 12"
+  ],
   "scripts": {
     "dev": "next dev --turbo",
     "build": "CI=false && next build",
@@ -65,10 +72,13 @@
     "eslint": "^8.40.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-webpack-plugin": "^4.0.1",
     "file-loader": "^6.2.0",
     "husky": "^8.0.3",
+    "img-optimize-loader": "^1.0.7",
     "lint-staged": "^13.2.2",
     "prettier": "^2.8.8",
-    "terser-webpack-plugin": "^5.3.8"
+    "terser-webpack-plugin": "^5.3.8",
+    "thread-loader": "^4.0.2"
   }
 }
