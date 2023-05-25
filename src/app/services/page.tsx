@@ -1,7 +1,7 @@
 "use client"
 import React from "react";
 
-export default function Services(props: React.ReactPropTypes) { 
+export default function Services(){ 
 
     return (
         <>
