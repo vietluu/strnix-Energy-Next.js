@@ -254,7 +254,7 @@ const AboutPage = () => {
             backgroundImage: 'url(/assets/images/about/bg-image-15.jpg)',
           }}
         >
-          <div className='title position-absolute bottom-3 left-[33%] text-2xl text-white'>
+          <div className='title position-absolute bottom-3 left-[33%] text-2xl text-white d-none d-lg-block'>
             <i aria-hidden='true' className=' flaticon-solar-panel'></i>{' '}
             <span>Our Mission</span>
           </div>{' '}
@@ -286,7 +286,7 @@ const AboutPage = () => {
             backgroundImage: 'url(/assets/images/about/bg-image-16.jpg)',
           }}
         >
-          <div className='title position-absolute bottom-3 left-[33%]  text-2xl text-white'>
+          <div className='title position-absolute bottom-3 left-[33%]  text-2xl text-white d-none d-lg-block'>
             <i aria-hidden='true' className=' flaticon-dam'></i>{' '}
             <span>INNOVATION</span>
           </div>

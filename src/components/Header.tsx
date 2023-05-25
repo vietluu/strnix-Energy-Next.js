@@ -18,8 +18,8 @@ const Header = () => {
       duration: 1000,
       delay: 0,
       once: false, // whether animation should happen only once - while scrolling down
-    //   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-    //   startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
       initClassName: 'aos-init', // class applied after initialization
       animatedClassName: 'aos-animate', // class applied on animation
       useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
@@ -105,7 +105,7 @@ const Header = () => {
                   </Link>
                   <ul className='sub-menu '>
                     <li>
-                      <Link href='# '>ABOUT US</Link>
+                      <Link href='about'>ABOUT US</Link>
                     </li>
                     <li>
                       <Link href='# '>{"FAQ's"}</Link>
@@ -315,7 +315,7 @@ const Header = () => {
                   </Link>
                   <ul className='sub-menu '>
                     <li>
-                      <Link href='# '>ABOUT US</Link>
+                      <Link href='about'>ABOUT US</Link>
                     </li>
                     <li>
                       <Link href='# '>{"FAQ's"}</Link>
@@ -445,7 +445,7 @@ const Header = () => {
                   id='sercond'
                   onClick={(e) => handleShowDropdown(e.currentTarget)}
                 >
-                  <Link onClick={(e) => setMenuMobile(false)} href='# '>
+                  <Link onClick={(e) => setMenuMobile(false)} href='about'>
                     <strong>ABOUT US</strong>
                     <div className='dropdown-icon'>
                       <span className='fa fa-angle-right'></span>
@@ -453,7 +453,7 @@ const Header = () => {
                   </Link>
                   <ul className='nav-mobile'>
                     <li>
-                      <Link onClick={(e) => setMenuMobile(false)} href='# '>
+                      <Link onClick={(e) => setMenuMobile(false)} href='about'>
                         ABOUT US
                       </Link>
                     </li>

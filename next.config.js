@@ -9,11 +9,9 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
-  swcMinify: true,
-  // compiler: {
-  //   removeConsole: true,
-  // },
-  output: 'standalone',
+  compiler: {
+    removeConsole: true,
+  },
   experimental: {
     appDir: true,
     mdxRs: true,
@@ -96,7 +94,7 @@ const nextConfig = {
     } else {
       config.plugins.push(
         new ESLintWebpackPlugin({
-          context: path.resolve(__dirname, 'src'),
+          context: path.resolve(__dirname, './src'),
           emitError: true,
           emitWarning: true,
           failOnError: true,
@@ -129,7 +127,6 @@ const nextConfig = {
               // This will transform your png/jpg into webp.
               webp: true,
               disableOnDevelopment: true,
-              publicPath: '/assets/images',
             },
           },
         },
