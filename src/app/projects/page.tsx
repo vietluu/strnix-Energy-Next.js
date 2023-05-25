@@ -6,8 +6,7 @@ export default function Projects() {
             <div
         className='page-baner banner-title'
         style={{backgroundImage: 'url(/assets/images/services/banner-bg-2.jpg)'}}
-        data-aos='custom-center'
-        data-aos-duration='500'
+       
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>

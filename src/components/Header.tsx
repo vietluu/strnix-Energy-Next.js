@@ -17,9 +17,9 @@ const Header = () => {
     Aos.init({
       duration: 1000,
       delay: 0,
-      once: true, // whether animation should happen only once - while scrolling down
-      disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      once: false, // whether animation should happen only once - while scrolling down
+    //   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+    //   startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
       initClassName: 'aos-init', // class applied after initialization
       animatedClassName: 'aos-animate', // class applied on animation
       useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
@@ -170,7 +170,7 @@ const Header = () => {
             </div>
           </div>
         )}
-        <div data-aos='custom-center' data-aos-duration='500'>
+        <div >
           <div className='banner-top  clearfix'>
             <div className='top-left'>
               <div className='top-text'>The Nagy Saving for us</div>

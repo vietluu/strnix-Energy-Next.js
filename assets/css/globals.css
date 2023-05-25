@@ -235,7 +235,7 @@ button:focus {
   display: inline-block;
   color: #333333;
   line-height: 20px;
-  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .banner-top .social-comunity li a {
@@ -362,7 +362,7 @@ button:focus {
 .page-baner {
   position: relative;
   width: 100%;
-  /* animation: anishow 0.75s linear; */
+  animation: anishow 1s ease;
 }
 
 @keyframes anishow {
@@ -523,7 +523,7 @@ button:focus {
 }
 
 .search {
-  width: min-content;
+  
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 0;
@@ -532,7 +532,7 @@ button:focus {
 .search span {
   padding: 0 20px 0 20px;
   margin-top: 20px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #ffffff;
   border-left: dotted;
   border-left-width: 4px;
@@ -2345,7 +2345,7 @@ button:focus {
   color: #fff;
   z-index: 10;
   top: -25px;
-  left: 49%;
+  left: calc(50% - 25px);
   width: 50px;
   height: 50px;
   text-align: center;

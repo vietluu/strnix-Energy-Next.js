@@ -97,8 +97,7 @@ const Homepage = () => {
     <>
       <div
         className='page-baner'
-        data-aos='custom-center'
-        data-aos-duration='500'
+    
       >
         <Slider {...setting}>
           <div className='header-slides '>

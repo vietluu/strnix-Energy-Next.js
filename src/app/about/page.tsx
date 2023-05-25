@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
 import { Left, Right } from '../../common/button';
 import CountUp from 'react-countup';
+import { memo } from 'react';
 
 const AboutPage = () => {
   const setting: Settings = {
@@ -43,8 +44,7 @@ const AboutPage = () => {
       <div
         className='page-baner banner-title'
         style={{ backgroundImage: 'url(/assets/images/about/banner-bg-1.jpg)' }}
-        data-aos='custom-center'
-        data-aos-duration='500'
+       
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
@@ -750,4 +750,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default memo(AboutPage);
