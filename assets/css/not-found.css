@@ -1,24 +1,24 @@
 .page-err {
-    width: 100%;
-    display: inline-block;
-    background: #fff;
-    margin: 0;
-    font-weight: 800;
-    text-align: center;
-    height: 50vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    vertical-align: middle;
-  }
-  
-  .page-err .title {
-    margin: .8rem 3rrem;
-    font: 6rem Roboto;
-  }
-   .page-err .description{
-    display: inline-block;
-    margin: .1rem 3rrem;
-    font: 4rem Roboto;
-  }
+  width: 100%;
+  display: inline-block;
+  background: #fff;
+  margin: 0;
+  font-weight: 800;
+  text-align: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  vertical-align: middle;
+}
+
+.page-err .title {
+  margin: 0.8rem 3rrem;
+  font: 6rem Roboto;
+}
+.page-err .description {
+  display: inline-block;
+  margin: 0.1rem 3rrem;
+  font: 4rem Roboto;
+}

@@ -6,25 +6,25 @@ module.exports = {
       cwd: './', // current workspace
       watch: [
         // watch directorys and restart when they change
-        '.next'
+        '.next',
       ],
       ignore_watch: [
         // ignore watch
         'node_modules',
         'logs',
-        'static'
+        'static',
       ],
-      instances: 1,  // start 2 instances
+      instances: 1, // start 2 instances
       node_args: '--harmony',
-      interpreter : 'node@16.13.1',
+      interpreter: 'node@16.13.1',
       env: {
         NODE_ENV: 'production',
-        PORT: 8688
+        PORT: 8688,
       },
       out_file: './logs/out.log', // normal log
       error_file: './logs/err.log', // error log
       merge_logs: true,
-      log_date_format: 'YYYY-MM-DD HH:mm Z' // date format
-    }
-  ]
+      log_date_format: 'YYYY-MM-DD HH:mm Z', // date format
+    },
+  ],
 };

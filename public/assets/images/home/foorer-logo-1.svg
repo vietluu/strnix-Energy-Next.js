@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164.001" height="65.394" viewBox="0 0 164.001 65.394">
+  <g id="Group_7" data-name="Group 7" transform="translate(-634.999 -252)">
+    <path id="Path_1" data-name="Path 1" d="M623.772,317.494l3.125-2.288,1.507,1.953s.836-2.623,4.687-8.649a22.593,22.593,0,0,1,9.653-8.314l-7.811,27.509h12.443l-6.121,27.689,24.981-40.336L656.1,314.7l4.5-13.334a18.62,18.62,0,0,1,5.636,5.189,50.983,50.983,0,0,1,4.846,8.5h-4.521l7.151,10.416,7.2-10.416h-4.589s.588-3.8-5.745-11.83-12.87-8.778-12.87-8.778l-9.549,26.046,9.443.462-7.265,14.058,2.567-10.992-12.61-.279,9.765-29.294a23.645,23.645,0,0,0-19.028,8.091C623.768,311.093,623.772,317.494,623.772,317.494Z" transform="translate(14 -38)" fill="#173277"/>
+    <path id="Path_2" data-name="Path 2" d="M641.455,346.66c.435-.145,1.233-3.7,1.233-3.7a30.149,30.149,0,0,1-9.14-6.964,24.229,24.229,0,0,1-4.5-9.5h3.264l-5.876-9.5-5.44,9.5h4.062s.979,7.145,5.078,12.186S641.455,346.66,641.455,346.66Z" transform="translate(14 -38)" fill="#52c306"/>
+    <path id="Path_3" data-name="Path 3" d="M648.156,347.513h0l2.623-3.906s9.235-.6,14.284-5.245,5.915-13.336,5.915-13.336l2.511,3.627,3.738-3.627s-3,11.62-10.267,17.242S651.5,347.778,648.156,347.513Z" transform="translate(14 -38)" fill="#52c306"/>
+    <text id="Strnix" transform="translate(704 289)" fill="#fff" font-size="34" font-family="SegoeUI-Bold, Segoe UI" font-weight="700"><tspan x="0" y="0">Strnix</tspan></text>
+    <text id="World_s_Energy" data-name="World&apos;s Energy" transform="translate(704 309)" fill="#c2c2c2" font-size="14" font-family="SegoeUI, Segoe UI"><tspan x="0" y="0">World&apos;s Energy</tspan></text>
+  </g>
+</svg>

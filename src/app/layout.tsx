@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google';
 import Header from '../components/Header';
-import Footer  from '../components/Footer';
+import Footer from '../components/Footer';
 const inter = Inter({ subsets: ['vietnamese'] });
 
 import '/assets/css/slick.css';
@@ -10,16 +10,18 @@ import '/assets/css/bootstrap.min.css';
 import '/assets/css/aos.css';
 import '/assets/css/globals.css';
 import '/assets/css/flaticon.css';
-import '/assets/css/all.min.css'
+import '/assets/css/all.min.css';
 import { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 
-export const metadata = (params: Metadata): Metadata => (
-  {
-
-  viewport:"width=device-width, initial-scale=1",
-  title: params.title && ( params.title + " - Strnix world's energy") || "Strnix world's energy by Next.js",
-  description: params.description || "Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...",
+export const metadata = (params: Metadata): Metadata => ({
+  viewport: 'width=device-width, initial-scale=1',
+  title:
+    (params.title && params.title + " - Strnix world's energy") ||
+    "Strnix world's energy by Next.js",
+  description:
+    params.description ||
+    'Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...',
   authors: [{ name: 'Viet luu' }],
   category: 'next.js',
   keywords: ['next.js', 'reactjs', 'typescript', 'strnix'],
@@ -37,12 +39,13 @@ export const metadata = (params: Metadata): Metadata => (
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-    
   },
   twitter: {
     card: 'summary',
     title: params.twitter?.title || 'strnix energy by next.js',
-    description: params.twitter?.description  || 'Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...',
+    description:
+      params.twitter?.description ||
+      'Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...',
     siteId: '1467726470533754880',
     creator: '@nextjs',
     creatorId: '1467726470533754880',
@@ -50,19 +53,19 @@ export const metadata = (params: Metadata): Metadata => (
   },
   themeColor: 'black',
   openGraph: {
-    images: params.openGraph?.images || '/assets/images/home/featured-image-1.jpg',
+    images:
+      params.openGraph?.images || '/assets/images/home/featured-image-1.jpg',
   },
-
 });
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-  }) {
+}) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={'container-body ' + inter.className}>
-      <NextTopLoader/>
+        <NextTopLoader />
         <Header />
         {children}
         <Footer />

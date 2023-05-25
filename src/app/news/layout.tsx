@@ -1,14 +1,10 @@
-
-
-import { metadata as meta } from "../layout";
-export const metadata = meta({ title: 'News' })
+import { metadata as meta } from '../layout';
+export const metadata = meta({ title: 'News' });
 
 export default function NewsLayout({
-    children, 
+  children,
 }: {
-
-    children: React.ReactNode;
-    }) { 
-
-    return (<>{children }</>)
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

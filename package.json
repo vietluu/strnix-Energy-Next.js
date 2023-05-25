@@ -16,10 +16,13 @@
   },
   "main": "server.js",
   "lint-staged": {
-    "*.ts": [
-      "yarn lint",
-      "yarn prettier",
-      "git add ."
+    "*.{ts,tsx}": [
+      "eslint --no-ignore --fix",
+      "git add --force"
+    ],
+    "*.{json,md}": [
+      "prettier --write",
+      "git add --force"
     ]
   },
   "browserslist": [

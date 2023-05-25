@@ -1,14 +1,10 @@
-
-
-import { metadata as meta } from "../layout";
-export const metadata = meta({ title: 'Our Services' })
+import { metadata as meta } from '../layout';
+export const metadata = meta({ title: 'Our Services' });
 
 export default function ServicesLayout({
-    children, 
+  children,
 }: {
-
-    children: React.ReactNode;
-    }) { 
-
-    return (<>{children }</>)
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }
