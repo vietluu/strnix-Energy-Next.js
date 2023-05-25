@@ -1,10 +1,8 @@
-"use client"
 import { Inter } from 'next/font/google';
 import Header from '../components/Header';
 import Footer  from '../components/Footer';
 const inter = Inter({ subsets: ['vietnamese'] });
-import React, {useLayoutEffect, } from 'react';
-import Aos from 'aos';
+
 import '/assets/css/slick.css';
 import '/assets/css/owl.carousel.css';
 import 'antd/dist/reset.css';
@@ -12,43 +10,59 @@ import '/assets/css/bootstrap.min.css';
 import '/assets/css/aos.css';
 import '/assets/css/globals.css';
 import '/assets/css/flaticon.css';
+import '/assets/css/all.min.css'
+import { Metadata } from 'next';
+import NextTopLoader from 'nextjs-toploader';
 
+export const metadata = (params: Metadata): Metadata => (
+  {
 
+  viewport:"width=device-width, initial-scale=1",
+  title: params.title && ( params.title + " - Strnix world's energy") || "Strnix world's energy by Next.js",
+  description: params.description || "Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...",
+  authors: [{ name: 'Viet luu' }],
+  category: 'next.js',
+  keywords: ['next.js', 'reactjs', 'typescript', 'strnix'],
+  icons: { icon: '/next.svg', apple: '/next.svg' },
+  appleWebApp: true,
+  robots: {
+    index: false,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: false,
+      noimageindex: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+    
+  },
+  twitter: {
+    card: 'summary',
+    title: params.twitter?.title || 'strnix energy by next.js',
+    description: params.twitter?.description  || 'Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...',
+    siteId: '1467726470533754880',
+    creator: '@nextjs',
+    creatorId: '1467726470533754880',
+    images: ['/assets/images/home/featured-image-2.jpg'],
+  },
+  themeColor: 'black',
+  openGraph: {
+    images: params.openGraph?.images || '/assets/images/home/featured-image-1.jpg',
+  },
+
+});
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
   }) {
-    useLayoutEffect(() => {
-      Aos.init({
-        duration: 1000,
-        delay:0,
-        once: true,// whether animation should happen only once - while scrolling down
-        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-        initClassName: 'aos-init', // class applied after initialization
-        animatedClassName: 'aos-animate', // class applied on animation
-        useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
-        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-        throttleDelay: 99,// the delay on throttle used while scrolling the page (advanced)
-      });
-    }, []);
   return (
     <html lang="en">
-      <head>
-        <meta name="description" content="Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote..." />
-        <meta name="keywords" content="strnix , energy,next.js,vercel,react" />
-        <meta name="author" content="Vietluu" />
-        <meta
-          property="og:image"
-          content="/assets/images/home/bg-image-1.jpg"
-        />
-        <title>Strnix World's Energy by Next.js</title>
-        <link rel="icon" type="image/x-icon" href="/vercel.svg" sizes='any' />
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css"></link>
-      </head>
       <body className={'container-body ' + inter.className}>
+      <NextTopLoader/>
         <Header />
         {children}
         <Footer />

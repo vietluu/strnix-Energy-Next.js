@@ -5,8 +5,8 @@ import Slider, { Settings } from 'react-slick';
 import { Left, Right } from '../../common/button';
 import CountUp from 'react-countup';
 
-
 const AboutPage = () => {
+  
   const setting: Settings = {
     arrows: true,
     dots: false,
@@ -38,10 +38,13 @@ const AboutPage = () => {
       },
     ],
   };
+
   return (
     <>
+      
       <div
-        className="page-baner banner-about"
+        className="page-baner banner-title"
+        style={{backgroundImage: 'url(/assets/images/about/banner-bg-1.jpg)'}}
         data-aos="custom-center"
         data-aos-duration="500"
       >

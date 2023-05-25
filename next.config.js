@@ -9,10 +9,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 })
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
-  swcMinify: false,
-  compiler: {
-    removeConsole: true,
-  },
+  swcMinify: true,
+  // compiler: {
+  //   removeConsole: true,
+  // },
   output: 'standalone',
   experimental: {
     appDir: true,
