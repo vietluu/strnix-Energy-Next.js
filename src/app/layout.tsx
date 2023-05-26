@@ -1,7 +1,7 @@
-import { Inter } from 'next/font/google';
+import {Hind} from 'next/font/google';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-const inter = Inter({ subsets: ['vietnamese'] });
+const inter = Hind({ subsets: ['latin'], weight:"400" });
 
 import '/assets/css/slick.css';
 import '/assets/css/owl.carousel.css';
@@ -61,11 +61,13 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-}) {
+  }) {
+ 
   return (
     <html lang='en'>
       <body className={'container-body ' + inter.className}>
         <NextTopLoader />
+        {/* <div className="preloader"></div> */}
         <Header />
         {children}
         <Footer />

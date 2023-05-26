@@ -1,7 +1,7 @@
 {
   "name": "strnix",
   "license": "MIT",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "private": true,
   "author": "vietluu",
   "engines": {
@@ -34,11 +34,13 @@
   ],
   "scripts": {
     "dev": "next dev --turbo",
-    "build": "CI=false && next build",
+    "build": "next build",
     "start": "SET ENVIRONMENT=./.env &&  node server.js",
     "lint": "next lint",
     "prettier": "prettier --write .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "analyze": "ANALYZE=true next build",
+    "prod": "NODE_ENV=production  node server.js"
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",

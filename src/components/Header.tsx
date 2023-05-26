@@ -17,9 +17,9 @@ const Header = () => {
     Aos.init({
       duration: 1000,
       delay: 0,
-      once: false, // whether animation should happen only once - while scrolling down
+      once: true, // whether animation should happen only once - while scrolling down
       disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-     startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+      startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
       initClassName: 'aos-init', // class applied after initialization
       animatedClassName: 'aos-animate', // class applied on animation
       useClassNames: true, // if true, will add content of `data-aos` as classes on scroll
@@ -548,8 +548,8 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
-              <div className='close' onClick={(e) => setMenuMobile(false)}>
-                <i className='fas fa-times fa-2x'></i>
+              <div className='btn-close' onClick={(e) => setMenuMobile(false)}>
+                <i className='fa fa-times fa-2x'></i>
               </div>
             </div>
           </div>

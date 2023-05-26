@@ -101,7 +101,7 @@ export default function Footer() {
                 <strong>Send Email</strong>
                 <div className='info-text '>
                   <p>
-                    <a href='# '> info@domain.com</a>
+                    <a href='mailto:info@domain.com'> info@domain.com</a>
                   </p>
                 </div>
               </div>

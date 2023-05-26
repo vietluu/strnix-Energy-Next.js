@@ -54,6 +54,78 @@ button:focus {
   position: relative;
   margin: 0 auto;
 }
+.preloader{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: transparent;
+
+}
+.preloader::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #fff;
+  z-index: 0;
+  -webkit-transform: translateX(-101%);
+      -ms-transform: translateX(-101%);
+      transform: translateX(-101%);
+  animation: leftSlide 0.8s ease;
+  -webkit-animation: leftSlide 0.8s ease;
+  -moz-animation: leftSlide 0.8s ease;;
+}
+@keyframes leftSlide {
+  0%{
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  100%{
+    .preloader:before {
+      -webkit-transform: translateX(-101%);
+      -ms-transform: translateX(-101%);
+      transform: translateX(-101%);
+    }
+  }
+}
+@keyframes rightSlide {
+  0%{
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+  100%{
+    
+      
+  -webkit-transform: translateX(101%);
+  -ms-transform: translateX(101%);
+  transform: translateX(101%);
+  
+  }
+}
+
+.preloader:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 51%;
+  height: 100%;
+  background: #fff;
+  z-index: 2;
+  -webkit-transform: translateX(101%);
+  -ms-transform: translateX(101%);
+  transform: translateX(101%);
+  -webkit-animation: leftSlide 0.8s ease;
+  -moz-animation: leftSlide 0.8s ease;;
+  animation:  rightSlide 0.8s ease;
+}
 
 ::before,
 ::after {
@@ -135,7 +207,7 @@ button:focus {
   font-size: 1.3rem;
 }
 
-.search-bar .close {
+.search-bar .btn-close {
   right: 30px;
   top: 20px;
 }
@@ -362,17 +434,9 @@ button:focus {
 .page-baner {
   position: relative;
   width: 100%;
-  animation: anishow 1s ease;
+ 
 }
 
-@keyframes anishow {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
-}
 .header-slides {
   position: relative;
   background-color: #000000;
@@ -642,7 +706,7 @@ button:focus {
   margin-bottom: 0;
 }
 
-.close {
+.btn-close {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1183,7 +1247,7 @@ button:focus {
 .installation-container {
   width: 100%;
   height: auto;
-  padding-top: 100px;
+  padding: 100px 0;
   position: relative;
 }
 
@@ -2597,6 +2661,107 @@ button:focus {
 .image-box:hover > .social-links {
   opacity: 1;
   right: 10px;
+} 
+.box-card{
+  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.10);
+  position: relative;
+}
+.box-card .title-box{
+  position: absolute;
+  top: -40px;
+  left: calc(14%);
+  width: 80%;
+}
+.box-card:hover .title-box span{
+  background-color:#e85728 ;
+}
+.image-box .hover-box{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  visibility: hidden;
+  transform: translateY(-100%);
+  -webkit-transform:translateY(-100%) ;
+  -moz-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  -moz-transition: all 0.5s linear;
+ 
+
+}
+.box-card:hover .hover-box{
+  visibility: visible;
+    transform: translateY(0);
+    -webkit-transform:translateY(0) ;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+}
+.box-card .hover-box .inner-box{
+  transform: translateY(50px);
+  -webkit-transform:translateY(50px) ;
+  -moz-transform: translateY(50px);
+  -ms-transform: translateY(50px);
+  opacity: 0;
+
+  transition: all 0.5s linear 0.8s;
+  -webkit-transition: all 0.5s linear 0.8s;
+  -moz-transition: all 0.5s linear 0.8s;
+  
+}
+.box-card:hover .hover-box .inner-box{
+  opacity: 1;
+  transform: translateY(0);
+    -webkit-transform:translateY(0) ;
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+}
+.clients-slide{
+  background: url('/assets/images/services/dotted-pattern.png') repeat ;
+}
+.client-box{
+  position: relative;
+  overflow: hidden;
+}
+.client-box .dots{
+  position: absolute;
+  bottom: 10px;
+  width: 50px;
+  height: 30px;
+  z-index: 10;
+
+
+  width: 100%;
+  text-align: center;
+}
+.client-box .dots li{
+  width: 8px;
+  height: 8px;
+display: inline-block; 
+
+margin: 5px;
+}
+.client-box .dots li span{
+  display: inline-block;
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+  background-color: #cccccc;
+}
+.client-box .dots .slick-active{
+  width: 16px;
+}
+.client-box .dots .slick-active span{
+  background-color: #ee2d50;
+}
+.client-info{
+  color:#222222
 }
 @keyframes textSlidedown {
   0% {
@@ -2624,7 +2789,7 @@ button:focus {
   }
   .header-main-box {
     max-width: 100%;
-    margin: 0;
+    margin: 0 !important;
   }
   .header-top {
     visibility: hidden;

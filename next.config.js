@@ -9,9 +9,11 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
 });
 const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
-  compiler: {
-    removeConsole: true,
-  },
+  swcMinify: true,
+
+  // compiler: {
+  //   removeConsole: true,
+  // },
   experimental: {
     appDir: true,
     mdxRs: true,
@@ -127,6 +129,7 @@ const nextConfig = {
               // This will transform your png/jpg into webp.
               webp: true,
               disableOnDevelopment: true,
+              publicPath: 'auto',
             },
           },
         },
