@@ -9,8 +9,8 @@ export default function Footer() {
   };
   return (
     <footer>
-      <div className='ten-body '>
-        <div className='ten-container '>
+      <div className='bg-[#0f1e44]'>
+        <div className='container-xl'>
           <div className='row-list '>
             <div className='info-link '>
               <i aria-hidden='true' className=' flaticon-renewable-energy'></i>

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import Aos from 'aos';
-
+import NavTop from './NavTop';
 const Header = () => {
   const [menuMobile, setMenuMobile] = useState(false);
   const [search, setSearch] = useState(false);
@@ -13,6 +13,8 @@ const Header = () => {
     setPage(window.scrollY);
   }, []);
 
+  
+  
   useLayoutEffect(() => {
     Aos.init({
       duration: 1000,
@@ -38,12 +40,14 @@ const Header = () => {
     }
   }, [menuMobile, search]);
   const handleShowDropdown = (e: any): void => {
-    e.children[0].children[1].classList.toggle('activebtn');
-    e.children[1].classList.toggle('open');
+    e.children[1].classList.toggle('activebtn');
+    e.children[2].classList.toggle('open');
+
   };
   const scroll = (): void => {
     setPage(window.scrollY);
   };
+ 
   return (
     <>
       {search && (
@@ -63,115 +67,10 @@ const Header = () => {
       )}
       <header className='header'>
         {page > 200 && (
-          <div className='header-top clearfix'>
-            <div className='logo-top'>
-              <Link href='/'>
-                <Image
-                  width={136}
-                  height={50}
-                  priority
-                  src='/assets/images/home/sticky-logo.png'
-                  alt='Logo'
-                />{' '}
-              </Link>
-            </div>
-            <div className='main-menu clearfix'>
-              <ul className='menu '>
-                <li>
-                  <Link href='/' className='hover1 '>
-                    <strong>HOME</strong>
-                  </Link>
-                  <ul className='sub-menu'>
-                    <li>
-                      <Link href='# '>Home Solar Energy</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Home Wind Power</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Home Bio Power</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Home Fuel Power</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Home Hydro Power</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href='about' className='hover1 '>
-                    <strong>ABOUT US</strong>
-                  </Link>
-                  <ul className='sub-menu '>
-                    <li>
-                      <Link href='about'>ABOUT US</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>{"FAQ's"}</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Delicated Project</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href='services' className='hover1'>
-                    <strong>SERVICES</strong>
-                  </Link>
-                  <ul className='sub-menu '>
-                    <li>
-                      <Link href='# '>Our Services</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Commercial Services</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Panel Installation</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Replacement Upgrade</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Residential EV Charges</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Solar Maintenance</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href='projects' className='hover1 '>
-                    <strong>PROJECTS</strong>
-                  </Link>
-                </li>
-                <li>
-                  <Link href='news' className='hover1 '>
-                    <strong>NEWS</strong>
-                  </Link>
-                  <ul className='sub-menu '>
-                    <li>
-                      <Link href='# '>Blog Grid Style</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Blog with Sidebar</Link>
-                    </li>
-                    <li>
-                      <Link href='# '>Blog Post Details</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li>
-                  <Link href='contact' className='hover1 '>
-                    <strong>CONTACT</strong>
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
+          <NavTop/>
         )}
         <div >
-          <div className='banner-top  clearfix'>
+          <div className='banner-top clearfix'>
             <div className='top-left'>
               <div className='top-text'>The Nagy Saving for us</div>
             </div>
@@ -270,8 +169,9 @@ const Header = () => {
               </div>
             </div>
             <div className='main-menu clearfix'>
-              <div className='tabbar d-lg-none'>
-                <div className='navmoblie'>
+              <div className='nav-mobile'>
+              <div className='tabbar'>
+                <div className='open-nav'>
                   <span
                     className='menu-bar'
                     onClick={(e) => setMenuMobile(true)}
@@ -279,14 +179,16 @@ const Header = () => {
                     <i className='fas fa-bars'></i>
                   </span>
                 </div>
-                <div className='search '>
+                <div className='search'>
                   <span onClick={(e) => setSearch(true)}>
                     <i className='fas fa-search '></i>
                   </span>
                 </div>
               </div>
+              </div>
 
-              <ul className='menu '>
+              <nav className='nav-pc'>
+              <ul className='menu'>
                 <li>
                   <Link href='/' className='hover1 '>
                     <strong>HOME</strong>
@@ -377,16 +279,17 @@ const Header = () => {
                   </Link>
                 </li>
               </ul>
-              <div className='search d-none d-lg-block'>
+              <div className='search'>
                 <span onClick={(e) => setSearch(true)}>
                   <i className='fas fa-search '></i>
                 </span>
               </div>
+             </nav>
             </div>
           </div>
         </div>
         {menuMobile && (
-          <div className='mobile-menu'>
+          <nav className='mobile-menu'>
             <div className='dropdownnav-menu'>
               <ul id='dropdown'>
                 <li id='menu-img'>
@@ -408,10 +311,12 @@ const Header = () => {
                 >
                   <Link onClick={(e) => setMenuMobile(false)} href='/'>
                     <strong>HOME</strong>
+                    </Link>
                     <div className='dropdown-icon'>
+                      
                       <span className='fa fa-angle-right'></span>
                     </div>
-                  </Link>
+                  
 
                   <ul className='nav-mobile'>
                     <li>
@@ -447,10 +352,11 @@ const Header = () => {
                 >
                   <Link onClick={(e) => setMenuMobile(false)} href='about'>
                     <strong>ABOUT US</strong>
+                    </Link>
                     <div className='dropdown-icon'>
                       <span className='fa fa-angle-right'></span>
                     </div>
-                  </Link>
+                 
                   <ul className='nav-mobile'>
                     <li>
                       <Link onClick={(e) => setMenuMobile(false)} href='about'>
@@ -475,10 +381,10 @@ const Header = () => {
                 >
                   <Link onClick={(e) => setMenuMobile(false)} href='services'>
                     <strong>SERVICES</strong>
+                  </Link>
                     <div className='dropdown-icon'>
                       <span className='fa fa-angle-right'></span>
                     </div>
-                  </Link>
                   <ul className='nav-mobile'>
                     <li>
                       <Link onClick={(e) => setMenuMobile(false)} href='# '>
@@ -520,10 +426,10 @@ const Header = () => {
                 <li onClick={(e) => handleShowDropdown(e.currentTarget)}>
                   <Link onClick={(e) => setMenuMobile(false)} href='news'>
                     <strong>NEWS</strong>
+                  </Link>
                     <div className='dropdown-icon'>
                       <span className='fa fa-angle-right'></span>
                     </div>
-                  </Link>
                   <ul className='nav-mobile'>
                     <li>
                       <Link onClick={(e) => setMenuMobile(false)} href='# '>
@@ -552,7 +458,7 @@ const Header = () => {
                 <i className='fa fa-times fa-2x'></i>
               </div>
             </div>
-          </div>
+          </nav>
         )}
       </header>
     </>

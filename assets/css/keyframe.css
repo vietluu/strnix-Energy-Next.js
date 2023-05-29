@@ -1,0 +1,132 @@
+@keyframes leftSlide {
+    0%{
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+    100%{
+    
+        -webkit-transform: translateX(-101%);
+        -ms-transform: translateX(-101%);
+        transform: translateX(-101%);
+      
+    }
+  }
+  @keyframes rightSlide {
+    0%{
+      -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+      transform: translateX(0%);
+    }
+    100%{
+  
+        
+    -webkit-transform: translateX(101%);
+    -ms-transform: translateX(101%);
+    transform: translateX(101%);
+    
+    }
+  }
+
+  
+  @keyframes searchAnimation {
+    0% {
+      transform: translateY(100vh);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  @keyframes menuAnimation {
+    0% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes show {
+    0% {
+      transform: translateX(70%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes hide {
+    0% {
+      transform: translateY(0);
+      height: 100%;
+    }
+    100% {
+      height: 0;
+      transform: translateX(100vh);
+    }
+  }
+
+  @keyframes animations {
+    0% {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes animations-right {
+    0% {
+      opacity: 0;
+      transform: translateX(-30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes animations-up {
+    0% {
+      opacity: 0;
+      transform: translateY(80px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes animations-down {
+    0% {
+      opacity: 0;
+      transform: translateY(-80px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes textSlidedown {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slidedown {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    100% {
+      height: 100%;
+      opacity: 1;
+    }
+  }

@@ -3,11 +3,13 @@ import { Rate, Tabs } from 'antd';
 import Image from 'next/image';
 import React, { memo, useEffect, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
-import { isMobile } from 'react-device-detect';
+import { isMobile, isTablet } from 'react-device-detect';
 import CountUp, { CountUpProps } from 'react-countup';
-import { Left, Right } from '../common/button';
+import CustomButtonSlide from '@/components/CustomButtonSlide';
 
 const Homepage = () => {
+
+  
   const setting: Settings = {
     arrows: false,
     dots: true,
@@ -31,8 +33,8 @@ const Homepage = () => {
     useTransform: false,
     speed: 500,
     autoplaySpeed: 3000,
-    nextArrow: <Right />,
-    prevArrow: <Left />,
+    nextArrow: <CustomButtonSlide position = 'right'/>,
+    prevArrow: <CustomButtonSlide position='left'/>,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,8 +55,8 @@ const Homepage = () => {
     useTransform: false,
     speed: 500,
     autoplaySpeed: 3000,
-    nextArrow: <Right />,
-    prevArrow: <Left />,
+    nextArrow: <CustomButtonSlide position ='right'/>,
+    prevArrow: <CustomButtonSlide position='left'/>,
     responsive: [
       {
         breakpoint: 1024,
@@ -688,7 +690,7 @@ const Homepage = () => {
             </div>
             <div className='elm-five-right col-xl-7 col-lg-7 col-sm-12 '>
               <div className='fivecontent ' id='tabs' data-aos='fade-left'>
-                <Tabs type='card' tabPosition={isMobile ? 'top' : 'bottom'}>
+                <Tabs type='card' tabPosition={isMobile || isTablet ? 'top' : 'bottom'}>
                   {dataTabs.map((value, index) => {
                     return (
                       <Tabs.TabPane key={index} tab={value.label}>

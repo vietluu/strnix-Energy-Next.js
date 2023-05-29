@@ -2,11 +2,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
-import { Left, Right } from '../../common/button';
+import CustomButtonSlide from '../../components/CustomButtonSlide';
 import CountUp from 'react-countup';
-import { memo } from 'react';
+
 
 const AboutPage = () => {
+
   const setting: Settings = {
     arrows: true,
     dots: false,
@@ -15,8 +16,8 @@ const AboutPage = () => {
     autoplay: true,
     infinite: true,
     autoplaySpeed: 2500,
-    nextArrow: <Right />,
-    prevArrow: <Left />,
+    nextArrow: <CustomButtonSlide position = 'right'/>,
+    prevArrow: <CustomButtonSlide position='left'/>,
     responsive: [
       {
         breakpoint: 1024,
@@ -48,6 +49,7 @@ const AboutPage = () => {
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
+           
             {"strnix world's energy "}
             {'  →  About Strnix'}
           </h5>
@@ -249,7 +251,7 @@ const AboutPage = () => {
           </div>
         </div>
         <div
-          className='text-col col-lg-3 d-lg-block  d-md-none position-relative px-0'
+          className='content-box text-col col-lg-3 d-lg-block  d-md-none position-relative px-0'
           style={{
             backgroundImage: 'url(/assets/images/about/bg-image-15.jpg)',
           }}
@@ -281,7 +283,7 @@ const AboutPage = () => {
           </div>
         </div>
         <div
-          className='text-col col-lg-3 d-lg-block d-md-none position-relative px-0'
+          className=' content-box text-col col-lg-3 d-lg-block d-md-none position-relative px-0'
           style={{
             backgroundImage: 'url(/assets/images/about/bg-image-16.jpg)',
           }}
@@ -750,4 +752,4 @@ const AboutPage = () => {
   );
 };
 
-export default memo(AboutPage);
+export default AboutPage;

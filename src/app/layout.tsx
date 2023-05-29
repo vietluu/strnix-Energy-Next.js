@@ -8,17 +8,22 @@ import '/assets/css/owl.carousel.css';
 import 'antd/dist/reset.css';
 import '/assets/css/bootstrap.min.css';
 import '/assets/css/aos.css';
-import '/assets/css/globals.css';
 import '/assets/css/flaticon.css';
 import '/assets/css/all.min.css';
+import '/assets/css/keyframe.css';
+import '/assets/scss/style.scss';
+
 import { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
 
 export const metadata = (params: Metadata): Metadata => ({
   viewport: 'width=device-width, initial-scale=1',
-  title:
-    (params.title && params.title + " - Strnix world's energy") ||
-    "Strnix world's energy by Next.js",
+  colorScheme:'light',
+  title: {
+    default: params?.title ? `${params?.title}` : "Strnix world's energy by Next.js",
+    template: "%s | Strnix World's Energy",
+    
+  },
   description:
     params.description ||
     'Strnix - Solar and Green Energy WordPress Theme by SmartDataSoft on ThemeForest. Strnix – Solar and Green Energy WordPress Theme Strnix WordPress Theme is web masterpiece which is perfect to promote...',

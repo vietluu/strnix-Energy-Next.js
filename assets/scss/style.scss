@@ -1,0 +1,107 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'header';
+@import 'home';
+@import 'about';
+@import 'services';
+@import 'projects';
+@import 'footer';
+@import 'responsive';
+* {
+  margin: 0 auto;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body {
+	font-family: 'Hind', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	overflow-x: hidden;
+}
+img {
+	position: static !important;
+}
+a,
+a:hover,
+a:link,
+a:active,
+a:focus {
+	text-decoration: none;
+	outline: none;
+}
+.body-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+button {
+	&:focus {
+		outline: none;
+	}
+}
+.container-body {
+	max-width: 2160px;
+	min-width: 300px;
+	width: 100%;
+	height: auto;
+	color: #222222;
+	line-height: 1.5rem;
+	background: #ffffff;
+	position: relative;
+	margin: 0 auto;
+	
+}
+// .preloader {
+// 	position: fixed;
+// 	left: 0;
+// 	top: 0;
+// 	width: 100%;
+// 	height: 100%;
+// 	z-index: 999999;
+// 	background-color: transparent;
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		left: 0;
+// 		top: 0;
+// 		width: 51%;
+// 		height: 100%;
+// 		background: #fff;
+// 		z-index: 0;
+// 		-webkit-transform: translateX(-101%);
+// 		-ms-transform: translateX(-101%);
+// 		transform: translateX(-101%);
+// 		animation: leftSlide 0.8s ease;
+// 		-webkit-animation: leftSlide 0.8s ease;
+// 		-moz-animation: leftSlide 0.8s ease;
+// 	}
+// 	&:after {
+// 		content: '';
+// 		position: absolute;
+// 		right: 0;
+// 		top: 0;
+// 		width: 51%;
+// 		height: 100%;
+// 		background: #fff;
+// 		z-index: 2;
+// 		-webkit-transform: translateX(101%);
+// 		-ms-transform: translateX(101%);
+// 		transform: translateX(101%);
+// 		-webkit-animation: leftSlide 0.8s ease;
+// 		-moz-animation: leftSlide 0.8s ease;
+// 		animation: rightSlide 0.8s ease;
+// 	}
+// }
+::before,
+::after {
+	box-sizing: border-box;
+}
