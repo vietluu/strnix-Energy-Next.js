@@ -2,7 +2,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import Fancybox from "../../components/FancyBox";
+import { Fancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
+
+
+Fancybox.bind('[data-fancybox="gallery"]', {
+  animated:true,
+  Carousel:{infinite:true}
+});
 export default function Projects() {
     return (
         <>
@@ -23,13 +30,7 @@ export default function Projects() {
         <div className=' py-[90px]'>
           
           <div className='container-lg'>
-          <Fancybox
-  options={{
-    Carousel: {
-      infinite: false,
-    },
-  }}
-            >
+
               
               <div className='row'>
           <div className='project-block col-lg-4 col-md-6 col-sm-12 '>
@@ -227,7 +228,7 @@ export default function Projects() {
           </div>
            
          </div>
-</Fancybox>
+
          </div>
             
           </div>
