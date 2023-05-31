@@ -16,7 +16,7 @@
   },
   "main": "server.js",
   "lint-staged": {
-    "*.{ts,tsx}": [
+    "*.{tsx}": [
       "eslint --no-ignore --fix",
       "git add --force"
     ],
