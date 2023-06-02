@@ -2,9 +2,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
-import CustomButtonSlide from '../../components/CustomButtonSlide';
+import CustomButtonSlide from '../../components/buttonCustom/CustomButtonSlide';
 import CountUp from 'react-countup';
-
+import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
+import { Breadcrumb } from 'antd';
+import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 
 const AboutPage = () => {
 
@@ -50,8 +52,7 @@ const AboutPage = () => {
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
            
-            {"strnix world's energy "}
-            {'  →  About Strnix'}
+          <Breadcrumb separator='→' items={Breadcrumbs('About US')}/>
           </h5>
           <h1 className='text-6xl mt-4'>About Strnix</h1>
         </div>
@@ -240,12 +241,7 @@ const AboutPage = () => {
             </div>
             <div className='linkbox '>
               <a href='# ' className='link '>
-                <div className='link-text effect '>
-                  <span className='btn-txt '>View All Works</span>
-                  <span className='btn-icon '>
-                    <i className='fas fa-arrow-right '></i>{' '}
-                  </span>
-                </div>
+              <CustomBtnHover text='View all work'/>
               </a>
             </div>
           </div>
@@ -422,14 +418,7 @@ const AboutPage = () => {
                   />
                 </div>
                 <button className='form-group  btnbox inputform col-lg-4 col-md-6 col-sm-12'>
-                  <div className='link-text effect '>
-                    <span className='btn-txt '>
-                      <a></a>Get More Info
-                    </span>
-                    <span className='btn-icon '>
-                      <i className='fas fa-arrow-right '></i>{' '}
-                    </span>
-                  </div>
+                <CustomBtnHover text='Get More Info'/>
                 </button>
               </div>
               <div className='noti'>

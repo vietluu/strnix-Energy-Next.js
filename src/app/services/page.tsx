@@ -3,6 +3,9 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
+import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
+import { Breadcrumb } from 'antd';
+import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 export default function Services() {
   const setting: Settings = {
     dots: true,
@@ -27,8 +30,7 @@ export default function Services() {
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
-            {"strnix world's energy "}
-            {'  →  Our Services'}
+          <Breadcrumb separator='→' items={Breadcrumbs('Our Services')}/>
           </h5>
           <h1 className='text-6xl mt-4'>Our Services</h1>
         </div>
@@ -596,11 +598,8 @@ export default function Services() {
                     </select>
                   </div>
                   <div className='linkbox '>
-                    <button type='submit' className='link-text effect '>
-                      <span className='btn-txt '>Send Request</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
+                    <button type='submit'>
+                      <CustomBtnHover text='Send request'/>
                     </button>
                   </div>
                 </div>

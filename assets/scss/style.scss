@@ -61,6 +61,23 @@ button {
 	margin: 0 auto;
 	
 }
+.ant-breadcrumb{
+	ol{
+		font-size: 1.05rem;
+		justify-content: center;
+		.ant-breadcrumb-separator{
+			color: white;
+		}
+		li{
+			margin: 0;
+			a{
+				&:hover{
+					background-color: transparent;
+				}
+			}
+		}
+	}
+}
 // .preloader {
 // 	position: fixed;
 // 	left: 0;

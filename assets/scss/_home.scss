@@ -1172,7 +1172,12 @@
 }
 .form-request {
 	width: 100%;
+	padding: 40px 30px;
 	background-color: #fff;
+	select{
+		padding: 13px;
+		margin-top: 20px;
+	}
 }
 .row-input {
 	display: flex;

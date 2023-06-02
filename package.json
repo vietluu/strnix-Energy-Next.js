@@ -11,12 +11,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn lint-staged"
+      "pre-commit": "lint-staged"
     }
   },
   "main": "server.js",
   "lint-staged": {
-    "*.{tsx}": [
+    "*.tsx": [
       "eslint --no-ignore --fix",
       "git add --force"
     ],

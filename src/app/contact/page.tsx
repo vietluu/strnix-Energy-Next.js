@@ -1,10 +1,11 @@
 'use client';
 import React, {useRef} from 'react';
 import Image from 'next/image';
-import {Button, Form, Input} from 'antd';
-import TextArea from 'antd/es/input/TextArea';
-import { emailValiate } from '../../utils/validate';
+import {Button, Form, Input, Breadcrumb} from 'antd';
+import { emailValiate } from '@/utils/validate';
 import Link from 'next/link';
+import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
+import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 export default function Contact() {
   const formRef = useRef(null);
   const onFinish = (values: any) => {
@@ -25,8 +26,7 @@ export default function Contact() {
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
-            {"strnix world's energy "}
-            {'  →  Contact Us'}
+          <Breadcrumb separator='→' items={Breadcrumbs('Contact US')}/>
           </h5>
           <h1 className='text-6xl mt-4'>Contact Us</h1>
         </div>
@@ -157,19 +157,12 @@ export default function Contact() {
                 </div>
                 <div className='col-12 py-3'>
                   <Form.Item name='message'>
-                    <TextArea cols={100} rows={5}  style={{ height: 120, resize: 'none' }}  placeholder='Message'/>
+                    <Input.TextArea cols={100} rows={5}  style={{ height: 120, resize: 'none' }}  placeholder='Message'/>
                     </Form.Item>
                   </div>
                 <div className='col-sm-12 col-md-4 m-0 py-3'>
                   <Button htmlType='submit' className='border-none w-full p-0'>
-                  <div className='link-text effect'>
-                    <span className='btn-txt '>
-                      Send Request
-                    </span>
-                    <span className='btn-icon '>
-                      <i className='fas fa-arrow-right '></i>{' '}
-                    </span>
-                  </div>
+                  <CustomBtnHover text='Send request'/>
                     </Button>
                   </div>
               </Form>

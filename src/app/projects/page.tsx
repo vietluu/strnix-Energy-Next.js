@@ -4,7 +4,8 @@ import Link from "next/link";
 import React from "react";
 import { Fancybox } from '@fancyapps/ui';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
-
+import { Breadcrumb } from 'antd';
+import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 
 Fancybox.bind('[data-fancybox="gallery"]', {
   animated:true,
@@ -20,8 +21,7 @@ export default function Projects() {
       >
         <div className='mt-11 pt-8 font-weight-bold'>
           <h5>
-            {"strnix world's energy "}
-            {'  →  Our Projects'}
+          <Breadcrumb separator='→' items={Breadcrumbs('Our Projects')}/>
           </h5>
           <h1 className='text-6xl mt-4'>Our Projects</h1>
         </div>

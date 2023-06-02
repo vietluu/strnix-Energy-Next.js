@@ -1,12 +1,12 @@
 'use client';
 import { Rate, Tabs } from 'antd';
 import Image from 'next/image';
-import React, { memo, useEffect, useRef } from 'react';
+import React, { memo, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile, isTablet } from 'react-device-detect';
-import CountUp, { CountUpProps } from 'react-countup';
-import CustomButtonSlide from '@/components/CustomButtonSlide';
-
+import CountUp from 'react-countup';
+import CustomButtonSlide from '@/components/buttonCustom/CustomButtonSlide';
+import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
 const Homepage = () => {
 
   
@@ -440,14 +440,7 @@ const Homepage = () => {
                   />
                 </div>
                 <button className='form-group  btnbox inputform col-lg-4 col-md-6 col-sm-12'>
-                  <div className='link-text effect '>
-                    <span className='btn-txt '>
-                      <a></a>Get More Info
-                    </span>
-                    <span className='btn-icon '>
-                      <i className='fas fa-arrow-right '></i>{' '}
-                    </span>
-                  </div>
+                  <CustomBtnHover text='Get More Info'/>
                 </button>
               </div>
               <div className='noti'>
@@ -678,12 +671,7 @@ const Homepage = () => {
                 </div>
                 <div className='linkbox '>
                   <a href='# ' className='link '>
-                    <div className='link-text effect '>
-                      <span className='btn-txt '>View All Works</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
-                    </div>
+                    <CustomBtnHover text='View All Work'/>
                   </a>
                 </div>
               </div>
@@ -1002,12 +990,7 @@ const Homepage = () => {
                 <p>Monitoring & Maintaince</p>
                 <div className='linkbox '>
                   <a href='# ' className='link '>
-                    <div className='link-text effect '>
-                      <span className='btn-txt '>Get Started</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
-                    </div>
+                   <CustomBtnHover text='Get started'/>
                   </a>
                 </div>
               </div>
@@ -1033,12 +1016,7 @@ const Homepage = () => {
                 <p>Monitoring & Maintaince</p>
                 <div className='linkbox '>
                   <a href='# ' className='link '>
-                    <div className='link-text effect '>
-                      <span className='btn-txt '>Get Started</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
-                    </div>
+                  <CustomBtnHover text='Get started'/>
                   </a>
                 </div>
               </div>
@@ -1063,12 +1041,7 @@ const Homepage = () => {
                 <p>Monitoring & Maintaince</p>
                 <div className='linkbox '>
                   <a href='# ' className='link '>
-                    <div className='link-text effect '>
-                      <span className='btn-txt '>Get Started</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
-                    </div>
+                  <CustomBtnHover text='Get started'/>
                   </a>
                 </div>
               </div>
@@ -1135,11 +1108,8 @@ const Homepage = () => {
                     </select>
                   </div>
                   <div className='linkbox '>
-                    <button type='submit' className='link-text effect '>
-                      <span className='btn-txt '>Send Request</span>
-                      <span className='btn-icon '>
-                        <i className='fas fa-arrow-right '></i>{' '}
-                      </span>
+                    <button type='submit'>
+                    <CustomBtnHover text='Send Request'/>
                     </button>
                   </div>
                 </div>

@@ -1,6 +1,8 @@
 'use client';
 import Link from 'next/link';
 import Image from 'next/image';
+import SocialLink from './SocialLink';
+import Logo from './Logo';
 export default function Footer() {
   const goToTop = (): void => {
     if (typeof window !== 'undefined') {
@@ -22,43 +24,9 @@ export default function Footer() {
             </div>
             <div className='social-logo '>
          
-              <Link href='/'>
-                <Image
-                  width={164}
-                  height={66}
-                  
-                  src='/assets/images/home/foorer-logo-1.svg'
-                  alt='Logo'
-                />{' '}
-              </Link>
+              <Logo option='footer'/>
              
-              <ul className='social-comunity '>
-                <li>
-                  <a href='# '>
-                    <i className='fab fa-twitter '></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='# '>
-                    <i className='fab fa-facebook-f '></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='# '>
-                    <i className='fab fa-instagram '></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='# '>
-                    <i className='fab fa-linkedin-in '></i>
-                  </a>
-                </li>
-                <li>
-                  <a href='# '>
-                    <i className='fab fa-pinterest-p '></i>
-                  </a>
-                </li>
-              </ul>
+              <SocialLink/>
             </div>
             <div className='info-link '>
               <i aria-hidden='true' className=' flaticon-car-battery'></i>
@@ -197,49 +165,16 @@ export default function Footer() {
               </div>
             </div>
             <div className='contact-elm '>
-              <div className='contact-logo '>go
+              <div className='contact-logo '>
                
-                <Link href='/'>
-                <Image
-                  width={164}
-                  height={66}
-                  src='/assets/images/home/foorer-logo-1.svg'
-                  alt='Logo'
-                />{' '}
-              </Link>
+              <Logo option='footer'/>
              
                 <p>
                   Integer lobortis sem consequat imperdiet In nulla viverra ut
                   lorem ut, dapibus conse etur diam. Nun bibendum diet condiment
                   sed ipsum duis lacinia.
                 </p>
-                <ul className='social-comunity '>
-                  <li>
-                    <a href='# '>
-                      <i className='fab fa-twitter '></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='# '>
-                      <i className='fab fa-facebook-f '></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='# '>
-                      <i className='fab fa-instagram '></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='# '>
-                      <i className='fab fa-linkedin-in '></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href='# '>
-                      <i className='fab fa-pinterest-p '></i>
-                    </a>
-                  </li>
-                </ul>
+                <SocialLink/>
               </div>
             </div>
           </div>

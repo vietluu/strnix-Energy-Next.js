@@ -1,20 +1,12 @@
 import React, { JSX } from "react";
 import Link from 'next/link';
-import Image from 'next/image';
+import Logo from "../Logo";
 export default function NavTop():JSX.Element {
     return (
         <nav className='header-top clearfix'>
         <div className='container row  flex-nowrap mx-auto'>
         <div className='logo-top'>
-              <Link href='/'>
-                <Image
-                  width={136}
-                  height={50}
-                  priority
-                  src='/assets/images/home/sticky-logo.png'
-                  alt='Logo'
-                />{' '}
-              </Link>
+             <Logo/>
             </div>
             <div className='main-menu clearfix'>
               <ul className='menu '>
