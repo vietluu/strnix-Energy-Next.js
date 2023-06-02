@@ -1,3 +1,4 @@
+"use client";
 import { Breadcrumb } from 'antd';
 import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 export default function NotFound() {
