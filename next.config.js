@@ -11,31 +11,13 @@ const isDev = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 const nextConfig = {
   swcMinify: true,
 
-  // compiler: {
-  //   removeConsole: true,
-  // },
+  compiler: {
+    removeConsole: true,
+  },
   experimental: {
     appDir: true,
     mdxRs: true,
-    // turbo: {
-    //         resolveAlias: {
-    //             underscore: 'lodash',
-    //             mocha: { browser: 'mocha/browser-entry.js' },
-    //           },
-    //         loaders: {
-    //           // Option format
-    //           '.md': [
-    //             {
-    //               loader: '@mdx-js/loader',
-    //               options: {
-    //                 format: 'md',
-    //               },
-    //             },
-    //           ],
-    //           // Option-less format
-    //           '.mdx': ['@mdx-js/loader'],
-    //         },
-    //       },
+ 
   },
 
   poweredByHeader: false,
