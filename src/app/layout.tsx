@@ -8,9 +8,9 @@ import '/assets/css/owl.carousel.css';
 import 'antd/dist/reset.css';
 import '/assets/css/bootstrap.min.css';
 import '/assets/css/aos.css';
+import '/assets/css/keyframe.css';
 import '/assets/css/flaticon.css';
 import '/assets/css/all.min.css';
-import '/assets/css/keyframe.css';
 import '/assets/scss/style.scss';
 
 import { Metadata } from 'next';

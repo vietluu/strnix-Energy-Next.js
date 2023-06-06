@@ -113,17 +113,7 @@ const nextConfig = {
         })
       );
 
-      //   test: /\.tsx$/,
-      //   enforce: 'pre',
-      //   include: path.resolve(__dirname, './src'),
-      //   options: {
-      //     configFile: path.resolve('.eslintrc.json'),
-      //     eslint: {
-      //       configFile: path.resolve(__dirname, '.eslintrc.json')
-      //     }
-      //   },
-      //   loader: 'eslint-webpack-plugin'
-      // });
+
     }
     config.module.rules.push({
       test: /\.(jpe?g|png|gif|svg)$/i,

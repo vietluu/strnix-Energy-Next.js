@@ -1,16 +1,14 @@
 "use client";
+import Fancybox from "@/components/FancyBox";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { Fancybox } from '@fancyapps/ui';
+
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { Breadcrumb } from 'antd';
-import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
+import { Breadcrumbs } from '@/components/breadcrums/breadcrumMap';
 
-Fancybox.bind('[data-fancybox="gallery"]', {
-  animated:true,
-  Carousel:{infinite:true}
-});
+
 export default function Projects() {
     return (
         <>
@@ -32,7 +30,8 @@ export default function Projects() {
           <div className='container-lg'>
 
               
-              <div className='row'>
+            <Fancybox>
+            <div className='row'>
           <div className='project-block col-lg-4 col-md-6 col-sm-12 '>
             <div className='img-box max-lg:p-0 mb-2'>
                 <Image width={365} height={537} priority src='/assets/images/projects/16.jpg' alt='projects' />
@@ -228,6 +227,7 @@ export default function Projects() {
           </div>
            
          </div>
+           </Fancybox>
 
          </div>
             
