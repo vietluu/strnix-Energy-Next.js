@@ -1,15 +1,46 @@
 'use client';
-import { Rate, Tabs } from 'antd';
+import { Rate, Tabs, Form, Input, Select, notification, message, } from 'antd';
 import Image from 'next/image';
-import React, { memo, useRef } from 'react';
+import React  from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile, isTablet } from 'react-device-detect';
 import CountUp from 'react-countup';
 import CustomButtonSlide from '@/components/buttonCustom/CustomButtonSlide';
 import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
+import { emailValiate, phoneValidate } from '@/utils/validate';
+import { useAppDispatch, useAppSelector } from '@/redux/hooks';
+import { RootState } from '@/redux/store';
+import { sendForm } from '@/redux/formSlice/formSlice';
 const Homepage = () => {
-
+  const dispatch = useAppDispatch();
+  const isLoading = useAppSelector((state:RootState) => 
+    state.formReducer.isLoading
+  );
+  const hasErr = useAppSelector((state:RootState) => 
+    state.formReducer.hasErr
+  );
   
+  const sendFormRequest = async (value:any) => {
+    const res = await dispatch(sendForm(value));
+     message.loading({
+      content: "Sending..",
+      duration:2,
+    });
+    if (res.payload) {
+      notification.success({
+        message: 'Success',
+      description:
+        'I will never close automatically. This is a purposely very very long description that has many many characters and words.',
+      });
+    }
+    else {
+      notification.error({
+        message: 'ERORR',
+      description:
+        'There was an error sending!',
+      });
+    }
+  };
   const setting: Settings = {
     arrows: false,
     dots: true,
@@ -412,32 +443,44 @@ const Homepage = () => {
                 {"We're Dedicated To "}<br /> Build A Cleaner Future
               </h2>
             </div>
-            <form className='form col-xl-8 col-lg-12 col-md-12 '>
+            <Form  onFinish={(value: any) => sendFormRequest(value)} onFinishFailed={(err:any)=>console.log(err)} className='form col-xl-8 col-lg-12 col-md-12 '>
               <div className='elm-form row clearfix'>
                 <div className='form-group  inputform col-lg-4 col-md-6 col-sm-12'>
-                  <label>
-                    <i className='fas fa-user '></i>
-                  </label>
-                  <input
-                    id='text'
-                    type='text '
-                    name='name '
+                  <Form.Item
+                  name='name'
+                  >
+                  <Input
+                    id='text'    
+                    prefix={<i className='fas fa-user '></i>}  
                     placeholder='Your Name '
-                    required
-                  />
+                  />                   
+                 </Form.Item>
                 </div>
 
                 <div className=' form-group inputform col-lg-4 col-md-6 col-sm-12'>
-                  <label>
-                    <i className='fas fa-envelope-open '></i>
-                  </label>
-                  <input
+               
+                  <Form.Item
+                    
+                    name='email'
+                    rules={[{
+                      validator: (_, value) => {
+                        if (!value || value.trim() === '') {
+                          return Promise.reject('The field is required.');
+                         }
+                         if (!emailValiate(value)) {
+                           return Promise.reject('The e-mail address entered is invalid.');
+                         }
+                         return Promise.resolve();
+                      }
+                    }]}
+                  >
+               
+                    <Input
+                    prefix={<i className='fas fa-envelope-open'></i>}
                     id='text'
-                    type='email '
-                    name='email '
                     placeholder='Your Email '
-                    required
                   />
+                 </Form.Item>
                 </div>
                 <button className='form-group  btnbox inputform col-lg-4 col-md-6 col-sm-12'>
                   <CustomBtnHover text='Get More Info'/>
@@ -446,7 +489,7 @@ const Homepage = () => {
               <div className='noti'>
                 <p>Thank you for your message. It has been sent.</p>
               </div>
-            </form>
+            </Form>
           </div>
         </div>
       </div>
@@ -1072,40 +1115,101 @@ const Homepage = () => {
           </div>
           <div className='support '>
             <div className='form-request ' data-aos='fade-up'>
-              <form>
+              <Form  onFinish={(value:any)=> sendFormRequest(value)} onFinishFailed={(err:any)=>{ console.log(err); }}>
                 <div className='row-input clearfix '>
                   <div className='form-group col-lg-4 col-md-6 col-sm-12'>
-                    <input
-                      type='text'
-                      name='name '
+                    <Form.Item
+                      name='name'
+                      rules={[{
+                        required: true,
+                        message:"The field is required"
+                      }]}
+                    >
+                    <Input
+                      
                       placeholder='Your Name '
-                      required
+                      
                     />
+                    </Form.Item>
                   </div>
                   <div className='form-group  col-lg-4 col-md-6 col-sm-12'>
-                    <input
-                      type='email'
-                      name='email '
+                    <Form.Item
+                      name='email'
+                      rules={[{
+                        validator: (_, value) => {
+                          if (!value || value.trim() === '') {
+                            return Promise.reject('The field is required.');
+                           }
+                           if (!emailValiate(value)) {
+                             return Promise.reject('The e-mail address entered is invalid.');
+                           }
+                           return Promise.resolve();
+                        }
+                      }]}
+                    >
+                    <Input
+                      
                       placeholder='Email '
-                      required
+                      
                     />
+                   </Form.Item>
                   </div>
                   <div className='form-group  col-lg-4 col-md-12 col-sm-12'>
-                    <input
-                      type='tel '
-                      name='phone-number '
-                      placeholder='Phone '
-                      pattern='[0-9]{4}[0-9]{3}[0-9]{3}'
-                      required
-                    />
+                    <Form.Item
+                      name='phone'
+                  
+                      rules={[{
+                        validator: (_, value) => {
+                          if (!value || value.trim() === '') {
+                            return Promise.reject('The field is required.');
+                           }
+                           if (!phoneValidate(value)) {
+                             return Promise.reject('The phone number entered is invalid.');
+                           }
+                           return Promise.resolve();
+                        }
+                      }]}
+                    >
+                    <Input
+                   placeholder='Phone '
+                   
+                 />
+                   </Form.Item>
                   </div>
                   <div className='form-group  col-xl-12'>
-                    <select className='custom-select-box ' name='field-name '>
+                    {/* <select className='custom-select-box ' name='field-name '>
                       <option>Subject / Discuss About Service</option>
                       <option>Installation</option>
                       <option>Maintenance</option>
                       <option>Replacement</option>
-                    </select>
+                    </select> */}
+                    <Form.Item
+                      name='select'
+                      rules={[{
+                        required: true,
+                        message:"The field is required"
+                      }]}
+                    >
+                      <Select
+                      
+                        placeholder='Subject / Discuss About Service'
+                        options={[{
+                          value: 'Installation',
+                          label:'Installation'
+                          
+                        },
+                          {
+                            value: 'Maintenance',
+                          label:'Maintenance'
+                          },
+                         { value: 'Replacement',
+                          label:'Replacement'}
+                        
+                        ]}
+                        allowClear
+                      />
+                
+                    </Form.Item>
                   </div>
                   <div className='linkbox '>
                     <button type='submit'>
@@ -1113,7 +1217,7 @@ const Homepage = () => {
                     </button>
                   </div>
                 </div>
-              </form>
+              </Form>
 
               <div className='response '>
                 <p>Thank you for your messeage. It has been sent.</p>
@@ -1310,4 +1414,4 @@ const Homepage = () => {
   );
 };
 
-export default memo(Homepage);
+export default Homepage;

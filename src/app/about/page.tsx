@@ -5,11 +5,12 @@ import Slider, { Settings } from 'react-slick';
 import CustomButtonSlide from '../../components/buttonCustom/CustomButtonSlide';
 import CountUp from 'react-countup';
 import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Form, Input } from 'antd';
 import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
-
+import { emailValiate } from '@/utils/validate';
 const AboutPage = () => {
 
+ 
   const setting: Settings = {
     arrows: true,
     dots: false,
@@ -390,41 +391,55 @@ const AboutPage = () => {
                 {"We're Dedicated To"} <br /> Build A Cleaner Future
               </h2>
             </div>
-            <form className='form col-xl-8 col-lg-12 col-md-12 '>
+            <Form  onFinish={(value: any) => { console.log(value); }} onFinishFailed={(err: any) => console.log(err)} className='form col-xl-8 col-lg-12 col-md-12 '>
               <div className='elm-form row clearfix'>
                 <div className='form-group  inputform col-lg-4 col-md-6 col-sm-12'>
+                  <Form.Item
+                  name='name'
+                  >
                   <label>
                     <i className='fas fa-user '></i>
                   </label>
-                  <input
-                    id='text'
-                    type='text '
-                    name='name '
+                  <Input
+                    id='text'                  
                     placeholder='Your Name '
-                    required
-                  />
+                  />                   
+                 </Form.Item>
                 </div>
 
                 <div className=' form-group inputform col-lg-4 col-md-6 col-sm-12'>
+                  <Form.Item
+                    name='email'
+                    rules={[{
+                      validator: (_, value) => {
+                        if (!value || value.trim() === '') {
+                          return Promise.reject('The field is required.');
+                         }
+                         if (!emailValiate(value)) {
+                           return Promise.reject('The e-mail address entered is invalid.');
+                         }
+                         return Promise.resolve();
+                      }
+                    }]}
+                  >
                   <label>
                     <i className='fas fa-envelope-open '></i>
                   </label>
-                  <input
+                  <Input
                     id='text'
-                    type='email '
-                    name='email '
                     placeholder='Your Email '
-                    required
+                   
                   />
+                 </Form.Item>
                 </div>
                 <button className='form-group  btnbox inputform col-lg-4 col-md-6 col-sm-12'>
-                <CustomBtnHover text='Get More Info'/>
+                  <CustomBtnHover text='Get More Info'/>
                 </button>
               </div>
               <div className='noti'>
                 <p>Thank you for your message. It has been sent.</p>
               </div>
-            </form>
+            </Form>
           </div>
         </div>
       </div>

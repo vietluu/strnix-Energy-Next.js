@@ -24,7 +24,6 @@ function getIPAdress() {
 
 const { isDev } = publicRuntimeConfig;
 const { PORT } = serverRuntimeConfig;
-console.log(isDev, PORT);
 const app = next({ dev: isDev });
 const handle = app.getRequestHandler();
 

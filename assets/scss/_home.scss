@@ -461,13 +461,32 @@
 	margin-bottom: 20px;
 	label {
 		position: absolute;
-		left: 0;
-		top: -5px;
+		left: -23px;
+		top: -4px;
 		padding: 20px;
 		margin-left: 10px;
 		line-height: 28px;
 		color: #5f5959;
 	}
+	.ant-form-item-control{
+        
+		
+		input{
+			padding: 29px 0;
+			background-color: transparent !important;
+		}
+	}
+}
+.ant-input-affix-wrapper{
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	padding: 0;
+	border-color:#5f5959;
+	color: #5f5959;
+	.ant-input-prefix{
+		padding-left: 10px;
+	}
+	
 }
 .form {
 	input {
@@ -636,7 +655,7 @@
 		left: 0;
 		width: 100%;
 		height: 550px;
-		background: url(https://smartdemowp.com/strnix/wp-content/themes/strnix/assets/images/background/bg-pattern-1.png)
+		background: url("/assets/images/home/bg-pattern-1.png")
     center center repeat;
 	}
 }
@@ -1170,6 +1189,8 @@
 		font-weight: 400;
 	}
 }
+
+
 .form-request {
 	width: 100%;
 	padding: 40px 30px;
@@ -1178,6 +1199,22 @@
 		padding: 13px;
 		margin-top: 20px;
 	}
+	
+	.ant-form-item-control-input{
+ 
+       
+    input,textArea{
+      
+        color: black;
+        &::placeholder{
+            color: black;
+            
+        }
+        
+    }
+   
+
+}
 }
 .row-input {
 	display: flex;

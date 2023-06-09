@@ -7,9 +7,10 @@ import Link from 'next/link';
 import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
 import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
 export default function Contact() {
-  const formRef = useRef(null);
-  const onFinish = (values: any) => {
-    console.log('Success:', values);
+  
+  const onFinish = (value:any) => {
+  
+    console.log('Success:', value);
   };
   
   const onFinishFailed = (errorInfo: any) => {
@@ -113,7 +114,7 @@ export default function Contact() {
                 <span className='dottitle '></span>
               </div>
               </div>
-              <Form ref={formRef} className='py-[30px] text-left' onFinish={onFinish} onFinishFailed={onFinishFailed}>
+              <Form   className='py-[30px] text-left' onFinish={onFinish} onFinishFailed={onFinishFailed}>
                 <div className='row px-3 '>
                 <div className='col-sm-12 col-md-6 mt-3' >
                   <Form.Item
@@ -161,9 +162,11 @@ export default function Contact() {
                     </Form.Item>
                   </div>
                 <div className='col-sm-12 col-md-4 m-0 py-3'>
+              
                   <Button htmlType='submit' className='border-none w-full p-0'>
                   <CustomBtnHover text='Send request'/>
                     </Button>
+                
                   </div>
               </Form>
             </div>

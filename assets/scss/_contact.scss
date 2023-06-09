@@ -17,6 +17,12 @@
     }
   
 }
+.ant-form-item-control{
+    div{
+        margin: 0 ;
+        text-align: left;
+    }
+}
 .form-contact{
     .elmif{
         h2{
@@ -28,9 +34,10 @@
             background-color: white;
         }
     }
-    .ant-form-item-control{
-        div{
-            margin: 0 ;
+
+    .ant-form-item-control-input{
+        input,textArea{
+            color: white;
         }
     }
     }
@@ -43,7 +50,7 @@
         border-radius: 0 !important;
         background-color: transparent;
         padding: 15px 20px;
-        color: white;
+        
         &::placeholder{
             color: white;
             
@@ -55,6 +62,7 @@
     }
 
 }
+
 .form-banner{
     background: url('/assets/images/contact/bg-image-9.jpg') no-repeat;
     min-height: 300px;

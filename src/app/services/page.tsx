@@ -4,9 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
 import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Form, Input, Select } from 'antd';
 import { Breadcrumbs } from '../../components/breadcrums/breadcrumMap';
+import { useRef } from 'react';
+import { emailValiate, phoneValidate } from '@/utils/validate';
 export default function Services() {
+  
   const setting: Settings = {
     dots: true,
     slidesToShow: 1,
@@ -562,48 +565,109 @@ export default function Services() {
           </div>
           <div className='support '>
             <div className='form-request ' data-aos='fade-up'>
-              <form>
+            <Form  onFinish={(value)=>{ console.log('ok', value); }} onFinishFailed={(err)=>{ console.log(err); }}>
                 <div className='row-input clearfix '>
                   <div className='form-group col-lg-4 col-md-6 col-sm-12'>
-                    <input
-                      type='text'
-                      name='name '
+                    <Form.Item
+                      name='name'
+                      rules={[{
+                        required: true,
+                        message:"The field is required"
+                      }]}
+                    >
+                    <Input
+                      
                       placeholder='Your Name '
-                      required
+                      
                     />
+                    </Form.Item>
                   </div>
                   <div className='form-group  col-lg-4 col-md-6 col-sm-12'>
-                    <input
-                      type='email'
-                      name='email '
+                    <Form.Item
+                      name='email'
+                      rules={[{
+                        validator: (_, value) => {
+                          if (!value || value.trim() === '') {
+                            return Promise.reject('The field is required.');
+                           }
+                           if (!emailValiate(value)) {
+                             return Promise.reject('The e-mail address entered is invalid.');
+                           }
+                           return Promise.resolve();
+                        }
+                      }]}
+                    >
+                    <Input
+                      
                       placeholder='Email '
-                      required
+                      
                     />
+                   </Form.Item>
                   </div>
                   <div className='form-group  col-lg-4 col-md-12 col-sm-12'>
-                    <input
-                      type='tel '
-                      name='phone-number '
-                      placeholder='Phone '
-                      pattern='[0-9]{4}[0-9]{3}[0-9]{3}'
-                      required
-                    />
+                    <Form.Item
+                      name='phone'
+                  
+                      rules={[{
+                        validator: (_, value) => {
+                          if (!value || value.trim() === '') {
+                            return Promise.reject('The field is required.');
+                           }
+                           if (!phoneValidate(value)) {
+                             return Promise.reject('The phone number entered is invalid.');
+                           }
+                           return Promise.resolve();
+                        }
+                      }]}
+                    >
+                    <Input
+                   placeholder='Phone '
+                   
+                 />
+                   </Form.Item>
                   </div>
                   <div className='form-group  col-xl-12'>
-                    <select className='custom-select-box ' name='field-name '>
+                    {/* <select className='custom-select-box ' name='field-name '>
                       <option>Subject / Discuss About Service</option>
                       <option>Installation</option>
                       <option>Maintenance</option>
                       <option>Replacement</option>
-                    </select>
+                    </select> */}
+                    <Form.Item
+                      name='select'
+                      rules={[{
+                        required: true,
+                        message:"The field is required"
+                      }]}
+                    >
+                      <Select
+                      
+                        placeholder='Subject / Discuss About Service'
+                        options={[{
+                          value: 'Installation',
+                          label:'Installation'
+                          
+                        },
+                          {
+                            value: 'Maintenance',
+                          label:'Maintenance'
+                          },
+                         { value: 'Replacement',
+                          label:'Replacement'}
+                        
+                        ]}
+                        allowClear
+                      />
+                
+                    </Form.Item>
                   </div>
                   <div className='linkbox '>
                     <button type='submit'>
-                      <CustomBtnHover text='Send request'/>
+                    <CustomBtnHover text='Send Request'/>
                     </button>
                   </div>
                 </div>
-              </form>
+              </Form>
 
               <div className='response '>
                 <p>Thank you for your messeage. It has been sent.</p>

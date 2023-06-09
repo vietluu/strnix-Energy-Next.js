@@ -1,7 +1,8 @@
-import {Hind} from 'next/font/google';
+import { Hind } from 'next/font/google';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
-const inter = Hind({ subsets: ['latin'], weight:"400" });
+import { Providers } from '@/redux/providers';
+const inter = Hind({ subsets: ['latin'], weight: '400' });
 
 import '/assets/css/slick.css';
 import '/assets/css/owl.carousel.css';
@@ -18,11 +19,12 @@ import NextTopLoader from 'nextjs-toploader';
 
 export const metadata = (params: Metadata): Metadata => ({
   viewport: 'width=device-width, initial-scale=1',
-  colorScheme:'light',
+  colorScheme: 'light',
   title: {
-    default: params?.title ? `${params?.title}` : "Strnix world's energy by Next.js",
+    default: params?.title
+      ? `${params?.title}`
+      : "Strnix world's energy by Next.js",
     template: "%s | Strnix World's Energy",
-    
   },
   description:
     params.description ||
@@ -66,16 +68,17 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
-  }) {
- 
+}) {
   return (
     <html lang='en'>
       <body className={'container-body ' + inter.className}>
         <NextTopLoader />
         {/* <div className="preloader"></div> */}
-        <Header />
-        {children}
-        <Footer />
+        <Providers>
+          <Header />
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
