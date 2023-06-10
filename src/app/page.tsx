@@ -1,7 +1,7 @@
 'use client';
 import { Rate, Tabs, Form, Input, Select, notification, message, } from 'antd';
 import Image from 'next/image';
-import React  from 'react';
+import React, { useEffect }  from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile, isTablet } from 'react-device-detect';
 import CountUp from 'react-countup';
@@ -19,13 +19,20 @@ const Homepage = () => {
   const hasErr = useAppSelector((state:RootState) => 
     state.formReducer.hasErr
   );
-  
+  useEffect(() => {
+    isLoading ?   message.loading({
+     content: "Sending..",
+     duration:0,
+    }) : message.destroy();
+    hasErr &&  notification.error({
+        message: 'ERORR',
+      description:
+        'There was an error sending!',
+      });
+  }, [isLoading, hasErr]);
   const sendFormRequest = async (value:any) => {
+   
     const res = await dispatch(sendForm(value));
-     message.loading({
-      content: "Sending..",
-      duration:2,
-    });
     if (res.payload) {
       notification.success({
         message: 'Success',
@@ -33,13 +40,7 @@ const Homepage = () => {
         'I will never close automatically. This is a purposely very very long description that has many many characters and words.',
       });
     }
-    else {
-      notification.error({
-        message: 'ERORR',
-      description:
-        'There was an error sending!',
-      });
-    }
+   
   };
   const setting: Settings = {
     arrows: false,

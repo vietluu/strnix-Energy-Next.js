@@ -7,7 +7,7 @@ export default function Logo({ option }: any) {
  
   useLayoutEffect(() => {
     (() => {
-      console.log('run');
+     
       switch (option) {
         case 'dark':
           setLogo('logo.svg');
