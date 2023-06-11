@@ -10,7 +10,7 @@ import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
 import { emailValiate, phoneValidate } from '@/utils/validate';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { RootState } from '@/redux/store';
-import { sendForm } from '@/redux/formSlice/formSlice';
+import { sendForm } from '@/redux/slices/formSlice';
 const Homepage = () => {
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector((state:RootState) => 

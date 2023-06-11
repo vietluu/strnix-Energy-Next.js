@@ -392,23 +392,23 @@ const AboutPage = () => {
               </h2>
             </div>
             <Form  onFinish={(value: any) => { console.log(value); }} onFinishFailed={(err: any) => console.log(err)} className='form col-xl-8 col-lg-12 col-md-12 '>
-              <div className='elm-form row clearfix'>
+            <div className='elm-form row clearfix'>
                 <div className='form-group  inputform col-lg-4 col-md-6 col-sm-12'>
                   <Form.Item
                   name='name'
                   >
-                  <label>
-                    <i className='fas fa-user '></i>
-                  </label>
                   <Input
-                    id='text'                  
+                    id='text'    
+                    prefix={<i className='fas fa-user '></i>}  
                     placeholder='Your Name '
                   />                   
                  </Form.Item>
                 </div>
 
                 <div className=' form-group inputform col-lg-4 col-md-6 col-sm-12'>
+               
                   <Form.Item
+                    
                     name='email'
                     rules={[{
                       validator: (_, value) => {
@@ -422,13 +422,11 @@ const AboutPage = () => {
                       }
                     }]}
                   >
-                  <label>
-                    <i className='fas fa-envelope-open '></i>
-                  </label>
-                  <Input
+               
+                    <Input
+                    prefix={<i className='fas fa-envelope-open'></i>}
                     id='text'
                     placeholder='Your Email '
-                   
                   />
                  </Form.Item>
                 </div>
