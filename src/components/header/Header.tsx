@@ -10,8 +10,8 @@ import Navpc from './Navpc';
 import Navmobile from './Navmobile';
 import CustomBtnHover from '../buttonCustom/CustomBtnHover';
 const Header = () => {
-  const [menuMobile, setMenuMobile] = useState(false);
-  const [search, setSearch] = useState(false);
+  const [menuMobile, setMenuMobile] = useState<boolean>(false);
+  const [search, setSearch] = useState<boolean>(false);
   const [page, setPage] = useState(0);
 
   

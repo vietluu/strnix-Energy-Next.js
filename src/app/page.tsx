@@ -1,7 +1,7 @@
 'use client';
 import { Rate, Tabs, Form, Input, Select, notification, message, } from 'antd';
 import Image from 'next/image';
-import React, { useEffect }  from 'react';
+import React, { useEffect, useState }  from 'react';
 import Slider, { Settings } from 'react-slick';
 import { isMobile, isTablet } from 'react-device-detect';
 import CountUp from 'react-countup';
@@ -12,6 +12,8 @@ import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { RootState } from '@/redux/store';
 import { sendForm } from '@/redux/slices/formSlice';
 const Homepage = () => {
+
+  const [isActive, setIsActive] = useState<boolean>(false);
   const dispatch = useAppDispatch();
   const isLoading = useAppSelector((state:RootState) => 
     state.formReducer.isLoading
@@ -1009,12 +1011,89 @@ const Homepage = () => {
               </div>
             </div>
             <div className='btn-show '>
-              <span className='btn-check active '>Monthly</span>
-              <span className='btn-check '>yearly</span>
+              <span onClick={e => setIsActive(false)} className={`btn-check ${!isActive && 'active'}`}  >Monthly</span>
+              <span onClick ={e => setIsActive(true) } className={`btn-check ${isActive && 'active'}`} >yearly</span>
             </div>
           </div>
           <div className='row clearfix'>
-            <div className='tab col-xl-4 col-md-6 col-sm-12 '>
+            {isActive ? 
+              <> <div className='tab col-xl-4 col-md-6 col-sm-12 '>
+              <div className='tab-element' data-aos='fade-up'>
+                <i aria-hidden='true' className='flaticon-power-7'></i>{' '}
+                <div className='img-name '>SEAMLESS COSTT</div>
+                <h2>Residential Area</h2>
+                <div className='icon-flash '>
+                  <i className='fas fa-bolt '></i>
+                </div>
+                <div className='cost '>
+                  <span className='curency '>$</span>
+                  <span className='money '>14.30</span>
+                </div>
+                <div className='cost-w '>PER WATT</div>
+                <p>Eco-Packing Systems</p>
+                <p>Minimal Energy Waste</p>
+                <p>High Density Cells</p>
+                <p>Environmental Frendly</p>
+                <p>Monitoring & Maintaince</p>
+                <div className='linkbox '>
+                  <a href='# ' className='link '>
+                   <CustomBtnHover text='Get started'/>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className='tab col-xl-4 translate-y-[-30px] col-md-6 col-sm-12'>
+              <div className='tab-element view ' data-aos='fade-down'>
+                <i aria-hidden='true' className='flaticon-nuclear-power'></i>
+                <div className=' img-name '>SEAMLESS COSTT</div>
+                <h2>Commercial Area</h2>
+                <div className='icon-flash '>
+                  <i className='fas fa-bolt'></i>
+                </div>
+                <div className='cost '>
+                  <span className='curency '>$</span>
+                  <span className='money '>25.08</span>
+                </div>
+                <div className='cost-w '>PER WATT</div>
+                <p>Eco-Packing Systems</p>
+                <p>Minimal Energy Waste</p>
+                <p>High Density Cells</p>
+                <p>Environmental Frendly</p>
+                <p>Monitoring & Maintaince</p>
+                <div className='linkbox '>
+                  <a href='# ' className='link '>
+                  <CustomBtnHover text='Get started'/>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className='tab col-xl-4 col-md-6 col-sm-12'>
+              <div className='tab-element ' data-aos='fade-up'>
+                <i aria-hidden='true' className=' flaticon-solar-panel-1'></i>
+                <div className=' img-name '>SEAMLESS COSTT</div>
+                <h2>Agricultral Area</h2>
+                <div className='icon-flash '>
+                  <i className='fas fa-bolt '></i>
+                </div>
+                <div className='cost '>
+                  <span className='curency '>$</span>
+                  <span className='money '>14.30</span>
+                </div>
+                <div className='cost-w '>PER WATT</div>
+                <p>Eco-Packing Systems</p>
+                <p>Minimal Energy Waste</p>
+                <p>High Density Cells</p>
+                <p>Environmental Frendly</p>
+                <p>Monitoring & Maintaince</p>
+                <div className='linkbox '>
+                  <a href='# ' className='link '>
+                  <CustomBtnHover text='Get started'/>
+                  </a>
+                </div>
+              </div>
+                </div>
+              </> : <> <div className='tab col-xl-4 col-md-6 col-sm-12 '>
               <div className='tab-element' data-aos='fade-up'>
                 <i aria-hidden='true' className='flaticon-power-7'></i>{' '}
                 <div className='img-name '>SEAMLESS COSTT</div>
@@ -1089,7 +1168,7 @@ const Homepage = () => {
                   </a>
                 </div>
               </div>
-            </div>
+            </div></>}
           </div>
         </div>
       </div>
@@ -1191,8 +1270,7 @@ const Homepage = () => {
                         message:"The field is required"
                       }]}
                     >
-                      <Select
-                      
+                      <Select                      
                         placeholder='Subject / Discuss About Service'
                         options={[{
                           value: 'Installation',
