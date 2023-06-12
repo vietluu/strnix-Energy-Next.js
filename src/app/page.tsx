@@ -1043,7 +1043,7 @@ const Homepage = () => {
               </div>
             </div>
 
-            <div className='tab col-xl-4 translate-y-[-30px] col-md-6 col-sm-12'>
+            <div className='tab col-xl-4  translate-y-[-30px] max-xl:translate-y-0 col-md-6 col-sm-12'>
               <div className='tab-element view ' data-aos='fade-down'>
                 <i aria-hidden='true' className='flaticon-nuclear-power'></i>
                 <div className=' img-name '>SEAMLESS COSTT</div>

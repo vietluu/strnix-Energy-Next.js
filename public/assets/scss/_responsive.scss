@@ -1,0 +1,238 @@
+
+$xl:1024px;
+$lg:920px;
+$md:768px;
+$sm:500px;
+
+@media screen and (max-width: $xl){
+    .info-link {
+        display: none;
+    }
+    .header-main-box {
+        max-width: 100%;
+        margin: 0 !important;
+    }
+    .header-top {
+        visibility: hidden;
+    }
+    .menu-bar {
+        display: inline-block;
+    }
+    .banner-top {
+        .top-right {
+            display: none;
+        }
+        .top-left {
+            margin: auto;
+            text-align: center;
+        }
+    }
+    .header-main .header-main-box .info-contact,
+        .nav-pc {
+        display: none !important;
+    }
+    .main-menu {
+        .nav-mobile {
+            display: block;
+        }
+    }
+    .text-info {
+        h1 {
+            padding: 0 50px;
+            font-size: 60px;
+        }
+    }
+    .solar-Solutions-elm {
+        flex-direction: column-reverse;
+    }
+    .solar-Solutions {
+        .solar-Solutions-elm {
+            .elm-right {
+                p {
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+    .elm-left {
+        .img-left {
+            padding-left: 0;
+            padding-top: 30px;
+            img {
+                width: 100%;
+            }
+        }
+        .img-bottom {
+            display: none;
+        }
+    }
+    .imgcircle {
+        left: initial !important;
+        right: calc(50% - 60px) !important;
+        top: 33%;
+    }
+    .vote {
+        width: 100%;
+        margin-right: 30px;
+        flex: 0 0 100%;
+    }
+    .slides-comment {
+        .btn {
+            display: none;
+        }
+    }
+    .row-services {
+        .contact-elm {
+            width: 100%;
+            
+            border-bottom: 1px solid #777777;
+        }
+    }
+    
+}
+@media screen and (max-width: $lg) {
+    .logo {
+        flex: 0 0 17%;
+        margin-right: 0px;
+        margin-top: 5px;
+    }
+    .text-info {
+        h1 {
+            font-size: 44px;
+            padding: 0 20px;
+        }
+    }
+    .search-elm {
+        input[type='text'] {
+            flex: 0 0 100%;
+            border-radius: 5px 5px 0 0;
+        }
+        input[type='submit'] {
+            flex: 0 0 100%;
+            border-radius: 0 0 5px 5px;
+        }
+    }
+    .mainsevices {
+        padding-top: 15px;
+        .textright {
+            padding-top: 30px;
+        }
+        h2 {
+            font-size: 24px;
+        }
+        .textleft {
+            padding-bottom: 30px;
+            text-align: left;
+        }
+    }
+    .wraptext {
+        font-size: 16px;
+    }
+    .social-logo {
+        width: 100% !important;
+        a {
+            display: block;
+            width: 100%;
+        }
+    }
+    .footer-left,
+        .footer-right {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .elmhiden {
+        margin-top: 50px;
+    }
+    .imgdemo {
+        width: 100%;
+    }
+    
+  }
+  
+  @media screen and (max-width: $md) {
+    .header-main-box {
+        display: block;
+    }
+    .ant-tabs-nav-list {
+        flex-direction: column;
+    }
+    .logo {
+        margin: auto;
+    }
+    .ant-tabs-tab {
+        width: 100% !important;
+    }
+    .text-info {
+        h1 {
+            font-size: 42px;
+        }
+    }
+    .header-main {
+        .linkbox {
+            display: none;
+        }
+    }
+    .row {
+        h2 {
+            font-size: 28px;
+            margin-left: 0;
+        }
+    }
+    .btn-tab {
+        display: inline-block;
+        position: static;
+        ul {
+            li {
+                width: 100%;
+            }
+        }
+    }
+    .row-info {
+        .elmif {
+            width: 100%;
+        }
+        .btn-show {
+            float: left;
+            margin-left: 0;
+        }
+    }
+    .support {
+        padding: 50px 15px;
+    }
+    .info-support {
+        font-size: 20px;
+    }
+    
+  
+  }
+  
+  
+  
+  @media screen and (max-width: $sm) {
+    .img-solar {
+        max-width: 100%;
+        width: 100%;
+    }
+    .row-text {
+        h2 {
+            font-size: 24px;
+        }
+    }
+    .imgprogram {
+        .owl-item {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .text-info {
+        h1 {
+            font-size: 30px;
+        }
+    }
+    
+  
+  }
+  
