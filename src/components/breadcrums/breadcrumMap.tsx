@@ -5,7 +5,6 @@ import React from 'react';
 export const Breadcrumbs = (value: string) => {
   const pathname = usePathname();
   const pathSnippets = pathname.split('/').filter((i) => i);
-
   const extraBreadcrumbItems = pathSnippets.map((_, index) => {
     const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
     return {
@@ -27,8 +26,7 @@ export const Breadcrumbs = (value: string) => {
       ),
       key: "Strnix World's Energy",
     },
-  ].concat(extraBreadcrumbItems[extraBreadcrumbItems.length - 1]);
+  ].concat(extraBreadcrumbItems[extraBreadcrumbItems.length - 1] || []);
 
-  console.log(breadcrumbItems);
   return breadcrumbItems;
 };
