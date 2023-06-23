@@ -1,42 +1,40 @@
- 'use layout';
-import React, { useRef, useEffect } from "react";
+'use layout';
+import React, { useRef, useEffect } from 'react';
 
-import {Fancybox as NativeFancybox,} from "@fancyapps/ui";
-import "@fancyapps/ui/dist/fancybox/fancybox.css";
+import { Fancybox as NativeFancybox } from '@fancyapps/ui';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 
-
-function Fancybox(props:any) {
+function Fancybox(props: any) {
   const containerRef = useRef(null);
 
   useEffect(() => {
     const container = containerRef.current;
 
-    const delegate = props.delegate || "[data-fancybox]";
-    
+    const delegate = props.delegate || '[data-fancybox]';
+
     const options = props.options || {
       fitToView: false,
-      autoScale: false, 
+      autoScale: false,
       Toolbar: {
         display: {
-          left: ["infobar"],
+          left: ['infobar'],
           middle: [
-            "zoomIn",
-            "zoomOut",
-            "rotateCCW",
-            "rotateCW",
-            "flipX",
-            "flipY",
-            "fitX",
-            "fitY",
-            "reset",
-           "toggleFS"
+            'zoomIn',
+            'zoomOut',
+            'rotateCCW',
+            'rotateCW',
+            'flipX',
+            'flipY',
+            'fitX',
+            'fitY',
+            'reset',
+            'toggleFS',
           ],
-          right: ["fullscreen", "thumbs", "close"],
+          right: ['fullscreen', 'thumbs', 'close'],
         },
-          
       },
-      
-      compact:true,
+
+      compact: true,
     };
 
     NativeFancybox.bind(container, delegate, options);

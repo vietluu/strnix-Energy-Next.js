@@ -132,7 +132,6 @@ button:focus {
   animation: searchAnimation 1s;
 }
 
-
 .stop-scrolling {
   position: absolute;
   top: 0;
@@ -197,7 +196,6 @@ button:focus {
   animation: menuAnimation 0.7s ease;
 }
 
-
 .logo-top {
   width: 50%;
   margin-top: 10px;
@@ -226,7 +224,7 @@ button:focus {
 .banner-top {
   max-width: 1200px;
   padding: 15px 0;
- 
+
   font-size: 1rem;
   color: #ffffff;
   display: flex;
@@ -252,12 +250,11 @@ button:focus {
   text-decoration: underline;
 }
 
-
- .social-comunity {
+.social-comunity {
   list-style-type: none;
 }
 
- .social-comunity li {
+.social-comunity li {
   position: relative;
   display: inline-block;
   color: #333333;
@@ -300,7 +297,7 @@ button:focus {
   flex-wrap: nowrap;
 }
 
-.right-content-header  .logo {
+.right-content-header .logo {
   flex: 0 0 10%;
   margin-right: 0;
   margin-top: 4px;
@@ -320,7 +317,7 @@ button:focus {
   margin-right: 10px;
 }
 
-.linkbox  .link {
+.linkbox .link {
   display: inline-block;
   font-size: 16px;
   line-height: 30px;
@@ -332,7 +329,7 @@ button:focus {
   position: relative;
 }
 
- .link-text {
+.link-text {
   background-color: #52c306;
   position: relative;
   display: block;
@@ -342,7 +339,7 @@ button:focus {
   border-radius: 0px;
 }
 
- .link-text::before {
+.link-text::before {
   content: '';
   width: 100%;
   height: 100%;
@@ -359,10 +356,9 @@ button:focus {
   width: 0;
 }
 
- .effect:hover::before {
+.effect:hover::before {
   width: 100%;
 }
-
 
 .link-text .btn-icon {
   position: absolute;
@@ -389,7 +385,7 @@ button:focus {
   color: #fff;
 }
 
-.main-menu  .nav-pc{
+.main-menu .nav-pc {
   width: 100%;
   display: flex;
 }
@@ -464,10 +460,9 @@ button:focus {
 .main-menu ul li:hover .sub-menu {
   display: block;
 }
-.main-menu .nav-mobile{
+.main-menu .nav-mobile {
   width: 100%;
   display: none;
-  
 }
 
 .nav-mobile .tabbar {
@@ -480,7 +475,6 @@ button:focus {
   display: block;
   z-index: 17;
   margin-left: 0;
-
 }
 
 .open-nav .menu-bar {
@@ -490,8 +484,7 @@ button:focus {
   margin-left: 15px;
 }
 
- .search {
-  
+.search {
   margin-top: 20px;
   margin-bottom: 20px;
   margin-right: 0;
@@ -518,7 +511,6 @@ button:focus {
   background-color: rgb(0, 0, 0, 0.4);
 }
 
-
 .mobile-menu .dropdownnav-menu {
   position: absolute;
   top: 0;
@@ -543,8 +535,6 @@ button:focus {
 .menu-img img {
   display: block;
 }
-
-
 
 .dropdownnav-menu ul li {
   display: block;
@@ -602,7 +592,6 @@ button:focus {
   text-align: center;
 }
 
-
 /* body */
 
 .link-text {
@@ -612,7 +601,6 @@ button:focus {
 .page-baner {
   position: relative;
   width: 100%;
- 
 }
 
 .header-slides {
@@ -625,7 +613,6 @@ button:focus {
   padding-bottom: 70px;
   overflow: hidden;
 }
-
 
 .img-slide {
   position: absolute;
@@ -2156,11 +2143,6 @@ button:focus {
   color: #08e306;
 }
 
-
-
-
-
-
 .banner-title {
   background-repeat: no-repeat;
   background-size: cover;
@@ -2355,21 +2337,21 @@ button:focus {
 .image-box:hover > .social-links {
   opacity: 1;
   right: 10px;
-} 
-.box-card{
-  box-shadow: 0px 0px 1px 0px rgba(0,0,0,0.10);
+}
+.box-card {
+  box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.1);
   position: relative;
 }
-.box-card .title-box{
+.box-card .title-box {
   position: absolute;
   top: -40px;
   left: calc(14%);
   width: 80%;
 }
-.box-card:hover .title-box span{
-  background-color:#e85728 ;
+.box-card:hover .title-box span {
+  background-color: #e85728;
 }
-.image-box .hover-box{
+.image-box .hover-box {
   position: absolute;
   top: 0;
   left: 0;
@@ -2381,25 +2363,23 @@ button:focus {
   justify-content: center;
   visibility: hidden;
   transform: translateY(-100%);
-  -webkit-transform:translateY(-100%) ;
+  -webkit-transform: translateY(-100%);
   -moz-transform: translateY(-100%);
   -ms-transform: translateY(-100%);
   transition: all 0.5s linear;
   -webkit-transition: all 0.5s linear;
   -moz-transition: all 0.5s linear;
- 
-
 }
-.box-card:hover .hover-box{
+.box-card:hover .hover-box {
   visibility: visible;
-    transform: translateY(0);
-    -webkit-transform:translateY(0) ;
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
 }
-.box-card .hover-box .inner-box{
+.box-card .hover-box .inner-box {
   transform: translateY(50px);
-  -webkit-transform:translateY(50px) ;
+  -webkit-transform: translateY(50px);
   -moz-transform: translateY(50px);
   -ms-transform: translateY(50px);
   opacity: 0;
@@ -2407,57 +2387,55 @@ button:focus {
   transition: all 0.5s linear 0.8s;
   -webkit-transition: all 0.5s linear 0.8s;
   -moz-transition: all 0.5s linear 0.8s;
-  
 }
-.box-card:hover .hover-box .inner-box{
+.box-card:hover .hover-box .inner-box {
   opacity: 1;
   transform: translateY(0);
-    -webkit-transform:translateY(0) ;
-    -moz-transform: translateY(0);
-    -ms-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
 }
-.clients-slide{
-  background: url('/assets/images/services/dotted-pattern.png') repeat ;
+.clients-slide {
+  background: url('/assets/images/services/dotted-pattern.png') repeat;
 }
-.client-box{
+.client-box {
   position: relative;
   overflow: hidden;
 }
-.client-box .dots{
+.client-box .dots {
   position: absolute;
   bottom: 10px;
   width: 50px;
   height: 30px;
   z-index: 10;
 
-
   width: 100%;
   text-align: center;
 }
-.client-box .dots li{
+.client-box .dots li {
   width: 8px;
   height: 8px;
-display: inline-block; 
+  display: inline-block;
 
-margin: 5px;
+  margin: 5px;
 }
-.client-box .dots li span{
+.client-box .dots li span {
   display: inline-block;
   border-radius: 8px;
   width: 100%;
   height: 100%;
   background-color: #cccccc;
 }
-.client-box .dots .slick-active{
+.client-box .dots .slick-active {
   width: 16px;
 }
-.client-box .dots .slick-active span{
+.client-box .dots .slick-active span {
   background-color: #ee2d50;
 }
-.client-info{
-  color:#222222
+.client-info {
+  color: #222222;
 }
-.content-box:hover >.title{
+.content-box:hover > .title {
   visibility: hidden;
 }
 

@@ -1151,15 +1151,15 @@ body[data-aos-easing='ease-in-out-quart'] [data-aos] {
   transform: perspective(2500px) rotateX(0);
 }
 
-[data-aos='spin']{
+[data-aos='spin'] {
   transform: rotate(-540deg);
   opacity: 0;
   transition-property: transform, opacity;
 }
-  [data-aos='spin'].aos-animate {
-    transform: rotate(0);
-    opacity: 1;
-  }
+[data-aos='spin'].aos-animate {
+  transform: rotate(0);
+  opacity: 1;
+}
 
 [data-aos='custom-center'] {
   transform: scalex(0);

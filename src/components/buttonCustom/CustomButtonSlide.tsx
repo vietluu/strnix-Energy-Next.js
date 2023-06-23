@@ -1,5 +1,4 @@
-import React, {JSX} from 'react';
-
+import React, { JSX } from 'react';
 
 const CustomButtonSlide = ({
   position,

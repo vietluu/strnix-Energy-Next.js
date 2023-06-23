@@ -2,8 +2,6 @@ import { Hind } from 'next/font/google';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 import { Providers } from '@/redux/providers';
-const inter = Hind({ subsets: ['latin'], weight: '400' });
-
 import '/assets/css/slick.css';
 import '/assets/css/owl.carousel.css';
 import 'antd/dist/reset.css';
@@ -13,16 +11,17 @@ import '/assets/css/keyframe.css';
 import '/assets/css/flaticon.css';
 import '/assets/css/all.min.css';
 import '/assets/scss/style.scss';
-
 import { Metadata } from 'next';
 import NextTopLoader from 'nextjs-toploader';
+
+const inter = Hind({ subsets: ['latin'], weight: '400' });
 
 export const metadata = (params: Metadata): Metadata => ({
   viewport: 'width=device-width, initial-scale=1',
   colorScheme: 'light',
   title: {
     default: params?.title
-      ? `${params?.title}`
+      ? `${params.title}`
       : "Strnix world's energy by Next.js",
     template: "%s | Strnix World's Energy",
   },
@@ -64,16 +63,16 @@ export const metadata = (params: Metadata): Metadata => ({
       params.openGraph?.images || '/assets/images/home/featured-image-1.jpg',
   },
 });
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body className={'container-body ' + inter.className}>
         <NextTopLoader />
-        {/* <div className="preloader"></div> */}
         <Providers>
           <Header />
           {children}

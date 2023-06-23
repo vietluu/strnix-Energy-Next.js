@@ -1,0 +1,14 @@
+.news-box__inner{
+    position: relative;
+    &::before{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 80px;
+    bottom: 0;
+    z-index: -1;
+    background: #f6f8ff;
+    }
+}

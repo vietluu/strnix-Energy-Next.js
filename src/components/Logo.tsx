@@ -4,10 +4,9 @@ import Image from 'next/image';
 
 export default function Logo({ option }: any) {
   const [logo, setLogo] = useState('logo.svg');
- 
+
   useLayoutEffect(() => {
     (() => {
-     
       switch (option) {
         case 'dark':
           setLogo('logo.svg');
@@ -28,13 +27,13 @@ export default function Logo({ option }: any) {
   }, [option]);
 
   return (
-    <Link href='/'>
+    <Link href="/">
       <Image
         width={130}
         height={60}
         priority
         src={`/assets/images/home/${logo}`}
-        alt='Logo'
+        alt="Logo"
       />
     </Link>
   );

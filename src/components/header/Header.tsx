@@ -14,7 +14,6 @@ const Header = () => {
   const [search, setSearch] = useState<boolean>(false);
   const [page, setPage] = useState(0);
 
-  
   useLayoutEffect(() => {
     Aos.init({
       duration: 1000,
@@ -31,7 +30,6 @@ const Header = () => {
     });
     window.addEventListener('scroll', scroll);
     setPage(window.scrollY);
-
   }, []);
 
   useEffect(() => {
@@ -47,120 +45,114 @@ const Header = () => {
   const handleShowDropdown = (e: any): void => {
     e.children[1].classList.toggle('activebtn');
     e.children[2].classList.toggle('open');
-
   };
   const scroll = (): void => {
     setPage(window.scrollY);
   };
- 
+
   return (
     <>
       {search && (
         <div className={`search-bar`}>
-          <div className='close' onClick={(e) => setSearch(false)}>
-            <i className='fas fa-times fa-2x'></i>
+          <div className="close" onClick={(e) => setSearch(false)}>
+            <i className="fas fa-times fa-2x"></i>
           </div>
-          <form action='#' method='POST' className='searchForm'>
-            <div className='search-elm'>
+          <form action="#" method="POST" className="searchForm">
+            <div className="search-elm">
               <fieldset>
-                <input type='text' placeholder=' Search Here' required />
-                <input type='submit' value='SEARCH NOW!' className='theme' />
+                <input type="text" placeholder=" Search Here" required />
+                <input type="submit" value="SEARCH NOW!" className="theme" />
               </fieldset>
             </div>
           </form>
         </div>
       )}
-      <header className='header'>
-        {page > 200 && (
-          <NavTop/>
-        )}
-        <div >
-          <div className='banner-top clearfix'>
-            <div className='top-left'>
-              <div className='top-text'>The Nagy Saving for us</div>
+      <header className="header">
+        {page > 200 && <NavTop />}
+        <div>
+          <div className="banner-top clearfix">
+            <div className="top-left">
+              <div className="top-text">The Nagy Saving for us</div>
             </div>
-            <div className='top-right'>
-              <div className=' mail '>
-                <Link href='mailto:support@smartdatasoft.net '>
+            <div className="top-right">
+              <div className=" mail ">
+                <Link href="mailto:support@smartdatasoft.net ">
                   Email:support@smartdatasoft.net
                 </Link>
               </div>
-              <SocialLink/>
+              <SocialLink />
             </div>
           </div>
-          <div className='header-main  '>
-            <div className='header-main-box row clearfix'>
-              <div className='logo '>
-                <Logo/>
+          <div className="header-main  ">
+            <div className="header-main-box row clearfix">
+              <div className="logo ">
+                <Logo />
               </div>
-              <div className='right-content-header'>
-                <div className='info-contact'>
-                  <div className='info'>
-                    <div className='icon-img '>
+              <div className="right-content-header">
+                <div className="info-contact">
+                  <div className="info">
+                    <div className="icon-img ">
                       <Image
                         width={40}
                         height={40}
                         priority
-                        src='/assets/images/home/phone.svg'
-                        alt='phone '
+                        src="/assets/images/home/phone.svg"
+                        alt="phone "
                       />
                     </div>
                     <strong>Mon to fri: 0800 - 1900</strong>
-                    <div className='info-text '>
+                    <div className="info-text ">
                       <p>+1-(222)-303-4500</p>
                     </div>
                   </div>
 
-                  <div className='info '>
-                    <div className='icon-img '>
+                  <div className="info ">
+                    <div className="icon-img ">
                       <Image
                         width={40}
                         height={40}
                         priority
-                        src='/assets/images/home/cooment.svg'
-                        alt='cooment '
+                        src="/assets/images/home/cooment.svg"
+                        alt="cooment "
                       />
                     </div>
                     <strong>Mon to fri: 0800 - 1900</strong>
-                    <div className='info-text '>
+                    <div className="info-text ">
                       <p>+1-(222)-303-4500</p>
                     </div>
                   </div>
                 </div>
-                <div className='linkbox '>
-                  <Link href='# ' className='link '>
-                    <CustomBtnHover text='Consultation Free'/>
-                    
+                <div className="linkbox ">
+                  <Link href="# " className="link ">
+                    <CustomBtnHover text="Consultation Free" />
                   </Link>
                 </div>
               </div>
             </div>
-            <div className='main-menu clearfix'>
-              <div className='nav-mobile'>
-              <div className='tabbar'>
-                <div className='open-nav'>
-                  <span
-                    className='menu-bar'
-                    onClick={(e) => setMenuMobile(true)}
-                  >
-                    <i className='fas fa-bars'></i>
-                  </span>
+            <div className="main-menu clearfix">
+              <div className="nav-mobile">
+                <div className="tabbar">
+                  <div className="open-nav">
+                    <span
+                      className="menu-bar"
+                      onClick={(e) => setMenuMobile(true)}
+                    >
+                      <i className="fas fa-bars"></i>
+                    </span>
+                  </div>
+                  <div className="search">
+                    <span onClick={(e) => setSearch(true)}>
+                      <i className="fas fa-search "></i>
+                    </span>
+                  </div>
                 </div>
-                <div className='search'>
-                  <span onClick={(e) => setSearch(true)}>
-                    <i className='fas fa-search '></i>
-                  </span>
-                </div>
-              </div>
               </div>
 
               <Navpc setSearch={setSearch} />
             </div>
           </div>
         </div>
-        {menuMobile && (
-          <Navmobile setMenuMobile={ setMenuMobile} />
-        )}
+        {menuMobile && <Navmobile setMenuMobile={setMenuMobile} />}
       </header>
     </>
   );
