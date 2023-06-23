@@ -2,11 +2,11 @@ import React from 'react';
 import { Breadcrumb } from 'antd';
 import { Breadcrumbs } from '../breadcrums/breadcrumMap';
 
-interface Breadcrumb {
+interface Breadcrumbtype {
   title: string;
   url: string;
 }
-export default function BannerBreadcrumbs(props: Breadcrumb) {
+export default function BannerBreadcrumbs(props: Breadcrumbtype) {
   return (
     <div
       className="page-baner banner-title"

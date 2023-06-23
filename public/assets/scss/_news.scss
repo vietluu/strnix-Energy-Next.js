@@ -12,3 +12,35 @@
     background: #f6f8ff;
     }
 }
+.news-search{
+    .ant-input-wrapper {
+        border: 1px solid rgb(174, 170, 170);
+        border-radius: 30px;
+        .ant-input-group-addon{
+
+            background-color: chartreuse !important;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            button{
+                outline: none;
+                border: none;
+            }
+        }
+        .ant-input{
+            border: none;
+            border-color: transparent;
+              color: black;
+              outline: none;
+              
+              &::placeholder {
+                color: rgb(196, 189, 189) !important;
+              }
+              &:focus{
+                box-shadow: none;
+              }
+             
+            }
+    }
+      
+}

@@ -36,7 +36,7 @@ export default function NewsSidebar(props: any) {
                   </div>
                   <ul className='list-disc p-3'>
                     {data.length > 0 && data.map((data:news )=> (
-                      <li className='font-xl cursor-pointer hover:text-lime-400 py-2'>{data.category}</li>
+                      <li key={data.id} className='font-xl cursor-pointer hover:text-lime-400 py-2'>{data.category}</li>
                     ))}
                   </ul>
                 </div>
@@ -50,7 +50,7 @@ export default function NewsSidebar(props: any) {
                   </div>
                   <div className='d-flex p-1 flex-row flex-wrap'>
                     {data.length > 0 && data.map((data:news )=> (
-                      <span  className='ml-0 mr-2 my-1 border border-black px-4 justify-start d-block  font-xl cursor-pointer hover:text-lime-400 py-2'>{data.tag}</span>
+                      <span  key={data.id} className='ml-0 mr-2 my-1 border border-black px-4 justify-start d-block  font-xl cursor-pointer hover:text-lime-400 py-2'>{data.tag}</span>
                     ))}
                   </div>
                   </div>
