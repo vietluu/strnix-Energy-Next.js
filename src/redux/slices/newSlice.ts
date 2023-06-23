@@ -1,21 +1,23 @@
 import { api } from '@/utils/api';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-
 const initialState = {
   isLoading: false,
   hasErr: false,
   data: [],
-  dataPost: []
+  dataPost: [],
 };
 export const getData = createAsyncThunk('new/get', async () => {
   const res: any = await api.get('Resource');
   return res.data;
 });
-export const getPost = createAsyncThunk('new/getpost', async (params:string) => {
-  const res: any = await api.get(`Resource?slug=${params}`);
-  return res.data;
-});
+export const getPost = createAsyncThunk(
+  'new/getpost',
+  async (params: string) => {
+    const res: any = await api.get(`Resource?slug=${params}`);
+    return res.data;
+  }
+);
 
 export const newSlice = createSlice({
   name: 'new',
@@ -44,7 +46,7 @@ export const newSlice = createSlice({
       .addCase(getPost.rejected, (state) => {
         state.hasErr = true;
         state.isLoading = false;
-      })
+      });
   },
 });
 export default newSlice.reducer;

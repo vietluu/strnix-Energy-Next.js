@@ -2,6 +2,7 @@ import { Hind } from 'next/font/google';
 import Header from '../components/header/Header';
 import Footer from '../components/Footer';
 import { Providers } from '@/redux/providers';
+import { Analytics } from '@vercel/analytics/react';
 import '/assets/css/slick.css';
 import '/assets/css/owl.carousel.css';
 import 'antd/dist/reset.css';
@@ -78,6 +79,7 @@ export default function RootLayout({
           {children}
           <Footer />
         </Providers>
+        <Analytics />
       </body>
     </html>
   );

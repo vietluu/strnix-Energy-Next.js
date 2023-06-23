@@ -5,7 +5,6 @@ import BannerBreadcrumbs from '@/components/banner/BannerBreadcrumbs';
 import ContactForm from '@/components/form/ContactForm';
 
 export default function Contact() {
-
   return (
     <>
       <BannerBreadcrumbs

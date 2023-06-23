@@ -1,22 +1,22 @@
 'use client';
-import Image from 'next/image'
+import Image from 'next/image';
 import BannerBreadcrumbs from '@/components/banner/BannerBreadcrumbs';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import { getData } from '@/redux/slices/newSlice';
 import { useLayoutEffect } from 'react';
 import Link from 'next/link';
-import { Form, Input, Pagination } from 'antd';
 import NewsSidebar from '@/components/NewsSidebar';
+import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
 
-interface news{
-  id: number,
-  title: string,
-  slug: string,
-  image: string,
-  category: string,
-  content: string,
-  tag:string
-  createAt:Date
+interface news {
+  id: number;
+  title: string;
+  slug: string;
+  image: string;
+  category: string;
+  content: string;
+  tag: string;
+  createAt: Date;
 }
 
 export default function News() {
@@ -38,26 +38,50 @@ export default function News() {
           <div className="row">
             <div className="col-lg-8 col-md-12">
               <div className="news-box">
-                {data.length > 0 &&
-                  data.map((value: news) =>
-                    <div key={value.id} className='news-box__inner px-4 mb-[40px]'>
+                {data.length > 0 ? (
+                  data.map((value: news) => (
+                    <div
+                      key={value.id}
+                      className="news-box__inner px-4 mb-[40px]"
+                    >
                       <div className="pb-[50px]">
                         <Link href={`news/${value.slug}`}>
-                        <Image priority fill className='aspect-[13/9]' src={value.image} alt='img' />
-                        <h2 className='text-3xl font-bold p-[20px]'>{value.title}</h2>
+                          <Image
+                            priority
+                            fill
+                            className="aspect-[13/9]"
+                            src={value.image}
+                            alt="img"
+                          />
+                          <h2 className="text-3xl font-bold p-[20px]">
+                            {value.title}
+                          </h2>
                         </Link>
-                        <p className=' p-[20px] whitespace-nowrap overflow-hidden text-ellipsis'>{value.content}</p>
-                        <div className='d-flex items-center p-[20px] '>
-                        <span className='ml-0 text-[#999999] font-bold cursor-pointer hover:text-[green]'>{value.category}</span>
-                        <Link href={`news/${value.slug}`} className='mr-0 text-blue-700 text-xl'>Read more</Link>
+                        <p className=" p-[20px] whitespace-nowrap overflow-hidden text-ellipsis">
+                          {value.content}
+                        </p>
+                        <div className="d-flex items-center p-[20px] ">
+                          <span className="ml-0 text-[#999999] font-bold cursor-pointer hover:text-[green]">
+                            {value.category}
+                          </span>
+                          <Link
+                            href={`news/${value.slug}`}
+                            className="mr-0 text-blue-700 text-xl"
+                          >
+                            Read more
+                          </Link>
                         </div>
                       </div>
-                    
-                    </div>)}
+                    </div>
+                  ))
+                ) : (
+                  <>
+                    <NewsSkeleton />
+                  </>
+                )}
               </div>
             </div>
-            <NewsSidebar data={data}/>
-            
+            <NewsSidebar data={data} />
           </div>
         </div>
       </div>
