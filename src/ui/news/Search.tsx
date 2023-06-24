@@ -4,6 +4,7 @@ import Link from 'next/link';
 import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
 
 interface props {
+  keyword:string|any,
   data: [
     {
       id: number;
@@ -18,12 +19,12 @@ interface props {
   ];
 }
 
-export default function News(props:props) {
-  const {data} = props
-
+export default function Search(props: props) {
+  const {keyword} = props
+  const { data } = props
   return (
     <>
-    
+      <h2 className='text-3xl text-green-500 font-bold mb-[40px]'>Result for:{keyword}</h2>
       <div className="news-box">
                 {data.length > 0 ? (
                   data.map((value :any ) => (
@@ -63,7 +64,9 @@ export default function News(props:props) {
                   ))
                 ) : (
                   <>
-                    <NewsSkeleton />
+              <h1 className='text-3xl font-bold text-center pb-9'>
+                   No Result
+                    </h1>
                   </>
                 )}
               </div>

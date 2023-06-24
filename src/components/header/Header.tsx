@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import React, { useEffect, useLayoutEffect, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Aos from 'aos';
 import NavTop from './NavTop';
@@ -9,10 +9,13 @@ import Logo from '../Logo';
 import Navpc from './Navpc';
 import Navmobile from './Navmobile';
 import CustomBtnHover from '../buttonCustom/CustomBtnHover';
+import { useRouter } from 'next/navigation';
 const Header = () => {
   const [menuMobile, setMenuMobile] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
   const [page, setPage] = useState(0);
+  const searchRef = useRef(null)
+  const router = useRouter()
 
   useLayoutEffect(() => {
     Aos.init({
@@ -57,14 +60,18 @@ const Header = () => {
           <div className="close" onClick={(e) => setSearch(false)}>
             <i className="fas fa-times fa-2x"></i>
           </div>
-          <form action="#" method="POST" className="searchForm">
+          <div className="searchForm"> 
             <div className="search-elm">
               <fieldset>
-                <input type="text" placeholder=" Search Here" required />
-                <input type="submit" value="SEARCH NOW!" className="theme" />
+                <input ref={searchRef} type="text" placeholder=" Search Here" />
+                
+                <input onClick={e => {
+                  //@ts-ignore
+                  router.push(`news?title=${searchRef?.current?.value}`), setSearch(false)
+                }} value="SEARCH NOW!" className="theme" />
               </fieldset>
             </div>
-          </form>
+          </div>
         </div>
       )}
       <header className="header">

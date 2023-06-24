@@ -61,9 +61,10 @@
   ::placeholder {
     font-size: 1.3rem;
   }
-  input[type='submit'] {
+  input[class='theme'] {
     flex: 0 0 20%;
-    padding: 25px 20px;
+    padding: 25px 0;
+    text-align: center;
     border-radius: 0 5px 5px 0;
     background-color: #08e438;
     color: white;

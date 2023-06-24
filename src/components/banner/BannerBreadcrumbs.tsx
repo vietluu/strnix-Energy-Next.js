@@ -1,4 +1,5 @@
-import React from 'react';
+'use client'
+
 import { Breadcrumb } from 'antd';
 import { Breadcrumbs } from '../breadcrums/breadcrumMap';
 
