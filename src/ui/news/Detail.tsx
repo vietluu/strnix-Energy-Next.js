@@ -36,7 +36,6 @@ interface props {
 }
 export default function Detail(props: props) {
   const { data } = props;
-  const dispatch = useAppDispatch();
 
   return (
     <>

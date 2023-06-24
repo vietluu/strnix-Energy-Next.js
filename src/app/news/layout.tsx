@@ -12,7 +12,10 @@ export default async function Layout({
   }: {
     children: React.ReactNode;
     }) {
-    const data = await getData()
+  const data = await getData()
+  const get = () => {
+    console.log('jij')
+  }
     return(
      <>
      <BannerBreadcrumbs
