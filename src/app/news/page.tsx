@@ -6,15 +6,14 @@ import { api } from "@/utils/api";
 export const metadata = meta({ title: 'News' });
 
 async function getData(data: object) {
-  const res = await api.get(`${process.env.NEXT_PUBLIC_URL}/Resource?${Object.keys(data)[0]}=${Object.values(data)[0]}`,)
+  const res = await api.get(`${process.env.NEXT_PUBLIC_URL}/Resource`, { params:data})
   return res.data
 }
 
-export default async function page(props: any) {
-  const { searchParams } = props
-  
-  const data  =  await getData(searchParams)
+export default async function page({ searchParams }: any) {
+  const data = await getData(searchParams)
+  const keyword:string =  ""+ Object.values(searchParams)[0]
   return (
-          <News search={Object.values(searchParams)[0]} data={data}/>
+          <News search={keyword} data={data}/>
   )
 }

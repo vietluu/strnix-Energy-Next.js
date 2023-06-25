@@ -4,7 +4,7 @@ import Link from 'next/link';
 import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
 
 interface props {
-  search: any;
+  search: string;
   data: [
     {
       id: number;
@@ -21,7 +21,7 @@ interface props {
 
 export default function News(props: props) {
   const { data, search } = props;
-
+  
   return (
     <>
       {search && (

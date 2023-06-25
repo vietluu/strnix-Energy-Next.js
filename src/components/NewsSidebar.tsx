@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef } from 'react';
 import { Form, Input, Pagination } from 'antd';
-import {useRouter } from 'next/navigation';
+import {useRouter,usePathname } from 'next/navigation';
 
 interface news {
   id: number;
@@ -15,7 +15,8 @@ interface news {
 }
 export default function NewsSidebar(props: any) {
   const formRef = useRef(null)
-  const pathName = useRouter()
+  const router = useRouter()
+  const pathname = usePathname()
   const { data } = props;
   
   return (
@@ -23,8 +24,8 @@ export default function NewsSidebar(props: any) {
       <div className="news-search">
         <Form ref={formRef} >
           <Form.Item name="keyword">
-            <Input.Search placeholder="enter keyword" onSearch={(value) => {
-              pathName.push(`news?title=${value}`),
+            <Input.Search placeholder="enter keyword" onSearch={async(value) => {
+              await router.push(`${pathname}?title=${value.trim()}`),
                 //@ts-ignore
               formRef?.current?.resetFields()
             }} />
@@ -44,7 +45,7 @@ export default function NewsSidebar(props: any) {
             {data.length > 0 &&
               data.map((data: news) => (
                 <li
-                  onClick={e => pathName.push(`news?category=${data.category}`)}
+                  onClick={e => router.push(`${pathname}?category=${data.category}`)}
                   className="font-xl cursor-pointer hover:text-lime-400 py-2"
                 >
                   {data.category}
@@ -64,7 +65,7 @@ export default function NewsSidebar(props: any) {
             {data.length > 0 &&
               data.map((data: news) => (
                 <span
-                  onClick={e => pathName.push(`news?tag=${data.tag}`)}
+                  onClick={e => router.push(`${pathname}?tag=${data.tag}`)}
                   className="ml-0 mr-2 my-1 border border-black px-4 justify-start d-block  font-xl cursor-pointer hover:text-lime-400 py-2"
                 >
                   {data.tag}
