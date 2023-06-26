@@ -20,14 +20,18 @@ export const revalidate = false
 export const dynamicParams = true;
 export const metadata = meta({ title: 'News' });
 
-
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 async function getData(data: object) {
-  const res = await api.get(`${process.env.NEXT_PUBLIC_URL}/Resource`, {params:data})
+  const res = await api.get(`${process.env.NEXT_PUBLIC_URL}/Resource`, { params: data })
   return res.data
 }
 
-export default async function page({ searchParams }: any) {
+export default async function page({ params, searchParams }: Props) {
   const data = await getData(searchParams)
+  
   const keyword:string =  ""+ Object.values(searchParams)[0]
   return (
           <News search={keyword} data={data}/>
