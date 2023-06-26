@@ -19,12 +19,13 @@ interface props {
   ];
 }
 
-export default function News(props: props) {
+export default function News(props: any) {
   const { data, search } = props;
+  console.log(search)
   
   return (
     <>
-      {search && (
+      {search&& search !== 'undefined' && (
         <h2 className="text-3xl text-green-500 font-bold mb-[40px]">
           Result for:{search}
         </h2>
