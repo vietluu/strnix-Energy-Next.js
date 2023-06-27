@@ -1,7 +1,9 @@
-import News from "@/ui/news/News";
+import dynamicComponent from 'next/dynamic'
+
+const News = dynamicComponent(() => import('@/ui/news/News'))
 import { metadata as meta } from '../layout';
 import { api } from "@/utils/api";
-import { GetServerSideProps } from "next";
+
 interface post{
   data:[
     {
@@ -33,7 +35,8 @@ async function getData(data: object) {
 export default async function page({ params, searchParams }: Props) {
   const data = await getData(searchParams)
   
+  const keyword:string =  ""+ Object.values(searchParams)[0]
   return (
-          <News  data={data}/>
+          <News search={keyword} data={data}/>
   )
 }
