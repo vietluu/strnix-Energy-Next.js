@@ -1,7 +1,7 @@
 import News from "@/ui/news/News";
 import { metadata as meta } from '../layout';
 import { api } from "@/utils/api";
-
+import { GetServerSideProps } from "next";
 interface post{
   data:[
     {
@@ -16,8 +16,9 @@ interface post{
     }
   ];
 }
-export const revalidate = false
+export const revalidate = 0;
 export const dynamicParams = true;
+export const dynamic = 'force-dynamic'
 export const metadata = meta({ title: 'News' });
 
 type Props = {
@@ -32,8 +33,7 @@ async function getData(data: object) {
 export default async function page({ params, searchParams }: Props) {
   const data = await getData(searchParams)
   
-  const keyword:string =  ""+ Object.values(searchParams)[0]
   return (
-          <News search={keyword} data={data}/>
+          <News  data={data}/>
   )
 }

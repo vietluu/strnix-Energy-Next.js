@@ -3,36 +3,25 @@ import Image from 'next/image';
 import Link from 'next/link';
 import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
 
-interface props {
-  search: string;
-  data: [
-    {
-      id: number;
-      title: string;
-      slug: string;
-      image: string;
-      category: string;
-      content: string;
-      tag: string;
-      createAt: Date;
-    }
-  ];
-}
+type news = {
+  id: number;
+  title: string;
+  slug: string;
+  image: string;
+  category: string;
+  content: string;
+  tag: string;
+  createAt: Date;
+};
 
 export default function News(props: any) {
-  const { data, search } = props;
-  console.log(search)
-  
+  const { data } = props;
+
   return (
     <>
-      {search&& search !== 'undefined' && (
-        <h2 className="text-3xl text-green-500 font-bold mb-[40px]">
-          Result for:{search}
-        </h2>
-      )}
       <div className="news-box">
         {data.length > 0 ? (
-          data.map((value: any) => (
+          data.map((value: news) => (
             <div key={value.id} className="news-box__inner px-4 mb-[40px]">
               <div className="pb-[50px]">
                 <Link href={`news/${value.slug}`}>
@@ -64,7 +53,7 @@ export default function News(props: any) {
           ))
         ) : (
           <>
-            <h2 className='text-3xl font-bold text-center pb-9'>No Result</h2>
+            <h2 className="text-3xl font-bold text-center pb-9">No Result</h2>
           </>
         )}
       </div>
