@@ -8,33 +8,14 @@ import CustomButtonSlide from '@/components/buttonCustom/CustomButtonSlide';
 import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
 import RegisterForm from '@/components/form/RegisterForm';
 import ContactForm from '@/components/form/ContactForm';
-import { useAppSelector } from '@/redux/hooks';
-import { useDispatch } from 'react-redux';
+
 import Banner from '@/components/banner/Banner';
-import { RootState } from '@/redux/store';
+
 import CounterUp from '@/components/CounterUp';
 
 export default function Home() {
   const [isActive, setIsActive] = useState<boolean>(false);
-  const dispatch = useDispatch();
-  const isLoading = useAppSelector(
-    (state: RootState) => state.formReducer.isLoading
-  );
-    const hasErr = useAppSelector((state: RootState) => state.formReducer.hasErr);
-    
-  useEffect(() => {
-    isLoading
-      ? message.loading({
-          content: 'Sending..',
-          duration: 0,
-        })
-      : message.destroy();
-    hasErr &&
-      notification.error({
-        message: 'ERORR',
-        description: 'There was an error sending!',
-      });
-  }, [isLoading, hasErr]);
+
 
   const reviewSlide: Settings = {
     arrows: true,

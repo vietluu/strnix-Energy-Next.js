@@ -17,8 +17,7 @@ export default function ContactForm() {
       formRef.current.resetFields();
       notification.success({
         message: 'Success',
-        description:
-          'I will never close automatically. This is a purposely very very long description that has many many characters and words.',
+        description:"request has been sent successfully"
       });
     }
   };

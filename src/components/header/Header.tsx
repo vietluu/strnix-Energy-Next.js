@@ -10,12 +10,34 @@ import Navpc from './Navpc';
 import Navmobile from './Navmobile';
 import CustomBtnHover from '../buttonCustom/CustomBtnHover';
 import { useRouter } from 'next/navigation';
+import { useAppSelector } from '@/redux/hooks';
+import { RootState } from '@/redux/store';
+import { notification,message } from 'antd'
 const Header = () => {
   const [menuMobile, setMenuMobile] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
   const [page, setPage] = useState(0);
   const searchRef = useRef(null)
   const router = useRouter()
+
+  const isLoading = useAppSelector(
+    (state: RootState) => state.formReducer.isLoading
+  );
+    const hasErr = useAppSelector((state: RootState) => state.formReducer.hasErr);
+    
+  useEffect(() => {
+    isLoading
+      ? message.loading({
+          content: 'Sending..',
+          duration: 0,
+        })
+      : message.destroy();
+    hasErr &&
+      notification.error({
+        message: 'ERORR',
+        description: 'There was an error sending!',
+      });
+  }, [isLoading, hasErr]);
 
   useLayoutEffect(() => {
     Aos.init({
