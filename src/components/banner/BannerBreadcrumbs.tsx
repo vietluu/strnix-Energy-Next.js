@@ -3,7 +3,7 @@
 import { Breadcrumb } from 'antd';
 import { Breadcrumbs } from '../breadcrums/breadcrumMap';
 
-interface Breadcrumbtype {
+type Breadcrumbtype = {
   title: string;
   url: string;
 }
