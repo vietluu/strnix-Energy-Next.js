@@ -5,7 +5,6 @@ export default function CounterUp() {
   return (
     <div className="sub-recent-projects ">
       <div className="bgsecond "></div>
-
       <div className="content ">
         <div className="method " data-aos="fade-up">
           <ul>

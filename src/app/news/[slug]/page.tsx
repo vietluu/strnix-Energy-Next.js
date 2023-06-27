@@ -9,7 +9,7 @@ async function getData(slug:string) {
 
 export const metadata = meta({ title: 'News' });
 
-interface params{
+type params = {
   params: {
     slug:string
   }

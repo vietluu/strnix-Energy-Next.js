@@ -4,44 +4,20 @@ import { getData, getPost } from '@/redux/slices/newSlice';
 import React from 'react';
 import Image from 'next/image';
 import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
+import { News } from '@/types/newsType';
 
-interface slug {
-  params: {
-    slug: string;
-  };
+type Props = {
+  data: []
 }
-interface post {
-  id: number;
-  title: string;
-  slug: string;
-  image: string;
-  category: string;
-  content: string;
-  tag: string;
-  createAt: Date;
-}
-interface props {
-  data: [
-    {
-      id: number;
-      title: string;
-      slug: string;
-      image: string;
-      category: string;
-      content: string;
-      tag: string;
-      createAt: Date;
-    }
-  ];
-}
-export default function Detail(props: props) {
+
+export default function Detail(props: Props) {
   const { data } = props;
 
   return (
     <>
       <div className="news-box">
         {data.length > 0 ? (
-          data.map((value: post) => (
+          data.map((value: News) => (
             <div className="news-box__inner px-3 mb-[40px]">
               <div className="pb-[50px]">
                 <Image

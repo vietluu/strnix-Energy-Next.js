@@ -2,18 +2,12 @@
 import React, { useRef } from 'react';
 import { Form, Input, Pagination } from 'antd';
 import {useRouter,usePathname } from 'next/navigation';
+import { News } from '@/types/newsType';
 
-interface news {
-  id: number;
-  title: string;
-  slug: string;
-  image: string;
-  category: string;
-  content: string;
-  tag: string;
-  createAt: Date;
+type Props = {
+  data: []
 }
-export default function NewsSidebar(props: any) {
+export default function NewsSidebar(props: Props) {
   const formRef = useRef(null)
   const router = useRouter()
   const pathname = usePathname()
@@ -25,9 +19,9 @@ export default function NewsSidebar(props: any) {
         <Form ref={formRef} >
           <Form.Item name="keyword">
             <Input.Search placeholder="enter keyword" onSearch={async(value) => {
-              await router.push(`${pathname}?title=${value.trim()}`),
+            await new Promise(()=> router.push(`${pathname}?title=${value.trim()}`)).then(()=>
                 //@ts-ignore
-              formRef?.current?.resetFields()
+              formRef?.current?.resetFields())
             }} />
           </Form.Item>
         </Form>
@@ -43,7 +37,7 @@ export default function NewsSidebar(props: any) {
           </div>
           <ul className="list-disc p-3">
             {data.length > 0 &&
-              data.map((data: news) => (
+              data.map((data: News) => (
                 <li
                   onClick={e => router.push(`${pathname}?category=${data.category}`)}
                   className="font-xl cursor-pointer hover:text-lime-400 py-2"
@@ -63,7 +57,7 @@ export default function NewsSidebar(props: any) {
           </div>
           <div className="d-flex p-1 flex-row flex-wrap">
             {data.length > 0 &&
-              data.map((data: news) => (
+              data.map((data: News) => (
                 <span
                   onClick={e => router.push(`${pathname}?tag=${data.tag}`)}
                   className="ml-0 mr-2 my-1 border border-black px-4 justify-start d-block  font-xl cursor-pointer hover:text-lime-400 py-2"

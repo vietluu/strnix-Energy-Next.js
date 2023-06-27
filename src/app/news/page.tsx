@@ -4,8 +4,8 @@ const News = dynamicComponent(() => import('@/ui/news/News'))
 import { metadata as meta } from '../layout';
 import { api } from "@/utils/api";
 
-interface post{
-  data:[
+type post =
+  [
     {
       id: number;
       title: string;
@@ -17,7 +17,7 @@ interface post{
       createAt: Date;
     }
   ];
-}
+
 export const revalidate = 0;
 export const dynamicParams = true;
 export const dynamic = 'force-dynamic'

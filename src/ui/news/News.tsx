@@ -1,33 +1,12 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
-
+import { News } from '@/types/newsType';
 type props = {
   search: string;
-  data: [
-    {
-      id: number;
-      title: string;
-      slug: string;
-      image: string;
-      category: string;
-      content: string;
-      tag: string;
-      createAt: Date;
-    }
-  ];
+  data: [];
 }
-type news =  {
-  id: number;
-  title: string;
-  slug: string;
-  image: string;
-  category: string;
-  content: string;
-  tag: string;
-  createAt: Date;
-}
+
 
 export default function News(props: props) {
   const { data, search } = props;
@@ -41,7 +20,7 @@ export default function News(props: props) {
       )}
       <div className="news-box">
         {data.length > 0 ? (
-          data.map((value: news) => (
+          data.map((value: News) => (
             <div key={value.id} className="news-box__inner px-4 mb-[40px]">
               <div className="pb-[50px]">
                 <Link href={`news/${value.slug}`}>

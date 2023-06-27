@@ -2,7 +2,11 @@ import React, { useEffect, useLayoutEffect, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function Logo({ option }: any) {
+type Props = {
+  option: string
+} | any;
+
+export default function Logo({ option }:Props) {
   const [logo, setLogo] = useState('logo.svg');
 
   useLayoutEffect(() => {

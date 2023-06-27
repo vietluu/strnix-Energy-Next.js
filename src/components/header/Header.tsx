@@ -67,10 +67,10 @@ const Header = () => {
     }
   }, [menuMobile, search]);
 
-  const handleShowDropdown = (e: any): void => {
-    e.children[1].classList.toggle('activebtn');
-    e.children[2].classList.toggle('open');
-  };
+  // const handleShowDropdown = (e: any): void => {
+  //   e.children[1].classList.toggle('activebtn');
+  //   e.children[2].classList.toggle('open');
+  // };
   const scroll = (): void => {
     setPage(window.scrollY);
   };

@@ -1,5 +1,5 @@
 import React, { JSX } from 'react';
-export default function CustomBtnHover({ text }: any): JSX.Element {
+export default function CustomBtnHover({ text }: { text: string }): JSX.Element {
   return (
     <div className="link-text effect ">
       <span className="btn-txt ">{text}</span>
