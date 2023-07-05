@@ -1,12 +1,12 @@
 'use client';
-import { useLayoutEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { store } from './store';
 import { Provider } from 'react-redux';
 import { setTimeout } from 'timers';
 
 export function Providers({ children }: { children: React.ReactNode }) {
   const [display, setDisplay] = useState<String>('');
-  useLayoutEffect(() => {
+  useEffect(() => {
     setTimeout(() => {
       setDisplay('d-none'), 800;
     });
