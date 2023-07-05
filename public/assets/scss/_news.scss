@@ -28,11 +28,10 @@
     }
     .ant-input {
       border: none;
-      border-radius: 30px 0 0 30px !important;
       border-color: transparent;
       color: black;
       outline: none;
-
+      border-radius: 30px 0 0 30px !important;
       &::placeholder {
         color: rgb(196, 189, 189) !important;
       }
@@ -40,5 +39,14 @@
         box-shadow: none;
       }
     }
+  }
+}
+.ant-skeleton {
+  width: 100% !important;
+  max-height: 500px !important;
+  aspect-ratio: 13/9;
+  .ant-skeleton-avatar {
+    width: 100% !important;
+    height: 100% !important;
   }
 }
