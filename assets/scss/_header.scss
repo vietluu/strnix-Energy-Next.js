@@ -84,7 +84,6 @@
     background-color: #fff;
     display: flex;
     justify-content: flex-end;
-    padding: 0 90px;
     ul {
       height: 100%;
       li {
@@ -111,6 +110,11 @@
 .logo-top {
   width: 50%;
   padding: 5px 0;
+  a{
+    img{
+      margin-left: 0;
+    }
+  }
 }
 .hover1 {
   color: #ffffff;
@@ -403,7 +407,6 @@
     height: 100vh;
     background-color: #222222;
     padding-top: 30px;
-    padding-bottom: 50px;
     overflow-y: auto;
     animation: show;
     animation-duration: 1s;
@@ -445,7 +448,6 @@
         line-height: 30px;
         top: 7px;
         border-radius: 3px;
-        z-index: 20;
       }
       & > .nav-mobile {
         display: none;

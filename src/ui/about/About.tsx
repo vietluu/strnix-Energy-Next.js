@@ -198,7 +198,7 @@ const About = () => {
           style={{ background: '#24345d' }}
         >
           <div
-            className="py-[60px] px-[120px] max-lg:px-4"
+            className="py-[60px] md:px-3 xl:px-5 px-[120px] max-lg:px-4"
             data-aos="fade-right"
           >
             <div className="title">
