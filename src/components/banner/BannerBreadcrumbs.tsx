@@ -7,7 +7,6 @@ type Breadcrumbtype = {
   title: string;
   url: string;
 }
-
 export default function BannerBreadcrumbs(props: Breadcrumbtype) {
   return (
     <div
