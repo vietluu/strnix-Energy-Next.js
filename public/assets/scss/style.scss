@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 @import 'header';
 @import 'home';
 @import 'about';
@@ -105,7 +105,7 @@ button {
     width: 51%;
     height: 100%;
     background: #fff;
-    z-index: 0;
+    z-index: 2;
     -webkit-transform: translateX(-101%);
     -ms-transform: translateX(-101%);
     transform: translateX(-101%);
