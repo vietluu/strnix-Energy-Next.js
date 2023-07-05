@@ -10,7 +10,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
     setTimeout(() => {
       setDisplay('d-none'), 800;
     });
-    return () => setDisplay('d-none');
+    
   }, []);
 
   return (
