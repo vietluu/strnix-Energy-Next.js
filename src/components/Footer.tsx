@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import SocialLink from './SocialLink';
 import Logo from './Logo';
+
 export default function Footer() {
   const goToTop = (): void => {
     if (typeof window !== 'undefined') {

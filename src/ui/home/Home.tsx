@@ -8,14 +8,11 @@ import CustomButtonSlide from '@/components/buttonCustom/CustomButtonSlide';
 import CustomBtnHover from '@/components/buttonCustom/CustomBtnHover';
 import RegisterForm from '@/components/form/RegisterForm';
 import ContactForm from '@/components/form/ContactForm';
-
 import Banner from '@/components/banner/Banner';
-
 import CounterUp from '@/components/CounterUp';
 
 export default function Home() {
   const [isActive, setIsActive] = useState<boolean>(false);
-
 
   const reviewSlide: Settings = {
     arrows: true,

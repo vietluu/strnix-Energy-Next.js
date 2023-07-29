@@ -5,9 +5,9 @@ import Link from 'next/link';
 import Slider, { Settings } from 'react-slick';
 import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
 import { Form, Input, Select } from 'antd';
-
 import { emailValiate, phoneValidate } from '@/utils/validate';
 import BannerBreadcrumbs from '@/components/banner/BannerBreadcrumbs';
+
 export default function Service() {
   const setting: Settings = {
     dots: true,

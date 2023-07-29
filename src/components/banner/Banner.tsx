@@ -1,5 +1,6 @@
 import React from 'react';
 import Slider, { Settings } from 'react-slick';
+
 export default function Banner() {
   const setting: Settings = {
     arrows: false,

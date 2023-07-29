@@ -2,18 +2,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { News } from '@/types/newsType';
+
 type props = {
   search: string;
   data: [];
-}
-
+};
 
 export default function News(props: props) {
   const { data, search } = props;
-  
+
   return (
     <>
-      {search&& search !== 'undefined' && (
+      {search && search !== 'undefined' && (
         <h2 className="text-3xl text-green-500 font-bold mb-[40px]">
           Result for:{search}
         </h2>

@@ -7,6 +7,7 @@ import CustomBtnHover from '../../components/buttonCustom/CustomBtnHover';
 import BannerBreadcrumbs from '@/components/banner/BannerBreadcrumbs';
 import RegisterForm from '@/components/form/RegisterForm';
 import CounterUp from '@/components/CounterUp';
+
 const About = () => {
   const setting: Settings = {
     arrows: true,

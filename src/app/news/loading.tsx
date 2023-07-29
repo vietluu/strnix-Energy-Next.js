@@ -1,6 +1,5 @@
-import NewsSkeleton from '@/components/skeleton/NewsSkeleton'
+import NewsSkeleton from '@/components/skeleton/NewsSkeleton';
+
 export default function loading() {
-  return (
-    <NewsSkeleton/>
-  )
+  return <NewsSkeleton />;
 }

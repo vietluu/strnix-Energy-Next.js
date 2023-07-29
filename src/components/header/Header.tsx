@@ -12,19 +12,20 @@ import CustomBtnHover from '../buttonCustom/CustomBtnHover';
 import { useRouter } from 'next/navigation';
 import { useAppSelector } from '@/redux/hooks';
 import { RootState } from '@/redux/store';
-import { notification,message } from 'antd'
+import { notification, message } from 'antd';
+
 const Header = () => {
   const [menuMobile, setMenuMobile] = useState<boolean>(false);
   const [search, setSearch] = useState<boolean>(false);
   const [page, setPage] = useState(0);
-  const searchRef = useRef(null)
-  const router = useRouter()
+  const searchRef = useRef(null);
+  const router = useRouter();
 
   const isLoading = useAppSelector(
     (state: RootState) => state.formReducer.isLoading
   );
-    const hasErr = useAppSelector((state: RootState) => state.formReducer.hasErr);
-    
+  const hasErr = useAppSelector((state: RootState) => state.formReducer.hasErr);
+
   useEffect(() => {
     isLoading
       ? message.loading({
@@ -82,15 +83,20 @@ const Header = () => {
           <div className="close" onClick={(e) => setSearch(false)}>
             <i className="fas fa-times fa-2x"></i>
           </div>
-          <div className="searchForm"> 
+          <div className="searchForm">
             <div className="search-elm">
               <fieldset>
                 <input ref={searchRef} type="text" placeholder=" Search Here" />
-                
-                <input onClick={e => {
-                  //@ts-ignore
-                  router.push(`news?title=${searchRef?.current?.value}`), setSearch(false)
-                }} value="SEARCH NOW!" className="theme" />
+
+                <input
+                  onClick={(e) => {
+                    //@ts-ignore
+                    router.push(`news?title=${searchRef?.current?.value}`),
+                      setSearch(false);
+                  }}
+                  value="SEARCH NOW!"
+                  className="theme"
+                />
               </fieldset>
             </div>
           </div>

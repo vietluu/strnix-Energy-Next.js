@@ -3,9 +3,7 @@ import Fancybox from '@/components/FancyBox';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
-
 import BannerBreadcrumbs from '@/components/banner/BannerBreadcrumbs';
 
 export default function Project() {
@@ -340,4 +338,3 @@ export default function Project() {
     </>
   );
 }
-
